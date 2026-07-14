@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaik Ghouse Mohiddin Shah | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1.1">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="stars-canvas"></canvas>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SGM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#music">Playlist</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrapper">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">B.Tech CSE AIML · SRM AP</div>
+        <h1 class="hero-name">
+          Shaik Ghouse<br><span class="highlight">Mohiddin Shah</span>
+        </h1>
+        <p class="hero-role">
+          A dedicated CS engineering student with a passion for AI &amp; intelligent systems. Fuelled by curiosity, music, and a competitive spirit.
+        </p>
+        <div class="hero-langs">
+          <span class="lang-tag">Hindi</span>
+          <span class="lang-tag">English</span>
+          <span class="lang-tag">Telugu</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-scene" id="avatarScene">
+          <div class="orbit-ring orbit1"><div class="orbit-dot blue"></div></div>
+          <div class="orbit-ring orbit2"><div class="orbit-dot green"></div></div>
+          <div class="avatar-card" id="avatarCard">
+            <img
+              src="https://sgm-shah.web.app/assets/profile.jpeg.jpg"
+              class="avatar-photo"
+              alt="Shaik Ghouse Mohiddin Shah"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-photo-fallback" style="display:none;">SGM</div>
+            <div class="avatar-info">
+              <h3>SGM SHAH</h3>
+              <p>CSE AIML · Guntur, India</p>
+            </div>
+            <div class="avatar-badges">
+              <span class="badge">C / C++</span>
+              <span class="badge green">DSA</span>
+              <span class="badge purple">AIML</span>
+              <span class="badge">OOPS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrapper">
+    <div class="stats-row">
+      <div class="card stat-card reveal"><div class="stat-num" data-target="92">0</div><div class="stat-label">12th Percentage</div></div>
+      <div class="card stat-card reveal"><div class="stat-num" data-target="82">0</div><div class="stat-label">10th Percentage</div></div>
+      <div class="card stat-card reveal"><div class="stat-num" data-target="3">0</div><div class="stat-label">Languages Spoken</div></div>
+    </div>
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Who I am</h2>
+    <div class="about-grid">
+      <div class="card reveal" style="padding:2.5rem;">
+        <p class="about-text">
+          I am a dedicated <strong>B.Tech CSE AIML Student</strong> at SRM University AP (2025–2029) with a passion for building intelligent systems. Beyond the screen, I am driven by diverse perspectives and a competitive spirit.<br><br>
+          I enjoy exploring the frontiers of <strong>Artificial Intelligence &amp; Machine Learning</strong>, coding efficient algorithms, and continuously levelling up my problem-solving skills through DSA practice.
+        </p>
+      </div>
+      <div class="card reveal" style="padding:2rem;">
+        <div style="font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">Interests &amp; Hobbies</div>
+        <div class="hobbies-grid">
+          <div class="hobby-item"><span>Watching Movies</span></div>
+          <div class="hobby-item"><span>Playing Cricket</span></div>
+          <div class="hobby-item"><span>Conspiracy Theories</span></div>
+          <div class="hobby-item"><span>Reading Books</span></div>
+          <div class="hobby-item"><span>Debating</span></div>
+          <div class="hobby-item"><span>Listening to Music</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrapper">
+    <div class="section-label">Academic Journey</div>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-list">
+
+      <div class="card edu-card reveal">
+        <div>
+          <div class="edu-period">2025 — 2029<br>Present</div>
+          <div class="edu-level">Undergraduate</div>
+        </div>
+        <div class="edu-content">
+          <h3>B.Tech CSE — AI &amp; Machine Learning</h3>
+          <div class="edu-institute">▸ SRM University AP, Andhra Pradesh</div>
+          <p style="font-size:.75rem; color:var(--muted); line-height:1.7; margin-bottom:.8rem;">Pursuing a 4-year B.Tech degree with specialisation in Artificial Intelligence and Machine Learning. Actively building a strong foundation in programming and intelligent systems.</p>
+          <div class="skills-chips">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+            <span class="chip">DSA</span>
+            <span class="chip">OOPS</span>
+            <span class="chip">AI/ML Fundamentals</span>
+          </div>
+          <div class="skill-bar-wrap" style="margin-top:1.2rem;">
+            <div class="skill-bar-label"><span>Progress (1st year)</span><span>~25%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="25"></div></div>
+          </div>
+          <div class="edu-score" style="margin-top:1rem; margin-bottom:0;">
+            <div class="score-item"><span class="score-val">8.2<span style="font-size:.65rem; color:var(--muted)">/10</span></span><span class="score-lbl">1st Year CGPA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card edu-card reveal">
+        <div>
+          <div class="edu-period">2023 — 2025</div>
+          <div class="edu-level">Intermediate</div>
+        </div>
+        <div class="edu-content">
+          <h3>11th &amp; 12th — Science Stream</h3>
+          <div class="edu-institute">▸ AAKASH Institute, Guntur</div>
+          <div class="edu-score">
+            <div class="score-item"><span class="score-val">920<span style="font-size:.65rem; color:var(--muted)">/1000</span></span><span class="score-lbl">Total Marks</span></div>
+            <div class="score-item"><span class="score-val">92%</span><span class="score-lbl">Percentage</span></div>
+          </div>
+          <div class="skills-chips">
+            <span class="chip">Event Planning</span>
+            <span class="chip">Event Management</span>
+            <span class="chip">Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card edu-card reveal">
+        <div>
+          <div class="edu-period">2022 — 2023</div>
+          <div class="edu-level">Schooling</div>
+        </div>
+        <div class="edu-content">
+          <h3>10th Class — SSC</h3>
+          <div class="edu-institute">▸ Sri Venkateswara Bala Kuteer, Guntur</div>
+          <div class="edu-score">
+            <div class="score-item"><span class="score-val">412<span style="font-size:.65rem; color:var(--muted)">/500</span></span><span class="score-lbl">Total Marks</span></div>
+            <div class="score-item"><span class="score-val">82%</span><span class="score-lbl">Percentage</span></div>
+          </div>
+          <div class="skills-chips">
+            <span class="chip">Music Editing</span>
+            <span class="chip">Debate</span>
+            <span class="chip">Multilingual</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC / PLAYLIST -->
+<section id="music">
+  <div class="wrapper">
+    <div class="section-label">Favourites</div>
+    <h2 class="section-title">My Playlist</h2>
+    <div class="card playlist-card reveal">
+      <div class="playlist-header">
+        <div class="playlist-icon">🎵</div>
+        <div>
+          <h3>Favourite Tracks</h3>
+          <p>The songs on repeat right now</p>
+        </div>
+      </div>
+      <div class="track-list">
+        <div class="track" data-src="assets/maula_mere_maula.mp3.mp3">
+          <div class="track-num">01</div>
+          <div class="track-play">▶</div>
+          <div class="track-info">
+            <div class="track-name">Maula Mere Maula</div>
+            <div class="track-artist">Anwar (2007)</div>
+            <div class="track-progress"><div class="track-progress-fill"></div></div>
+          </div>
+          <span class="track-time">0:00</span>
+          <span class="badge purple" style="font-size:.6rem;">Sufi</span>
+        </div>
+        <div class="track" data-src="assets/mere_rashke_qamar.mp3.mp3">
+          <div class="track-num">02</div>
+          <div class="track-play">▶</div>
+          <div class="track-info">
+            <div class="track-name">Mere Rashke Qamar</div>
+            <div class="track-artist">Nusrat Fateh Ali Khan</div>
+            <div class="track-progress"><div class="track-progress-fill"></div></div>
+          </div>
+          <span class="track-time">0:00</span>
+          <span class="badge purple" style="font-size:.6rem;">Qawwali</span>
+        </div>
+        <div class="track" data-src="assets/gehra_hua.mp3.mp3">
+          <div class="track-num">03</div>
+          <div class="track-play">▶</div>
+          <div class="track-info">
+            <div class="track-name">Gehra Hua</div>
+            <div class="track-artist">Dhurandhar</div>
+            <div class="track-progress"><div class="track-progress-fill"></div></div>
+          </div>
+          <span class="track-time">0:00</span>
+          <span class="badge" style="font-size:.6rem;">Indie</span>
+        </div>
+        <div class="track" data-src="assets/aakhri_ishq.mp3.mp3">
+          <div class="track-num">04</div>
+          <div class="track-play">▶</div>
+          <div class="track-info">
+            <div class="track-name">Aakri Ishq</div>
+            <div class="track-artist">Dhurandhar 2</div>
+            <div class="track-progress"><div class="track-progress-fill"></div></div>
+          </div>
+          <span class="track-time">0:00</span>
+          <span class="badge" style="font-size:.6rem;">Indie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrapper">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="card project-card reveal">
+        <div class="project-header">
+          <span class="project-icon">🏏</span>
+          <a href="https://ipl-auction-a81df.web.app" target="_blank" class="project-link">↗ View Live</a>
+        </div>
+        <h3>IPL Mega Auction Platform</h3>
+        <p class="project-desc">A real-time IPL Mega Auction platform that simulates the bidding process for cricket teams. Features live auction mechanics and team management. Deployed on Firebase.</p>
+        <div class="tech-stack">
+          <span class="tech">Firebase</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">HTML/CSS</span>
+          <span class="tech">Real-time DB</span>
+        </div>
+      </div>
+      <div class="card project-card reveal">
+        <div class="project-header">
+          <span class="project-icon">📄</span>
+          <a href="https://resume-writer-sigma.vercel.app/" target="_blank" class="project-link">↗ View Live</a>
+        </div>
+        <h3>Resume Writer</h3>
+        <p class="project-desc">A dynamic Resume Generator web app that lets users fill in their details and instantly preview a professionally formatted resume. Built with a clean, interactive UI.</p>
+        <div class="tech-stack">
+          <span class="tech">JavaScript</span>
+          <span class="tech">HTML/CSS</span>
+          <span class="tech">Vercel</span>
+        </div>
+      </div>
+      <div class="card project-card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; border-style:dashed; opacity:.6;">
+        <span style="font-size:2.5rem; margin-bottom:1rem;">🚀</span>
+        <h3 style="font-family:'Syne',sans-serif; font-size:.95rem; margin-bottom:.5rem;">More Coming Soon</h3>
+        <p style="font-size:.72rem; color:var(--muted);">Currently in 1st year, building more projects in AI/ML and full-stack development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrapper">
+    <div class="contact-card reveal">
+      <div class="section-label" style="justify-content:center;">Connect</div>
+      <h2 class="section-title" style="margin-bottom:0;">Let's talk<br><span style="color:var(--accent);">something great.</span></h2>
+      <p>Whether it's a project, collaboration, or just a conversation — I'm always open to connecting with curious minds.</p>
+
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sgmshah07@gmail.com" target="_blank" class="btn btn-primary" style="font-size:.82rem;">Send me an email →</a>
+
+      <div class="social-row">
+        <a href="https://linkedin.com" target="_blank" class="social-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="social-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="javascript:void(0)" id="email-social-btn" class="social-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <span class="btn-text-content">Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrapper"></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
