@@ -1,1 +1,15 @@
-# SGM_SHAH
+# 💫 About Me:
+# Hi there, I'm SHAIK GHOUSE MOHIDDIN SHAH<br><br>I am a BTech student majoring in **Computer Science and Engineering** with a specialization in **Artificial Intelligence & Machine Learning (AIML)**. I'm passionate about building interactive platforms, mastering core computer science concepts, and exploring emerging technologies. <br><br>### 🛠️ What I'm Currently Working On<br>*   **Core Fundamentals:** Deep diving into **C** and **C++**, and building a strong foundation in **Data Structures and Algorithms (DSA)**.<br>*   **Web & App Development:** Exploring real-time backend technologies like **Node.js** and **Firebase**, alongside HTML and UI design, to build seamless user experiences.<br>*   **Immersive Tech:** Expanding my knowledge in Augmented and Virtual Reality (recently completed an AR/VR workshop!).<br>*   **Interactive Projects:** Tinkering with game logic and simulations, including designing an online multiplayer IPL auction simulator.<br><br>### 🎯 My Goals<br>*   Actively upskilling and building projects to secure a **software engineering internship by the end of my second year**.<br>*   Continuously learning new tech stacks to prepare for a full-time engineering role by graduation.<br><br>### ⚡ Outside of Code<br>When I'm not writing code or debugging, you can usually find me:<br>*   Following cricket statistics and tournaments closely, especially the IPL and T20 World Cups.<br>*   Experimenting with hyper-realistic AI image generation and digital photography aesthetics.<br>*   Advocating for sustainability and finding ways to reduce single-use plastics.<br><br>
+
+
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.shion.dev/api?username=SGM-SHAH&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://streak-stats.demolab.com/?user=SGM-SHAH&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=SGM-SHAH&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+
+---
+[![](https://komarev.com/ghpvc/?username=SGM-SHAH&icon=0&color=0)](https://visitcount.itsvg.in)
+
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
