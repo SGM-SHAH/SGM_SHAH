@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=29.0">
+  <link rel="stylesheet" href="style.css?v=30.0">
 </head>
 
 <body>
@@ -54,9 +54,11 @@
 
     <!-- HERO SECTION -->
     <section id="top" class="portfolio-hero" aria-label="Portfolio introduction">
-      <!-- Frameless Atmospheric Side Portrait -->
-      <div class="portfolio-hero__side-portrait" aria-hidden="true">
-        <img src="assets/profile_studio.jpg" alt="" class="portfolio-hero__portrait-img" loading="eager">
+      <!-- Sticky Portrait Track: stays pinned to viewport while hero text scrolls -->
+      <div class="portfolio-hero__sticky-track" aria-hidden="true">
+        <div class="portfolio-hero__side-portrait">
+          <img src="assets/profile_studio.jpg" alt="" class="portfolio-hero__portrait-img" loading="eager">
+        </div>
       </div>
 
       <!-- Aligned Hero Content Container -->
@@ -847,7 +849,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=29.0"></script>
+  <script src="script.js?v=30.0"></script>
 </body>
 
 </html>

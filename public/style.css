@@ -74,7 +74,7 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -328,20 +328,70 @@ body {
 }
 
 /* ===================================================
-   2. HERO SECTION
+   2. HERO SECTION (PINNED STAGE & SCROLLING TEXT)
 =================================================== */
 .portfolio-hero {
   position: relative;
   isolation: isolate;
-  min-height: calc(100vh - 72px);
-  min-height: calc(100svh - 72px);
+  min-height: 160vh;
+  min-height: 160svh;
   overflow-x: clip;
   background-color: var(--dark-bg);
-  display: flex;
-  flex-direction: column;
 }
 
+/* STICKY PORTRAIT TRACK: STAYS PINNED TO VIEWPORT WHILE HERO TEXT SCROLLS */
+.portfolio-hero__sticky-track {
+  position: sticky;
+  top: 72px;
+  height: calc(100vh - 72px);
+  height: calc(100svh - 72px);
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portfolio-hero__side-portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: clamp(440px, 80vh, 780px);
+  max-width: clamp(280px, 46vw, 600px);
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 1;
+}
+
+.portfolio-hero__portrait-img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  display: block;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  mask-composite: intersect;
+  transition: filter 0.5s ease;
+}
+
+.portfolio-hero:hover .portfolio-hero__portrait-img {
+  filter: grayscale(100%) contrast(1.15) brightness(1);
+}
+
+/* SCROLLING TEXT CONTENT: GLIDES UP INDEPENDENTLY OF PINNED PORTRAIT */
 .portfolio-hero__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   width: min(100% - 3rem, 1400px);
   margin: 0 auto;
   min-height: calc(100vh - 72px);
@@ -349,10 +399,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  z-index: 2;
   padding: clamp(2rem, 3.8vh, 3.2rem) 0 clamp(2rem, 3.8vh, 3.2rem);
   box-sizing: border-box;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.portfolio-hero__inner * {
+  pointer-events: auto;
 }
 
 /* PHILOSOPHY & GROWTH QUOTE BOXES (TOP-LEFT & BOTTOM-LEFT) */
@@ -400,44 +454,6 @@ body {
   color: #a0a5b4;
 }
 
-/* FRAMELESS SIDE PORTRAIT */
-.portfolio-hero__side-portrait {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: clamp(440px, 80vh, 780px);
-  max-width: clamp(280px, 46vw, 600px);
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  opacity: 1;
-}
-
-.portfolio-hero__portrait-img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: right bottom;
-  display: block;
-  filter: grayscale(100%) contrast(1.1) brightness(0.95);
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
-    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
-    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
-  mask-composite: intersect;
-  transition: filter 0.5s ease;
-}
-
-.portfolio-hero:hover .portfolio-hero__portrait-img {
-  filter: grayscale(100%) contrast(1.15) brightness(1);
-}
-
 /* CENTER TITLE */
 .portfolio-hero__title-wrap {
   position: relative;
@@ -481,11 +497,19 @@ body {
   .portfolio-hero {
     min-height: auto;
   }
+  .portfolio-hero__sticky-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
   .portfolio-hero__inner {
+    position: relative;
     width: min(100% - 2.5rem, 1400px);
     min-height: auto;
     padding: 1.5rem 0 2rem;
     gap: 2rem;
+    pointer-events: auto;
   }
   .portfolio-hero__quote-box {
     max-width: 100%;
@@ -510,6 +534,7 @@ body {
 =================================================== */
 .about-section {
   position: relative;
+  z-index: 5;
   background-color: var(--dark-bg);
   padding: clamp(5rem, 8vw, 7.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
