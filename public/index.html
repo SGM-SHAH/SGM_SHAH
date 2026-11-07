@@ -1,331 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaik Ghouse Mohiddin Shah | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1.1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHAIK GHOUSE MOHIDDIN SHAH - Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#090A0D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=22.0">
 </head>
+
 <body>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-<canvas id="stars-canvas"></canvas>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
+  <!-- FILM GRAIN & GEOMETRIC GRID OVERLAY -->
+  <div class="film-grain-overlay" aria-hidden="true"></div>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">SGM<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#music">Playlist</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- STICKY MINIMALIST HEADER -->
+  <header class="portfolio-navigation">
+    <div class="portfolio-navigation__inner">
+      <a class="portfolio-navigation__brand" href="#top" aria-label="Back to top">
+        SGM<span>.</span>
+      </a>
+      <nav class="portfolio-navigation__links" aria-label="Main navigation">
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#skills">STACK</a>
+        <a href="#recognition">RECOGNITION</a>
+        <a href="#community">COMMUNITY</a>
+        <a href="#music">PLAYLIST</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <button type="button" class="portfolio-navigation__toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+        MENU
+      </button>
+    </div>
+    <nav class="portfolio-navigation__mobile" id="nav-mobile-drawer" aria-label="Mobile navigation">
+      <a href="#about">ABOUT</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#skills">TECHNICAL STACK</a>
+      <a href="#recognition">RECOGNITION</a>
+      <a href="#community">COMMUNITY</a>
+      <a href="#music">PLAYLIST</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="wrapper">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-eyebrow">B.Tech CSE AIML · SRM AP</div>
-        <h1 class="hero-name">
-          Shaik Ghouse<br><span class="highlight">Mohiddin Shah</span>
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="top" class="portfolio-hero" aria-label="Portfolio introduction">
+      <div class="portfolio-hero__title-wrap">
+        <h1 class="portfolio-hero__title">
+          <span class="portfolio-hero__line portfolio-hero__line--first">SHAIK GHOUSE</span>
+          <span class="portfolio-hero__line portfolio-hero__line--second">MOHIDDIN SHAH</span>
         </h1>
-        <p class="hero-role">
-          A dedicated CS engineering student with a passion for AI &amp; intelligent systems. Fuelled by curiosity, music, and a competitive spirit.
-        </p>
-        <div class="hero-langs">
-          <span class="lang-tag">Hindi</span>
-          <span class="lang-tag">English</span>
-          <span class="lang-tag">Telugu</span>
-        </div>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        </div>
       </div>
-      <div class="hero-visual">
-        <div class="avatar-scene" id="avatarScene">
-          <div class="orbit-ring orbit1"><div class="orbit-dot blue"></div></div>
-          <div class="orbit-ring orbit2"><div class="orbit-dot green"></div></div>
-          <div class="avatar-card" id="avatarCard">
-            <img
-              src="https://sgm-shah.web.app/assets/profile.jpeg.jpg"
-              class="avatar-photo"
-              alt="Shaik Ghouse Mohiddin Shah"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="avatar-photo-fallback" style="display:none;">SGM</div>
-            <div class="avatar-info">
-              <h3>SGM SHAH</h3>
-              <p>CSE AIML · Guntur, India</p>
+    </section>
+
+    <!-- ABOUT ME (ORIGIN STORY) -->
+    <section id="about" class="about-section" aria-label="About me">
+      <div class="site-container">
+
+        <!-- Stats Row -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num" data-target="4">0</div>
+            <div class="stat-label">Hackathons Competed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="6">0</div>
+            <div class="stat-label">Projects Shipped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-target="3">0</div>
+            <div class="stat-label">Languages Spoken</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 0.75rem;">
+          <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+            ORIGIN STORY
+          </span>
+        </div>
+        <h2 class="section-title-clean" style="color: #ffffff;">Who I am<span style="color:#62687a;">.</span></h2>
+
+        <div class="about-grid">
+          <div class="about-text-card">
+            <p class="about-text">
+              I am a dedicated <strong>B.Tech CSE AIML Student</strong> at SRM University AP (2025-2029) with a passion for building intelligent systems. Beyond the screen, I am driven by diverse perspectives and a competitive spirit.
+              <br><br>
+              I enjoy exploring the frontiers of <strong>Artificial Intelligence &amp; Machine Learning</strong>, coding efficient algorithms, competing in national hackathons with teammates, and continuously levelling up my problem-solving skills.
+            </p>
+          </div>
+
+          <div class="about-hobbies-card">
+            <div class="hobbies-title">Interests &amp; Hobbies</div>
+            <div class="hobbies-grid">
+              <div class="hobby-item"><span>Watching Movies</span></div>
+              <div class="hobby-item"><span>Playing Cricket</span></div>
+              <div class="hobby-item"><span>Conspiracy Theories</span></div>
+              <div class="hobby-item"><span>Reading Books</span></div>
+              <div class="hobby-item"><span>Debating</span></div>
+              <div class="hobby-item"><span>Listening to Music</span></div>
             </div>
-            <div class="avatar-badges">
-              <span class="badge">C / C++</span>
-              <span class="badge green">DSA</span>
-              <span class="badge purple">AIML</span>
-              <span class="badge">OOPS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE -->
+    <section id="projects" class="projects-section" aria-label="Selected work">
+      <div class="site-container">
+        <div class="projects-header">
+          <div style="margin-bottom: 1rem;">
+            <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+              SELECTED WORK
+            </span>
+          </div>
+          <h2 class="section-title-clean" style="color: #ffffff;">PROJECTS<span style="color:#62687a;">.</span></h2>
+          <p style="color: var(--dark-text-secondary); max-width: 650px; font-size: 1.05rem;">
+            Engineering at the intersection of algorithmic intelligence, low-level computation, and resilient digital architectures.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1 -->
+          <article class="project-card" data-project-id="campusx">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-AI-01</span>
+                <span class="project-category">AI / MULTI-LLM CONSENSUS</span>
+              </div>
+              <h3>CampusX</h3>
+              <p class="project-tagline">Multi-LLM consensus aggregation engine</p>
+              <p class="project-desc">
+                An intelligent consensus aggregation platform that queries multiple LLM providers simultaneously to cross-validate AI answers, compute semantic agreement, and drastically reduce hallucinations. Co-developed as a core teammate.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">FastAPI</span>
+                <span class="project-tech-tag">Python 3.11</span>
+                <span class="project-tech-tag">AsyncIO</span>
+                <span class="project-tech-tag">Multi-LLM APIs</span>
+                <span class="project-tech-tag">Consensus Scoring</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="campusx">
+                OPEN SPECIFICATION ↗
+              </button>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--dark-text-muted);">HackSRM 2026</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card" data-project-id="voca">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-VOX-02</span>
+                <span class="project-category">SPEECH AI &amp; NLP</span>
+              </div>
+              <h3>VOCA</h3>
+              <p class="project-tagline">Interactive AI speech &amp; language tutor</p>
+              <p class="project-desc">
+                Interactive AI language learning platform built for Hack The Winter. Features live speech evaluation, accent detection, dynamic conversational scenarios, and automated phonetic cadence analysis.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">React 19</span>
+                <span class="project-tech-tag">Web Speech API</span>
+                <span class="project-tech-tag">LLM Integration</span>
+                <span class="project-tech-tag">Firebase</span>
+                <span class="project-tech-tag">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="voca">
+                OPEN SPECIFICATION ↗
+              </button>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--dark-text-muted);">Hack The Winter</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project-card" data-project-id="safeecho">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-PSY-03</span>
+                <span class="project-category">NLP SENTIMENT &amp; EMPATHY</span>
+              </div>
+              <h3>SafeEcho</h3>
+              <p class="project-tagline">Empathy-driven mental health companion</p>
+              <p class="project-desc">
+                Empathy-focused web application designed to analyze sentiment patterns in user reflection logs and provide gentle, AI-guided coping techniques and supportive resources in real time with strict zero-logging privacy.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">NLP Sentiment</span>
+                <span class="project-tech-tag">JavaScript ESNext</span>
+                <span class="project-tech-tag">HTML5 / CSS3</span>
+                <span class="project-tech-tag">UI / UX</span>
+                <span class="project-tech-tag">Local Privacy</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="safeecho">
+                OPEN SPECIFICATION ↗
+              </button>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--dark-text-muted);">Code to Connect</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 4 -->
+          <article class="project-card" data-project-id="ipl">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-DAT-04</span>
+                <span class="project-category">REAL-TIME DB SYSTEMS</span>
+              </div>
+              <h3>IPL Mega Auction</h3>
+              <p class="project-tagline">Real-time multiplayer bidding simulation</p>
+              <p class="project-desc">
+                A real-time IPL Mega Auction platform that simulates the live bidding process for cricket teams. Features atomic budget constraints, live multiplayer auction mechanics, and sub-50ms synchronized database state.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">Firebase Realtime DB</span>
+                <span class="project-tech-tag">JavaScript</span>
+                <span class="project-tech-tag">Concurrency</span>
+                <span class="project-tech-tag">Firebase Hosting</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="ipl">
+                OPEN SPECIFICATION ↗
+              </button>
+              <a href="https://ipl-auction-a81df.web.app" target="_blank" rel="noopener noreferrer" class="btn-view-live">
+                VIEW LIVE ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 5 -->
+          <article class="project-card" data-project-id="resume">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-DOC-05</span>
+                <span class="project-category">PRODUCTIVITY SYSTEMS</span>
+              </div>
+              <h3>Dynamic Resume Writer</h3>
+              <p class="project-tagline">Real-time ATS resume formatter &amp; generator</p>
+              <p class="project-desc">
+                A dynamic Resume Generator web app that lets users fill in their professional profiles and instantly preview a professionally formatted ATS-optimized resume. Features dual-pane reactive state and print CSS pagination.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">JavaScript</span>
+                <span class="project-tech-tag">HTML5 / CSS3</span>
+                <span class="project-tech-tag">Print Engine</span>
+                <span class="project-tech-tag">Vercel Deployment</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="resume">
+                OPEN SPECIFICATION ↗
+              </button>
+              <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-view-live">
+                VIEW LIVE ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 6 -->
+          <article class="project-card" data-project-id="flappy">
+            <div>
+              <div class="project-card-header">
+                <span class="project-code">PRJ-GAME-06</span>
+                <span class="project-category">CANVAS ARCADE &amp; LEADERBOARDS</span>
+              </div>
+              <h3>Flappy Bhai</h3>
+              <p class="project-tagline">SRM AP campus arcade simulation</p>
+              <p class="project-desc">
+                High-performance 60FPS 2D HTML5 Canvas arcade simulation featuring custom SRM AP campus artwork, normalized physics loop, bounding box collision detection, and real-time Firebase global leaderboard synchronization.
+              </p>
+              <div class="project-tech-tags">
+                <span class="project-tech-tag">HTML5 Canvas</span>
+                <span class="project-tech-tag">JavaScript</span>
+                <span class="project-tech-tag">Physics Engine</span>
+                <span class="project-tech-tag">Firebase DB</span>
+              </div>
+            </div>
+            <div class="project-card-actions">
+              <button type="button" class="btn-open-spec" data-project="flappy">
+                OPEN SPECIFICATION ↗
+              </button>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--dark-text-muted);">Campus Edition</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL STACK / SKILLS ATLAS -->
+    <section id="skills" class="skills-atlas-section" aria-label="Technical stack">
+      <div class="site-container">
+        <div style="margin-bottom: 1rem;">
+          <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+            ENGINEERING CAPABILITIES
+          </span>
+        </div>
+        <h2 class="section-title-clean" style="color: #ffffff;">TECHNICAL STACK<span style="color:#62687a;">.</span></h2>
+        <p style="color: var(--dark-text-secondary); max-width: 650px; font-size: 1.05rem;">
+          Languages, intelligence systems and engineering tools. Explore the technical domains that shape my work.
+        </p>
+
+        <div class="skills-domains-grid">
+
+          <!-- DOMAIN 1: LANGUAGES -->
+          <div class="skill-domain-card">
+            <div class="domain-code">DOM_01 // LANGUAGES</div>
+            <h3 class="domain-title">Core Languages</h3>
+            <p class="domain-summary">Compiled languages and dynamic scripting foundations for algorithms and systems.</p>
+
+            <div class="domain-items-list">
+              <div class="domain-item">
+                <div class="domain-item-name">C &amp; C++</div>
+                <div class="domain-item-focus">OOP, STL Primitives, Pointer Arithmetic, Memory Architecture, Compilers</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Python</div>
+                <div class="domain-item-focus">FastAPI, AsyncIO, Scientific Libraries, Multi-LLM Scripting, Automation</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Java</div>
+                <div class="domain-item-focus">Object-Oriented Design Patterns, JVM Fundamentals, Exception Handling</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">JavaScript &amp; TypeScript</div>
+                <div class="domain-item-focus">ESNext Standards, Asynchronous DOM, Component Trees, Web APIs</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">SQL</div>
+                <div class="domain-item-focus">Relational Modeling, Query Formulation, Schema Integrity, Indexing</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 2: INTELLIGENCE & SYSTEMS -->
+          <div class="skill-domain-card">
+            <div class="domain-code">DOM_02 // INTELLIGENCE &amp; SYSTEMS</div>
+            <h3 class="domain-title">AI &amp; Algorithms</h3>
+            <p class="domain-summary">Algorithmic intelligence, natural language parsing, and foundational computing.</p>
+
+            <div class="domain-items-list">
+              <div class="domain-item">
+                <div class="domain-item-name">Multi-LLM API Pipelines</div>
+                <div class="domain-item-focus">Parallel Inference Fan-out, Dynamic Prompt Engineering, Consensus Validation</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Speech NLP &amp; Audio Streams</div>
+                <div class="domain-item-focus">Real-Time Acoustic Parsing, Phonetic Cadence, Web Speech Streaming</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Data Structures &amp; Algorithms</div>
+                <div class="domain-item-focus">Graph Traversals, Heaps, Dynamic Programming, Time/Space Complexity</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Object-Oriented Design (OOP)</div>
+                <div class="domain-item-focus">Polymorphism, Inheritance, Encapsulation, Clean Separation of Concerns</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Sentiment &amp; Text Analysis</div>
+                <div class="domain-item-focus">Lexical Classification, Heuristic Pattern Detection, Privacy Preservation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 3: RUNTIMES & TOOLING -->
+          <div class="skill-domain-card">
+            <div class="domain-code">DOM_03 // RUNTIMES &amp; INFRASTRUCTURE</div>
+            <h3 class="domain-title">Web &amp; Tooling</h3>
+            <p class="domain-summary">Full-stack web runtimes, cloud databases, and development toolchains.</p>
+
+            <div class="domain-items-list">
+              <div class="domain-item">
+                <div class="domain-item-name">React &amp; Modern Web Toolchain</div>
+                <div class="domain-item-focus">Virtual DOM, Vite, State Management, Responsive Design, CSS Systems</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">FastAPI &amp; Uvicorn</div>
+                <div class="domain-item-focus">RESTful API Design, Pydantic Schema Validation, Asynchronous Endpoints</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Firebase Realtime Ecosystem</div>
+                <div class="domain-item-focus">NoSQL DB Synchronization, Atomic Transactions, Cloud Hosting, Security Rules</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Git &amp; Version Control</div>
+                <div class="domain-item-focus">Branching Workflows, Collaborative PRs, Merge Conflict Resolution</div>
+              </div>
+              <div class="domain-item">
+                <div class="domain-item-name">Linux &amp; Shell Environments</div>
+                <div class="domain-item-focus">Bash Scripting, Process Inspection, CLI Tooling, Package Management</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOGNITION EXHIBITION (CERTIFICATES) -->
+    <section id="recognition" class="recognition-section" aria-label="Recognition and certificates">
+      <div class="site-container">
+        <div style="margin-bottom: 1rem;">
+          <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+            VERIFIED ACCREDITATIONS
+          </span>
+        </div>
+        <h2 class="section-title-clean" style="color: #ffffff;">RECOGNITION<span style="color:#62687a;">.</span></h2>
+        <p style="color: var(--dark-text-secondary); max-width: 650px; font-size: 1.05rem;">
+          Official accreditations, competitive hackathons, and technical event certifications.
+        </p>
+
+        <div class="recognition-grid">
+
+          <!-- CERTIFICATE 1 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">HACKATHON</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">SRM AP</span>
+              </div>
+              <h3>My First Hackathon</h3>
+              <div class="recognition-issuer">▸ GeeksforGeeks Campus Body · SRM University AP</div>
+              <p class="recognition-desc">
+                Official Certificate of Accomplishment &amp; Participation for <strong>My First Hackathon</strong>, organized by the <strong>GeeksforGeeks Campus Body / Student Chapter</strong> at SRM University AP.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/my_first_hackathon.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- CERTIFICATE 2 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">WORKSHOP</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">STEM LAB</span>
+              </div>
+              <h3>YISL - AR/VR Workshop</h3>
+              <div class="recognition-issuer">▸ Indo-U.S. Science &amp; Tech Forum · STEAM Varsity · GFG SRM AP</div>
+              <p class="recognition-desc">
+                Certificate of Completion for the <strong>Young Innovators STEM Lab (YISL) AR/VR Workshop</strong>, organized by <strong>GeeksforGeeks SRM AP Campus Body</strong> in collaboration with <strong>IUSSTF</strong> and <strong>STEAM Varsity</strong>.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/yisl_arvr_workshop.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- CERTIFICATE 3 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">TECHNICAL</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">GFG CHAPTER</span>
+              </div>
+              <h3>GeeksforGeeks Technical</h3>
+              <div class="recognition-issuer">▸ GeeksforGeeks Campus Body · SRM University AP</div>
+              <p class="recognition-desc">
+                Certificate of Excellence &amp; Active Participation in technical events, competitive coding contests, and workshops organized by the official <strong>GeeksforGeeks Campus Body / Student Chapter</strong> at SRM University AP.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/gfg_campus_certificate.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- CERTIFICATE 4 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">PROFESSIONAL</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">GOOGLE</span>
+              </div>
+              <h3>Project Management</h3>
+              <div class="recognition-issuer">▸ Google · Coursera Professional Certificate</div>
+              <p class="recognition-desc">
+                Official Professional Certification for completing <strong>Foundations of Project Management</strong> offered by <strong>Google</strong> via <strong>Coursera</strong>, covering project life cycles, Agile/Scrum, and documentation.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/google_project_management.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- CERTIFICATE 5 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">NATIONAL HACKATHON</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">GEHU</span>
+              </div>
+              <h3>Hack The Winter</h3>
+              <div class="recognition-issuer">▸ Graphic Era Hill University · Hackathon Community</div>
+              <p class="recognition-desc">
+                Certificate of Participation &amp; Achievement in <strong>Hack The Winter Hackathon</strong>, developing the <strong>VOCA</strong> speech-AI tutor platform as a core developer.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/hack_the_winter.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- CERTIFICATE 6 -->
+          <article class="recognition-card">
+            <div>
+              <div class="recognition-card-top">
+                <span class="recognition-badge">NATIONAL HACKATHON</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">ADOBE / UNSTOP</span>
+              </div>
+              <h3>Adobe University Hackathon</h3>
+              <div class="recognition-issuer">▸ Adobe · Unstop</div>
+              <p class="recognition-desc">
+                Official Certificate of Participation in the <strong>Adobe University Hackathon</strong>, a national-level competition organised by <strong>Adobe</strong> in collaboration with <strong>Unstop</strong>, focusing on creative intelligent digital solutions.
+              </p>
+            </div>
+            <div class="recognition-footer">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #7a7e8d;">VERIFIED PDF</span>
+              <a href="assets/certificates/adobe_university_hackathon.pdf" target="_blank" rel="noopener noreferrer" class="recognition-btn">
+                VIEW PDF ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY & SKILLS IN PRACTICE -->
+    <section id="community" class="community-section" aria-label="Community &amp; skills in practice">
+      <div class="site-container">
+        <div class="community-wrapper">
+          <div class="community-left">
+            <div style="margin-bottom: 1rem;">
+              <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+                LEADERSHIP &amp; IMPACT
+              </span>
+            </div>
+            <h3>SKILLS IN PRACTICE<span style="color:#62687a;">.</span></h3>
+            <p>
+              Beyond solitary engineering, I actively participate in hackathons, student chapters, and technical events: collaborating across cross-functional teams, structuring milestones, and ensuring on-ground execution.
+            </p>
+          </div>
+
+          <div class="community-right">
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Hackathon Team Architecture</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Cross-Functional Collaboration</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Agile Sprint Coordination</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Technical Event Management</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Competitive Problem Solving</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Code Reviews &amp; QA</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Rapid Prototyping</span>
+            </div>
+            <div class="community-item">
+              <span class="community-dot"></span>
+              <span class="community-text">Public Tech Demos</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrapper">
-    <div class="stats-row">
-      <div class="card stat-card reveal"><div class="stat-num" data-target="92">0</div><div class="stat-label">12th Percentage</div></div>
-      <div class="card stat-card reveal"><div class="stat-num" data-target="82">0</div><div class="stat-label">10th Percentage</div></div>
-      <div class="card stat-card reveal"><div class="stat-num" data-target="3">0</div><div class="stat-label">Languages Spoken</div></div>
-    </div>
-    <div class="section-label">About Me</div>
-    <h2 class="section-title">Who I am</h2>
-    <div class="about-grid">
-      <div class="card reveal" style="padding:2.5rem;">
-        <p class="about-text">
-          I am a dedicated <strong>B.Tech CSE AIML Student</strong> at SRM University AP (2025–2029) with a passion for building intelligent systems. Beyond the screen, I am driven by diverse perspectives and a competitive spirit.<br><br>
-          I enjoy exploring the frontiers of <strong>Artificial Intelligence &amp; Machine Learning</strong>, coding efficient algorithms, and continuously levelling up my problem-solving skills through DSA practice.
-        </p>
-      </div>
-      <div class="card reveal" style="padding:2rem;">
-        <div style="font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">Interests &amp; Hobbies</div>
-        <div class="hobbies-grid">
-          <div class="hobby-item"><span>Watching Movies</span></div>
-          <div class="hobby-item"><span>Playing Cricket</span></div>
-          <div class="hobby-item"><span>Conspiracy Theories</span></div>
-          <div class="hobby-item"><span>Reading Books</span></div>
-          <div class="hobby-item"><span>Debating</span></div>
-          <div class="hobby-item"><span>Listening to Music</span></div>
+    <!-- MUSIC / PLAYLIST SECTION -->
+    <section id="music" class="music-section" aria-label="Audio playlist">
+      <div class="site-container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 1.5rem;">
+          <div style="margin-bottom: 1rem;">
+            <span class="section-meta-label" style="color: var(--dark-text-secondary); border: 1px solid var(--dark-border); padding: 4px 10px; border-radius: 4px;">
+              SONIC COMPANION
+            </span>
+          </div>
+          <h2 class="section-title-clean" style="color: #ffffff;">MY PLAYLIST<span style="color:#62687a;">.</span></h2>
+          <p style="color: var(--dark-text-secondary); font-size: 0.95rem;">
+            The tracks that accompany deep programming sessions and late-night problem solving.
+          </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="wrapper">
-    <div class="section-label">Academic Journey</div>
-    <h2 class="section-title">Education</h2>
-    <div class="edu-list">
+        <div class="playlist-card">
+          <div class="playlist-header">
+            <div class="playlist-icon" title="Audio Player">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3>Favourite Tracks</h3>
+              <p>AUDIO STREAM · CLICK TO PLAY OR PAUSE</p>
+            </div>
+          </div>
 
-      <div class="card edu-card reveal">
-        <div>
-          <div class="edu-period">2025 — 2029<br>Present</div>
-          <div class="edu-level">Undergraduate</div>
-        </div>
-        <div class="edu-content">
-          <h3>B.Tech CSE — AI &amp; Machine Learning</h3>
-          <div class="edu-institute">▸ SRM University AP, Andhra Pradesh</div>
-          <p style="font-size:.75rem; color:var(--muted); line-height:1.7; margin-bottom:.8rem;">Pursuing a 4-year B.Tech degree with specialisation in Artificial Intelligence and Machine Learning. Actively building a strong foundation in programming and intelligent systems.</p>
-          <div class="skills-chips">
-            <span class="chip">C</span>
-            <span class="chip">C++</span>
-            <span class="chip">Python</span>
-            <span class="chip">DSA</span>
-            <span class="chip">OOPS</span>
-            <span class="chip">AI/ML Fundamentals</span>
-          </div>
-          <div class="skill-bar-wrap" style="margin-top:1.2rem;">
-            <div class="skill-bar-label"><span>Progress (1st year)</span><span>~25%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="25"></div></div>
-          </div>
-          <div class="edu-score" style="margin-top:1rem; margin-bottom:0;">
-            <div class="score-item"><span class="score-val">8.2<span style="font-size:.65rem; color:var(--muted)">/10</span></span><span class="score-lbl">1st Year CGPA</span></div>
-          </div>
-        </div>
-      </div>
+          <div class="track-list">
+            <div class="track" data-src="assets/maula_mere_maula.mp3.mp3">
+              <div class="track-num">01</div>
+              <div class="track-play">▶</div>
+              <div class="track-info">
+                <div class="track-name">Maula Mere Maula</div>
+                <div class="track-artist">Anwar (2007) · Roop Kumar Rathod</div>
+                <div class="track-progress">
+                  <div class="track-progress-fill"></div>
+                </div>
+              </div>
+              <span class="track-time">0:00</span>
+            </div>
 
-      <div class="card edu-card reveal">
-        <div>
-          <div class="edu-period">2023 — 2025</div>
-          <div class="edu-level">Intermediate</div>
-        </div>
-        <div class="edu-content">
-          <h3>11th &amp; 12th — Science Stream</h3>
-          <div class="edu-institute">▸ AAKASH Institute, Guntur</div>
-          <div class="edu-score">
-            <div class="score-item"><span class="score-val">920<span style="font-size:.65rem; color:var(--muted)">/1000</span></span><span class="score-lbl">Total Marks</span></div>
-            <div class="score-item"><span class="score-val">92%</span><span class="score-lbl">Percentage</span></div>
-          </div>
-          <div class="skills-chips">
-            <span class="chip">Event Planning</span>
-            <span class="chip">Event Management</span>
-            <span class="chip">Communication</span>
+            <div class="track" data-src="assets/mere_rashke_qamar.mp3.mp3">
+              <div class="track-num">02</div>
+              <div class="track-play">▶</div>
+              <div class="track-info">
+                <div class="track-name">Mere Rashke Qamar</div>
+                <div class="track-artist">Nusrat Fateh Ali Khan · Qawwali Classical</div>
+                <div class="track-progress">
+                  <div class="track-progress-fill"></div>
+                </div>
+              </div>
+              <span class="track-time">0:00</span>
+            </div>
+
+            <div class="track" data-src="assets/gehra_hua.mp3.mp3">
+              <div class="track-num">03</div>
+              <div class="track-play">▶</div>
+              <div class="track-info">
+                <div class="track-name">Gehra Hua</div>
+                <div class="track-artist">Dhurandhar · Indie Acoustic</div>
+                <div class="track-progress">
+                  <div class="track-progress-fill"></div>
+                </div>
+              </div>
+              <span class="track-time">0:00</span>
+            </div>
+
+            <div class="track" data-src="assets/aakhri_ishq.mp3.mp3">
+              <div class="track-num">04</div>
+              <div class="track-play">▶</div>
+              <div class="track-info">
+                <div class="track-name">Aakhri Ishq</div>
+                <div class="track-artist">Dhurandhar 2 · Contemporary Indie</div>
+                <div class="track-progress">
+                  <div class="track-progress-fill"></div>
+                </div>
+              </div>
+              <span class="track-time">0:00</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="card edu-card reveal">
-        <div>
-          <div class="edu-period">2022 — 2023</div>
-          <div class="edu-level">Schooling</div>
-        </div>
-        <div class="edu-content">
-          <h3>10th Class — SSC</h3>
-          <div class="edu-institute">▸ Sri Venkateswara Bala Kuteer, Guntur</div>
-          <div class="edu-score">
-            <div class="score-item"><span class="score-val">412<span style="font-size:.65rem; color:var(--muted)">/500</span></span><span class="score-lbl">Total Marks</span></div>
-            <div class="score-item"><span class="score-val">82%</span><span class="score-lbl">Percentage</span></div>
+    <!-- CONTACT SECTION & FOOTER -->
+    <section id="contact" class="contact-section" aria-label="Contact and communications">
+      <div class="site-container">
+        <div class="contact-header">
+          <div class="contact-meta-badge">
+            <span class="contact-dot"></span>
+            <span>INITIATE COMMUNICATIONS</span>
           </div>
-          <div class="skills-chips">
-            <span class="chip">Music Editing</span>
-            <span class="chip">Debate</span>
-            <span class="chip">Multilingual</span>
+          <h2 class="contact-headline">LET'S TALK.</h2>
+          <p class="contact-subheading">
+            Available for engineering research, internships, and ambitious software collaborations. Initiate dispatch or connect directly below.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <button type="button" class="pill-button-dark" id="copy-email-btn">
+            <span>EMAIL: sgmshah07@gmail.com</span>
+            <span style="color: var(--dark-text-muted);" id="copy-email-hint">[CLICK TO COPY]</span>
+          </button>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="pill-button-dark">
+            LINKEDIN ↗
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="pill-button-dark">
+            GITHUB ↗
+          </a>
+        </div>
+
+        <div class="footer-bar">
+          <div>
+            <div class="footer-name">SHAIK GHOUSE MOHIDDIN SHAH</div>
+            <div class="footer-copy">© 2026 - MONOCHROMATIC CINEMATIC ARCHITECTURE SKELETON</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 20px;">
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--dark-text-muted);">
+              16.5062° N, 80.6480° E
+            </span>
+            <button type="button" class="footer-back-to-top" id="back-to-top-btn">
+              TOP ↑
+            </button>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+  </main>
 
-<!-- MUSIC / PLAYLIST -->
-<section id="music">
-  <div class="wrapper">
-    <div class="section-label">Favourites</div>
-    <h2 class="section-title">My Playlist</h2>
-    <div class="card playlist-card reveal">
-      <div class="playlist-header">
-        <div class="playlist-icon">🎵</div>
-        <div>
-          <h3>Favourite Tracks</h3>
-          <p>The songs on repeat right now</p>
-        </div>
-      </div>
-      <div class="track-list">
-        <div class="track" data-src="assets/maula_mere_maula.mp3.mp3">
-          <div class="track-num">01</div>
-          <div class="track-play">▶</div>
-          <div class="track-info">
-            <div class="track-name">Maula Mere Maula</div>
-            <div class="track-artist">Anwar (2007)</div>
-            <div class="track-progress"><div class="track-progress-fill"></div></div>
-          </div>
-          <span class="track-time">0:00</span>
-          <span class="badge purple" style="font-size:.6rem;">Sufi</span>
-        </div>
-        <div class="track" data-src="assets/mere_rashke_qamar.mp3.mp3">
-          <div class="track-num">02</div>
-          <div class="track-play">▶</div>
-          <div class="track-info">
-            <div class="track-name">Mere Rashke Qamar</div>
-            <div class="track-artist">Nusrat Fateh Ali Khan</div>
-            <div class="track-progress"><div class="track-progress-fill"></div></div>
-          </div>
-          <span class="track-time">0:00</span>
-          <span class="badge purple" style="font-size:.6rem;">Qawwali</span>
-        </div>
-        <div class="track" data-src="assets/gehra_hua.mp3.mp3">
-          <div class="track-num">03</div>
-          <div class="track-play">▶</div>
-          <div class="track-info">
-            <div class="track-name">Gehra Hua</div>
-            <div class="track-artist">Dhurandhar</div>
-            <div class="track-progress"><div class="track-progress-fill"></div></div>
-          </div>
-          <span class="track-time">0:00</span>
-          <span class="badge" style="font-size:.6rem;">Indie</span>
-        </div>
-        <div class="track" data-src="assets/aakhri_ishq.mp3.mp3">
-          <div class="track-num">04</div>
-          <div class="track-play">▶</div>
-          <div class="track-info">
-            <div class="track-name">Aakri Ishq</div>
-            <div class="track-artist">Dhurandhar 2</div>
-            <div class="track-progress"><div class="track-progress-fill"></div></div>
-          </div>
-          <span class="track-time">0:00</span>
-          <span class="badge" style="font-size:.6rem;">Indie</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- PROJECT STORY SPECIFICATION MODAL -->
+  <div class="project-story-backdrop" id="project-story-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="project-story-modal" id="project-story-modal">
+      <header class="project-story-modal__header">
+        <span class="project-story-modal__category" id="modal-category">CATEGORY</span>
+        <button type="button" class="project-story-modal__close" id="modal-close-btn" aria-label="Close project details">×</button>
+      </header>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrapper">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="card project-card reveal">
-        <div class="project-header">
-          <span class="project-icon">🏏</span>
-          <a href="https://ipl-auction-a81df.web.app" target="_blank" class="project-link">↗ View Live</a>
-        </div>
-        <h3>IPL Mega Auction Platform</h3>
-        <p class="project-desc">A real-time IPL Mega Auction platform that simulates the bidding process for cricket teams. Features live auction mechanics and team management. Deployed on Firebase.</p>
-        <div class="tech-stack">
-          <span class="tech">Firebase</span>
-          <span class="tech">JavaScript</span>
-          <span class="tech">HTML/CSS</span>
-          <span class="tech">Real-time DB</span>
-        </div>
-      </div>
-      <div class="card project-card reveal">
-        <div class="project-header">
-          <span class="project-icon">📄</span>
-          <a href="https://resume-writer-sigma.vercel.app/" target="_blank" class="project-link">↗ View Live</a>
-        </div>
-        <h3>Resume Writer</h3>
-        <p class="project-desc">A dynamic Resume Generator web app that lets users fill in their details and instantly preview a professionally formatted resume. Built with a clean, interactive UI.</p>
-        <div class="tech-stack">
-          <span class="tech">JavaScript</span>
-          <span class="tech">HTML/CSS</span>
-          <span class="tech">Vercel</span>
-        </div>
-      </div>
-      <div class="card project-card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; border-style:dashed; opacity:.6;">
-        <span style="font-size:2.5rem; margin-bottom:1rem;">🚀</span>
-        <h3 style="font-family:'Syne',sans-serif; font-size:.95rem; margin-bottom:.5rem;">More Coming Soon</h3>
-        <p style="font-size:.72rem; color:var(--muted);">Currently in 1st year, building more projects in AI/ML and full-stack development.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <section>
+        <h2 class="project-story-modal__title" id="modal-title">Project Title</h2>
+        <p class="project-story-modal__tagline" id="modal-tagline">Project Tagline</p>
+        <p class="project-story-modal__description" id="modal-desc">Description</p>
+      </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrapper">
-    <div class="contact-card reveal">
-      <div class="section-label" style="justify-content:center;">Connect</div>
-      <h2 class="section-title" style="margin-bottom:0;">Let's talk<br><span style="color:var(--accent);">something great.</span></h2>
-      <p>Whether it's a project, collaboration, or just a conversation — I'm always open to connecting with curious minds.</p>
+      <hr class="project-story-modal__divider">
 
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sgmshah07@gmail.com" target="_blank" class="btn btn-primary" style="font-size:.82rem;">Send me an email →</a>
+      <section class="project-story-modal__section">
+        <h3 class="project-story-modal__section-title">The approach</h3>
+        <p class="project-story-modal__body" id="modal-architecture">Architecture details</p>
+      </section>
 
-      <div class="social-row">
-        <a href="https://linkedin.com" target="_blank" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
+      <section class="project-story-modal__section">
+        <h3 class="project-story-modal__section-title">What it brings together</h3>
+        <ul class="project-story-modal__list" id="modal-modules"></ul>
+      </section>
+
+      <section class="project-story-modal__section">
+        <h3 class="project-story-modal__section-title">Technical notes</h3>
+        <ul class="project-story-modal__list" id="modal-highlights"></ul>
+      </section>
+
+      <section class="project-story-modal__stack">
+        <div class="project-story-modal__stack-label">Built with</div>
+        <div class="project-story-modal__stack-value" id="modal-stack">Stack details</div>
+      </section>
+
+      <footer class="project-story-modal__footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="pill-button-dark" id="modal-live-link" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+          VIEW LIVE / REPO ↗
         </a>
-        <a href="https://github.com" target="_blank" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="javascript:void(0)" id="email-social-btn" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          <span class="btn-text-content">Email</span>
-        </a>
-      </div>
+        <button type="button" class="pill-button-dark" id="modal-close-btn-bottom" style="font-size: 0.75rem; padding: 0.5rem 1rem;">
+          CLOSE SPECIFICATION
+        </button>
+      </footer>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="wrapper"></div>
-</footer>
+  <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-<script src="script.js"></script>
+  <script src="script.js?v=22.0"></script>
 </body>
+
 </html>

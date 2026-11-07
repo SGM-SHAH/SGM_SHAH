@@ -8,11 +8,20 @@
     ],
     "headers": [
       {
-        "source": "**/*.mp3",
+        "source": "**/*.@(js|css)",
         "headers": [
           {
-            "key": "Content-Type",
-            "value": "audio/mpeg"
+            "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
           }
         ]
       }
