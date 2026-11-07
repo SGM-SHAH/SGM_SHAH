@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=25.0">
+  <link rel="stylesheet" href="style.css?v=26.0">
 </head>
 
 <body>
@@ -54,23 +54,29 @@
 
     <!-- HERO SECTION -->
     <section id="top" class="portfolio-hero" aria-label="Portfolio introduction">
-      <!-- Editorial Philosophy Quote (Top Left) -->
-      <div class="portfolio-hero__quote-top" aria-label="Philosophical motto">
-        <p class="portfolio-hero__quote-text">"The soul becomes dyed with the color of its thoughts."</p>
-        <span class="portfolio-hero__quote-author">Marcus Aurelius</span>
-      </div>
-
       <!-- Frameless Atmospheric Side Portrait -->
       <div class="portfolio-hero__side-portrait" aria-hidden="true">
         <img src="assets/profile_studio.jpg" alt="" class="portfolio-hero__portrait-img" loading="eager">
       </div>
 
-      <!-- Center Title -->
-      <div class="portfolio-hero__title-wrap">
-        <h1 class="portfolio-hero__title">
-          <span class="portfolio-hero__line portfolio-hero__line--first">SHAIK GHOUSE</span>
-          <span class="portfolio-hero__line portfolio-hero__line--second">MOHIDDIN SHAH</span>
-        </h1>
+      <!-- Aligned Hero Content Container -->
+      <div class="portfolio-hero__inner">
+        <!-- Editorial Philosophy Quote (Top Left - Aligned to Page Grid) -->
+        <div class="portfolio-hero__quote-box" aria-label="Philosophical motto">
+          <p class="portfolio-hero__quote-text">"The soul becomes dyed with the color of its thoughts."</p>
+          <span class="portfolio-hero__quote-author">Marcus Aurelius</span>
+        </div>
+
+        <!-- Center Monumental Title -->
+        <div class="portfolio-hero__title-wrap">
+          <h1 class="portfolio-hero__title">
+            <span class="portfolio-hero__line portfolio-hero__line--first">SHAIK GHOUSE</span>
+            <span class="portfolio-hero__line portfolio-hero__line--second">MOHIDDIN SHAH</span>
+          </h1>
+        </div>
+
+        <!-- Spacer to balance flex-between -->
+        <div class="portfolio-hero__bottom-spacer" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -838,7 +844,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=25.0"></script>
+  <script src="script.js?v=26.0"></script>
 </body>
 
 </html>
