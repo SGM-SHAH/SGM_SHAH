@@ -1421,6 +1421,8 @@ body {
   padding: 1.25rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, border-color 0.25s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .contact-portrait-card:hover {
@@ -1449,18 +1451,56 @@ body {
   letter-spacing: 0.1em;
   color: var(--dark-text-secondary);
   border: 1px solid var(--dark-border);
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-.contact-portrait-frame {
+.contact-portrait-card:hover .contact-portrait-status {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* 3D FLIP MECHANISM */
+.contact-portrait-flipper-container {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
+  perspective: 1200px;
+}
+
+.contact-portrait-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.contact-portrait-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.contact-portrait-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 6px;
   overflow: hidden;
-  background: var(--dark-bg);
   border: 1px solid var(--dark-border);
+  background: var(--dark-bg);
+}
+
+.contact-portrait-front {
+  transform: rotateY(0deg);
+}
+
+.contact-portrait-back {
+  transform: rotateY(180deg);
 }
 
 .contact-portrait-img {
@@ -1476,6 +1516,23 @@ body {
 .contact-portrait-card:hover .contact-portrait-img {
   filter: grayscale(0%) contrast(1.02) brightness(1);
   transform: scale(1.02);
+}
+
+.contact-face-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  background: rgba(9, 10, 13, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid var(--dark-border);
+  padding: 3px 8px;
+  border-radius: 4px;
+  pointer-events: none;
 }
 
 .contact-portrait-caption {
