@@ -94,6 +94,55 @@ body {
   inset: 0;
 }
 
+/* GLOBAL FIXED ATMOSPHERIC SIDE PORTRAIT (APPLIED TO WHOLE WEBSITE) */
+.global-side-portrait {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: clamp(440px, 80vh, 780px);
+  max-width: clamp(280px, 46vw, 600px);
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 1;
+}
+
+.global-side-portrait__img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  display: block;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  mask-composite: intersect;
+  transition: filter 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .global-side-portrait {
+    right: 0;
+    bottom: 0;
+    height: 50vh;
+    max-width: 75vw;
+    opacity: 0.18;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
 /* CONTAINER */
 .site-container {
   max-width: 1400px;
@@ -328,70 +377,20 @@ body {
 }
 
 /* ===================================================
-   2. HERO SECTION (PINNED STAGE & SCROLLING TEXT)
+   2. HERO SECTION
 =================================================== */
 .portfolio-hero {
   position: relative;
   isolation: isolate;
-  min-height: 160vh;
-  min-height: 160svh;
+  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 72px);
   overflow-x: clip;
-  background-color: var(--dark-bg);
-}
-
-/* STICKY PORTRAIT TRACK: STAYS PINNED TO VIEWPORT WHILE HERO TEXT SCROLLS */
-.portfolio-hero__sticky-track {
-  position: sticky;
-  top: 72px;
-  height: calc(100vh - 72px);
-  height: calc(100svh - 72px);
-  width: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.portfolio-hero__side-portrait {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: clamp(440px, 80vh, 780px);
-  max-width: clamp(280px, 46vw, 600px);
-  pointer-events: none;
+  background-color: transparent;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  opacity: 1;
+  flex-direction: column;
 }
 
-.portfolio-hero__portrait-img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: right bottom;
-  display: block;
-  filter: grayscale(100%) contrast(1.1) brightness(0.95);
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
-    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
-    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
-  mask-composite: intersect;
-  transition: filter 0.5s ease;
-}
-
-.portfolio-hero:hover .portfolio-hero__portrait-img {
-  filter: grayscale(100%) contrast(1.15) brightness(1);
-}
-
-/* SCROLLING TEXT CONTENT: GLIDES UP INDEPENDENTLY OF PINNED PORTRAIT */
 .portfolio-hero__inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   width: min(100% - 3rem, 1400px);
   margin: 0 auto;
   min-height: calc(100vh - 72px);
@@ -401,12 +400,8 @@ body {
   justify-content: space-between;
   padding: clamp(2rem, 3.8vh, 3.2rem) 0 clamp(2rem, 3.8vh, 3.2rem);
   box-sizing: border-box;
+  position: relative;
   z-index: 2;
-  pointer-events: none;
-}
-
-.portfolio-hero__inner * {
-  pointer-events: auto;
 }
 
 /* PHILOSOPHY & GROWTH QUOTE BOXES (TOP-LEFT & BOTTOM-LEFT) */
@@ -497,19 +492,11 @@ body {
   .portfolio-hero {
     min-height: auto;
   }
-  .portfolio-hero__sticky-track {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
   .portfolio-hero__inner {
-    position: relative;
     width: min(100% - 2.5rem, 1400px);
     min-height: auto;
     padding: 1.5rem 0 2rem;
     gap: 2rem;
-    pointer-events: auto;
   }
   .portfolio-hero__quote-box {
     max-width: 100%;
@@ -520,13 +507,6 @@ body {
   .portfolio-hero__quote-text--bottom {
     font-size: 0.95rem;
   }
-  .portfolio-hero__side-portrait {
-    right: 0;
-    bottom: 0;
-    height: 50vh;
-    max-width: 75vw;
-    opacity: 0.22;
-  }
 }
 
 /* ===================================================
@@ -534,8 +514,7 @@ body {
 =================================================== */
 .about-section {
   position: relative;
-  z-index: 5;
-  background-color: var(--dark-bg);
+  background-color: transparent;
   padding: clamp(5rem, 8vw, 7.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
 }
@@ -669,7 +648,7 @@ body {
 =================================================== */
 .projects-section {
   position: relative;
-  background-color: var(--dark-bg);
+  background-color: transparent;
   padding: clamp(5rem, 9vw, 8.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
 }
@@ -1030,7 +1009,7 @@ body {
 =================================================== */
 .skills-atlas-section {
   position: relative;
-  background-color: var(--dark-bg);
+  background-color: transparent;
   color: var(--dark-text);
   padding: clamp(5rem, 9vw, 8.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
@@ -1118,7 +1097,7 @@ body {
 =================================================== */
 .recognition-section {
   position: relative;
-  background-color: var(--dark-surface);
+  background-color: transparent;
   color: var(--dark-text);
   padding: clamp(5rem, 9vw, 8.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
@@ -1228,7 +1207,7 @@ body {
 =================================================== */
 .community-section {
   position: relative;
-  background-color: var(--dark-bg);
+  background-color: transparent;
   color: var(--dark-text);
   padding: clamp(5rem, 8vw, 7.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
@@ -1299,7 +1278,7 @@ body {
 =================================================== */
 .music-section {
   position: relative;
-  background-color: var(--dark-surface);
+  background-color: transparent;
   color: var(--dark-text);
   padding: clamp(5rem, 8vw, 7.5rem) 0;
   border-bottom: 1px solid var(--dark-border);
@@ -1465,7 +1444,7 @@ body {
 =================================================== */
 .contact-section {
   position: relative;
-  background-color: var(--dark-bg);
+  background-color: transparent;
   color: var(--dark-text);
   padding: clamp(6rem, 10vw, 9rem) 0 clamp(4rem, 6vw, 5rem);
   border-bottom: 1px solid var(--dark-border);
