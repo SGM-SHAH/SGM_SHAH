@@ -337,6 +337,99 @@ body {
   background-color: var(--dark-bg);
 }
 
+/* TOP-LEFT PHILOSOPHY QUOTE */
+.portfolio-hero__quote-top {
+  position: absolute;
+  z-index: 5;
+  top: clamp(24px, 4.5vh, 52px);
+  left: clamp(22px, 4.5vw, 68px);
+  max-width: min(420px, 34vw);
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(8px);
+  animation: portfolio-quote-reveal 1.1s ease-out 0.4s forwards;
+}
+
+.portfolio-hero__quote-text {
+  margin: 0;
+  color: #f7f5f0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-hero__quote-author {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dark-text-muted);
+}
+
+@keyframes portfolio-quote-reveal {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* FRAMELESS SIDE PORTRAIT */
+.portfolio-hero__side-portrait {
+  position: absolute;
+  right: clamp(10px, 3.5vw, 60px);
+  bottom: 0;
+  height: clamp(440px, 78vh, 760px);
+  max-width: clamp(280px, 44vw, 560px);
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(20px);
+  animation: portfolio-portrait-reveal 1.4s var(--ease-editorial) 0.3s forwards;
+}
+
+@keyframes portfolio-portrait-reveal {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.portfolio-hero__portrait-img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  display: block;
+  filter: grayscale(100%) contrast(1.1) brightness(0.94);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 40%),
+    linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 6%, black 22%);
+  mask-composite: intersect;
+  transition: filter 0.5s ease;
+}
+
+.portfolio-hero:hover .portfolio-hero__portrait-img {
+  filter: grayscale(100%) contrast(1.15) brightness(1);
+}
+
+/* CENTER TITLE */
 .portfolio-hero__title-wrap {
   position: relative;
   z-index: 2;
@@ -383,6 +476,24 @@ body {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero__quote-top {
+    top: 1.25rem;
+    left: 1.25rem;
+    max-width: calc(100% - 2.5rem);
+  }
+  .portfolio-hero__side-portrait {
+    right: 0;
+    bottom: 0;
+    height: 52vh;
+    max-width: 70vw;
+    opacity: 0.28;
+  }
+  .portfolio-hero__title-wrap {
+    padding-top: 2.5rem;
   }
 }
 
