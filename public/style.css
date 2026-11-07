@@ -1328,9 +1328,24 @@ body {
   overflow: hidden;
 }
 
-.contact-header {
-  max-width: 960px;
-  margin-bottom: 3.5rem;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  margin-bottom: 5.5rem;
+}
+
+@media (min-width: 960px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 360px);
+    align-items: start;
+    gap: 4.5rem;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-meta-badge {
@@ -1346,6 +1361,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-bottom: 1.5rem;
+  align-self: flex-start;
 }
 
 .contact-dot {
@@ -1381,7 +1397,106 @@ body {
   flex-wrap: wrap;
   gap: 14px;
   align-items: center;
-  margin-bottom: 5.5rem;
+  margin-top: 2.5rem;
+}
+
+/* EDITORIAL PORTRAIT CARD */
+.contact-portrait-col {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (min-width: 960px) {
+  .contact-portrait-col {
+    justify-content: flex-end;
+  }
+}
+
+.contact-portrait-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--dark-surface-elevated);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.contact-portrait-card:hover {
+  border-color: var(--dark-border-strong);
+  transform: translateY(-4px);
+}
+
+.contact-portrait-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.contact-portrait-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark-text-muted);
+}
+
+.contact-portrait-status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--dark-text-secondary);
+  border: 1px solid var(--dark-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.contact-portrait-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--dark-bg);
+  border: 1px solid var(--dark-border);
+}
+
+.contact-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(100%) contrast(1.08) brightness(0.96);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.contact-portrait-card:hover .contact-portrait-img {
+  filter: grayscale(0%) contrast(1.02) brightness(1);
+  transform: scale(1.02);
+}
+
+.contact-portrait-caption {
+  margin-top: 0.95rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.contact-portrait-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.contact-portrait-role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--dark-text-secondary);
+  margin-top: 2px;
 }
 
 .footer-bar {
