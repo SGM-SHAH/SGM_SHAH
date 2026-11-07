@@ -266,10 +266,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href');
     if (!targetId || targetId === '#') return;
+
+    if (targetId === '#top') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     const targetEl = document.querySelector(targetId);
     if (targetEl) {
       e.preventDefault();
-      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const nav = document.querySelector('.portfolio-navigation');
+      const navHeight = nav ? nav.offsetHeight : 72;
+      const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: Math.max(0, targetPos - navHeight),
+        behavior: 'smooth'
+      });
     }
   });
 });

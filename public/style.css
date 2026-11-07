@@ -54,11 +54,16 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   background-color: var(--dark-bg);
   color: var(--dark-text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#top {
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -330,7 +335,7 @@ body {
   isolation: isolate;
   min-height: calc(100vh - 72px);
   min-height: calc(100svh - 72px);
-  overflow: hidden;
+  overflow-x: clip;
   background-color: var(--dark-bg);
   display: flex;
   flex-direction: column;
@@ -346,32 +351,50 @@ body {
   justify-content: space-between;
   position: relative;
   z-index: 2;
-  padding: clamp(2rem, 4.5vh, 3.5rem) 0 clamp(1.5rem, 3vh, 2.5rem);
+  padding: clamp(2rem, 3.8vh, 3.2rem) 0 clamp(2rem, 3.8vh, 3.2rem);
+  box-sizing: border-box;
 }
 
-/* TOP-LEFT PHILOSOPHY QUOTE (ALIGNED TO 1ST PAGE GRID) */
+/* PHILOSOPHY & GROWTH QUOTE BOXES (TOP-LEFT & BOTTOM-LEFT) */
 .portfolio-hero__quote-box {
-  max-width: min(460px, 44vw);
+  max-width: min(520px, 48vw);
   pointer-events: none;
   opacity: 1; /* Instantly visible on 1st page */
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-hero__quote-box--top {
+  align-self: flex-start;
+}
+
+.portfolio-hero__quote-box--bottom {
+  align-self: flex-start;
+  max-width: min(560px, 52vw);
 }
 
 .portfolio-hero__quote-text {
   margin: 0;
   color: #ffffff;
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 1.55vw, 1.55rem);
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
   font-style: italic;
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
 
+.portfolio-hero__quote-text--bottom {
+  font-size: clamp(0.95rem, 1.15vw, 1.2rem);
+  line-height: 1.5;
+  color: #e5e5e0;
+}
+
 .portfolio-hero__quote-author {
   display: block;
-  margin-top: 8px;
+  margin-top: 6px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #a0a5b4;
@@ -382,7 +405,7 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
-  height: clamp(460px, 82vh, 800px);
+  height: clamp(440px, 80vh, 780px);
   max-width: clamp(280px, 46vw, 600px);
   z-index: 1;
   pointer-events: none;
@@ -433,7 +456,7 @@ body {
   margin: 0;
   color: #ffffff;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 8.5vw, 7.8rem);
+  font-size: clamp(2.3rem, 7.8vw, 7.2rem);
   font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.055em;
@@ -454,15 +477,15 @@ body {
   color: #ffffff;
 }
 
-.portfolio-hero__bottom-spacer {
-  height: 48px;
-  pointer-events: none;
-}
-
 @media (max-width: 768px) {
+  .portfolio-hero {
+    min-height: auto;
+  }
   .portfolio-hero__inner {
     width: min(100% - 2.5rem, 1400px);
-    padding: 1.5rem 0;
+    min-height: auto;
+    padding: 1.5rem 0 2rem;
+    gap: 2rem;
   }
   .portfolio-hero__quote-box {
     max-width: 100%;
@@ -470,15 +493,15 @@ body {
   .portfolio-hero__quote-text {
     font-size: 1.05rem;
   }
+  .portfolio-hero__quote-text--bottom {
+    font-size: 0.95rem;
+  }
   .portfolio-hero__side-portrait {
     right: 0;
     bottom: 0;
-    height: 52vh;
+    height: 50vh;
     max-width: 75vw;
-    opacity: 0.28;
-  }
-  .portfolio-hero__bottom-spacer {
-    height: 0;
+    opacity: 0.22;
   }
 }
 
