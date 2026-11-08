@@ -574,7 +574,7 @@ main {
 }
 
 .about-text-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.5rem;
@@ -595,7 +595,7 @@ main {
 }
 
 .about-hobbies-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.2rem;
@@ -679,7 +679,7 @@ main {
 }
 
 .education-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.4rem;
@@ -879,7 +879,7 @@ main {
 }
 
 .project-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.4rem;
@@ -1240,7 +1240,7 @@ main {
 }
 
 .skill-domain-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.4rem;
@@ -1332,7 +1332,7 @@ main {
 }
 
 .recognition-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 2.2rem;
@@ -1432,7 +1432,7 @@ main {
 }
 
 .playlist-card {
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: clamp(2rem, 4vw, 3rem);
@@ -1684,7 +1684,7 @@ main {
 .contact-portrait-card {
   width: 100%;
   max-width: 360px;
-  background: var(--dark-surface-elevated);
+  background: transparent;
   border: 1px solid var(--dark-border);
   border-radius: 8px;
   padding: 1.25rem;
@@ -1889,4 +1889,59 @@ main {
 #email-toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* ===================================================
+   CARD TRANSPARENCY & EDITORIAL ANIMATIONS
+=================================================== */
+.about-text-card,
+.about-hobbies-card,
+.education-card,
+.project-card,
+.skill-domain-card,
+.recognition-card,
+.playlist-card,
+.contact-portrait-card {
+  background: transparent;
+  transition: transform 0.4s var(--ease-editorial),
+              border-color 0.25s ease,
+              box-shadow 0.4s ease,
+              background 0.3s ease,
+              opacity 0.7s var(--ease-editorial);
+  will-change: transform, opacity;
+}
+
+/* Scroll-triggered card reveal starting state */
+.card-revealing {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.card-revealing.card-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Unified fluid hover animation across all transparent cards */
+.about-text-card:hover,
+.about-hobbies-card:hover,
+.education-card:hover,
+.project-card:hover,
+.skill-domain-card:hover,
+.recognition-card:hover,
+.playlist-card:hover,
+.contact-portrait-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.card-revealing.card-revealed:hover {
+  transform: translateY(-6px);
+}
+
+.project-card:hover .project-card-arrow {
+  transform: translate(2px, -2px);
+  color: #ffffff;
 }

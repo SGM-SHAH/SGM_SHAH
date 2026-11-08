@@ -426,3 +426,33 @@ if (backToTopBtn) {
     }
   });
 })();
+
+// CARD SCROLL REVEAL ENTRANCE ANIMATION
+(function initCardScrollReveal() {
+  const cardSelectors = [
+    '.about-text-card',
+    '.about-hobbies-card',
+    '.education-card',
+    '.project-card',
+    '.skill-domain-card',
+    '.recognition-card',
+    '.playlist-card',
+    '.contact-portrait-card'
+  ];
+
+  const cards = document.querySelectorAll(cardSelectors.join(', '));
+  if (!cards.length) return;
+
+  cards.forEach(card => card.classList.add('card-revealing'));
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('card-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+  cards.forEach(card => observer.observe(card));
+})();
