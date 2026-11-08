@@ -319,87 +319,264 @@ if (backToTopBtn) {
   });
 })();
 
-// AUDIO PLAYLIST CONTROLLER
-(function initAudioPlayer() {
-  let currentAudio = null;
-  let currentTrack = null;
-  let animFrame = null;
+// VINYL RECORD MUSIC PLAYER CONTROLLER (UIVERSE-INSPIRED AUDIO ENGINE)
+(function initVinylAudioPlayer() {
+  const tracks = [
+    {
+      name: 'Maula Mere Maula',
+      artist: 'Anwar (2007) · Roop Kumar Rathod',
+      src: 'assets/maula_mere_maula.mp3.mp3'
+    },
+    {
+      name: 'Mere Rashke Qamar',
+      artist: 'Nusrat Fateh Ali Khan · Qawwali Classical',
+      src: 'assets/mere_rashke_qamar.mp3.mp3'
+    },
+    {
+      name: 'Gehra Hua',
+      artist: 'Dhurandhar · Indie Acoustic',
+      src: 'assets/gehra_hua.mp3.mp3'
+    },
+    {
+      name: 'Aakhri Ishq',
+      artist: 'Dhurandhar 2 · Contemporary Indie',
+      src: 'assets/aakhri_ishq.mp3.mp3'
+    }
+  ];
+
+  let currentIndex = 0;
+  let isPlaying = false;
+  let isShuffle = false;
+  let isUserSeeking = false;
+  let audio = new Audio();
+  audio.preload = 'metadata';
+
+  // DOM Elements
+  const container = document.getElementById('vinyl-player-container');
+  const titleEl = document.getElementById('vinyl-track-title');
+  const artistEl = document.getElementById('vinyl-track-artist');
+  const timeCurEl = document.getElementById('vinyl-time-current');
+  const timeTotEl = document.getElementById('vinyl-time-total');
+  const slider = document.getElementById('vinyl-slider');
+  const playBtn = document.getElementById('vinyl-play-btn');
+  const playIcon = document.getElementById('vinyl-icon-play');
+  const pauseIcon = document.getElementById('vinyl-icon-pause');
+  const prevBtn = document.getElementById('vinyl-prev-btn');
+  const nextBtn = document.getElementById('vinyl-next-btn');
+  const modeBtn = document.getElementById('vinyl-mode-btn');
+  const repeatIcon = document.getElementById('vinyl-icon-repeat');
+  const shuffleIcon = document.getElementById('vinyl-icon-shuffle');
+  const listBtn = document.getElementById('vinyl-list-btn');
+  const trackEls = document.querySelectorAll('.track[data-src]');
 
   function formatTime(s) {
-    if (isNaN(s)) return '0:00';
+    if (isNaN(s) || s < 0) return '0:00';
     const m = Math.floor(s / 60);
     const sec = Math.floor(s % 60);
     return m + ':' + (sec < 10 ? '0' : '') + sec;
   }
 
-  function updateProgress() {
-    if (!currentAudio || !currentTrack) return;
-    const fill = currentTrack.querySelector('.track-progress-fill');
-    const timeEl = currentTrack.querySelector('.track-time');
-    if (currentAudio.duration) {
-      const pct = (currentAudio.currentTime / currentAudio.duration) * 100;
-      if (fill) fill.style.width = pct + '%';
-    }
-    if (timeEl) timeEl.textContent = formatTime(currentAudio.currentTime);
-    animFrame = requestAnimationFrame(updateProgress);
-  }
+  function setTrack(idx, autoPlay = false) {
+    currentIndex = (idx + tracks.length) % tracks.length;
+    const track = tracks[currentIndex];
 
-  function stopCurrent() {
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-      cancelAnimationFrame(animFrame);
-      if (currentTrack) {
-        const play = currentTrack.querySelector('.track-play');
-        if (play) play.textContent = '▶';
-        currentTrack.classList.remove('playing');
-        const fill = currentTrack.querySelector('.track-progress-fill');
+    if (titleEl) titleEl.textContent = track.name;
+    if (artistEl) artistEl.textContent = track.artist;
+    if (slider) slider.value = 0;
+    if (timeCurEl) timeCurEl.textContent = '0:00';
+    if (timeTotEl) timeTotEl.textContent = '0:00';
+
+    audio.src = track.src;
+    audio.load();
+
+    // Update tracklist highlight
+    trackEls.forEach((el, i) => {
+      if (i === currentIndex) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+        const p = el.querySelector('.track-play');
+        if (p) p.textContent = '▶';
+        const fill = el.querySelector('.track-progress-fill');
         if (fill) fill.style.width = '0%';
-        const timeEl = currentTrack.querySelector('.track-time');
-        if (timeEl) timeEl.textContent = '0:00';
+        const t = el.querySelector('.track-time');
+        if (t) t.textContent = '0:00';
       }
-      currentAudio = null;
-      currentTrack = null;
+    });
+
+    if (autoPlay) {
+      playAudio();
     }
   }
 
-  document.querySelectorAll('.track[data-src]').forEach(t => {
-    t.addEventListener('click', () => {
-      const src = t.dataset.src;
-      const play = t.querySelector('.track-play');
+  function playAudio() {
+    audio.play().then(() => {
+      isPlaying = true;
+      updatePlayUI();
+    }).catch(err => {
+      console.warn('Playback prevented:', err);
+    });
+  }
 
-      // If clicking current track -> toggle pause/play
-      if (currentTrack === t && currentAudio) {
-        if (currentAudio.paused) {
-          currentAudio.play();
-          if (play) play.textContent = '⏸';
-          t.classList.add('playing');
-          animFrame = requestAnimationFrame(updateProgress);
-        } else {
-          currentAudio.pause();
-          if (play) play.textContent = '▶';
-          t.classList.remove('playing');
-          cancelAnimationFrame(animFrame);
-        }
-        return;
+  function pauseAudio() {
+    audio.pause();
+    isPlaying = false;
+    updatePlayUI();
+  }
+
+  function togglePlay() {
+    if (isPlaying) {
+      pauseAudio();
+    } else {
+      playAudio();
+    }
+  }
+
+  function updatePlayUI() {
+    if (container) {
+      if (isPlaying) {
+        container.classList.add('is-playing');
+        container.classList.remove('is-paused');
+      } else {
+        container.classList.remove('is-playing');
+        container.classList.add('is-paused');
       }
+    }
 
-      // Stop previous
-      stopCurrent();
+    if (playIcon && pauseIcon) {
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      }
+    }
 
-      // Start new
-      currentTrack = t;
-      currentAudio = new Audio(src);
-      currentAudio.play();
-      if (play) play.textContent = '⏸';
-      t.classList.add('playing');
-      animFrame = requestAnimationFrame(updateProgress);
+    // Update active track button in tracklist
+    const activeEl = trackEls[currentIndex];
+    if (activeEl) {
+      const p = activeEl.querySelector('.track-play');
+      if (p) p.textContent = isPlaying ? '⏸' : '▶';
+    }
+  }
 
-      currentAudio.addEventListener('ended', () => {
-        stopCurrent();
-      });
+  function nextTrack() {
+    let nextIdx;
+    if (isShuffle) {
+      nextIdx = Math.floor(Math.random() * tracks.length);
+      if (nextIdx === currentIndex && tracks.length > 1) {
+        nextIdx = (currentIndex + 1) % tracks.length;
+      }
+    } else {
+      nextIdx = (currentIndex + 1) % tracks.length;
+    }
+    setTrack(nextIdx, true);
+  }
+
+  function prevTrack() {
+    if (audio.currentTime > 3) {
+      audio.currentTime = 0;
+      return;
+    }
+    const prevIdx = (currentIndex - 1 + tracks.length) % tracks.length;
+    setTrack(prevIdx, true);
+  }
+
+  // Audio events
+  audio.addEventListener('loadedmetadata', () => {
+    if (timeTotEl) timeTotEl.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+    const cur = audio.currentTime;
+    const dur = audio.duration;
+    const pct = (cur / dur) * 100;
+
+    if (!isUserSeeking && slider) {
+      slider.value = pct;
+    }
+    if (timeCurEl) timeCurEl.textContent = formatTime(cur);
+
+    // Sync active track row in tracklist
+    const activeEl = trackEls[currentIndex];
+    if (activeEl) {
+      const fill = activeEl.querySelector('.track-progress-fill');
+      if (fill) fill.style.width = pct + '%';
+      const timeEl = activeEl.querySelector('.track-time');
+      if (timeEl) timeEl.textContent = formatTime(cur);
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    nextTrack();
+  });
+
+  // Slider seeking
+  if (slider) {
+    slider.addEventListener('input', () => {
+      isUserSeeking = true;
+      if (audio.duration) {
+        const target = (slider.value / 100) * audio.duration;
+        if (timeCurEl) timeCurEl.textContent = formatTime(target);
+      }
+    });
+
+    slider.addEventListener('change', () => {
+      if (audio.duration) {
+        audio.currentTime = (slider.value / 100) * audio.duration;
+      }
+      isUserSeeking = false;
+    });
+  }
+
+  // Controls event listeners
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (nextBtn) nextBtn.addEventListener('click', nextTrack);
+  if (prevBtn) prevBtn.addEventListener('click', prevTrack);
+
+  if (modeBtn) {
+    modeBtn.addEventListener('click', () => {
+      isShuffle = !isShuffle;
+      if (repeatIcon && shuffleIcon) {
+        if (isShuffle) {
+          repeatIcon.classList.add('hidden');
+          shuffleIcon.classList.remove('hidden');
+          modeBtn.title = 'Shuffle active (click for sequential loop)';
+        } else {
+          repeatIcon.classList.remove('hidden');
+          shuffleIcon.classList.add('hidden');
+          modeBtn.title = 'Sequential loop active (click for shuffle)';
+        }
+      }
+    });
+  }
+
+  if (listBtn) {
+    listBtn.addEventListener('click', () => {
+      const listContainer = document.getElementById('track-list-container');
+      if (listContainer) {
+        listContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  // Tracklist click listeners
+  trackEls.forEach((el, index) => {
+    el.addEventListener('click', () => {
+      if (currentIndex === index && isPlaying) {
+        pauseAudio();
+      } else if (currentIndex === index && !isPlaying) {
+        playAudio();
+      } else {
+        setTrack(index, true);
+      }
     });
   });
+
+  // Initialize first track without autoplaying
+  setTrack(0, false);
 })();
 
 // INTERACTIVE 3D PORTRAIT FLIP
