@@ -2356,10 +2356,10 @@ main {
 
 .footer-bar {
   border-top: 1px solid var(--dark-border);
-  padding-top: 3rem;
+  padding-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 2rem;
 }
