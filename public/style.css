@@ -1995,10 +1995,212 @@ main {
 
 .contact-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
   margin-top: 2.5rem;
+}
+
+.contact-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.contact-fan-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--dark-text-muted);
+  text-transform: uppercase;
+}
+
+.contact-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ===================================================
+   UIVERSE-INSPIRED LAYERED FAN CONTACT CARD
+   Design adapted from ElsayedShamsEldeen on Uiverse.io
+   Synchronized with Monochromatic Haute Architecture
+   =================================================== */
+
+.main_card {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  background: rgba(14, 16, 21, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--dark-border-strong);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.6s var(--ease-editorial), border-color 0.4s ease, box-shadow 0.6s var(--ease-editorial);
+  cursor: pointer;
+  user-select: none;
+}
+
+.main_card:hover,
+.main_card.is-active,
+.main_card:focus-within {
+  transform: translateY(-3px) scale(1.03);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.main_card .background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom left, rgba(32, 36, 48, 0.65) 0%, rgba(13, 15, 20, 0.9) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.cool_card_logo {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  transition: all 0.6s var(--ease-editorial);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cool_card_logo p {
+  margin: 0;
+  line-height: 1;
+}
+
+.main_card:hover .cool_card_logo,
+.main_card.is-active .cool_card_logo,
+.main_card:focus-within .cool_card_logo {
+  transform: translate(0, 0);
+  bottom: 16px;
+  right: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--dark-text-muted);
+}
+
+.box {
+  position: absolute;
+  padding: 10px 14px;
+  text-align: right;
+  border-radius: 10% 13% 42% 0% / 10% 12% 75% 0%;
+  box-shadow: rgba(0, 0, 0, 0.5) -6px 6px 24px 0px;
+  transform-origin: bottom left;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.box:hover::before,
+.box:focus::before {
+  opacity: 1;
+}
+
+.box1 {
+  width: 86%;
+  height: 86%;
+  bottom: -86%;
+  left: -86%;
+  background: rgba(20, 23, 31, 0.95);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: var(--dark-text);
+  z-index: 10;
+  transition-delay: 0s;
+}
+
+.box2 {
+  width: 66%;
+  height: 66%;
+  bottom: -66%;
+  left: -66%;
+  background: rgba(28, 32, 44, 0.96);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.32);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  z-index: 11;
+  transition-delay: 0.12s;
+}
+
+.box3 {
+  width: 46%;
+  height: 46%;
+  bottom: -46%;
+  left: -46%;
+  background: rgba(38, 44, 60, 0.98);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.44);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.44);
+  color: #ffffff;
+  z-index: 12;
+  transition-delay: 0.24s;
+}
+
+.main_card:hover .box,
+.main_card.is-active .box,
+.main_card:focus-within .box {
+  bottom: -1px;
+  left: -1px;
+}
+
+.box:hover,
+.box:focus {
+  background: #ffffff;
+  color: #090a0d;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+}
+
+.box .icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: inherit;
+  transition: transform 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.box:hover .icon,
+.box:focus .icon {
+  transform: translate(2px, -1px);
+  color: #090a0d;
 }
 
 /* EDITORIAL PORTRAIT CARD */

@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=37.0">
+  <link rel="stylesheet" href="style.css?v=38.0">
 </head>
 
 <body>
@@ -986,17 +986,34 @@
             </p>
 
             <div class="contact-actions">
-              <button type="button" class="pill-button-dark" id="copy-email-btn">
-                <span>EMAIL: sgmshah07@gmail.com</span>
-                <span style="color: var(--dark-text-muted);" id="copy-email-hint">[CLICK TO COPY]</span>
-              </button>
-              <a href="https://linkedin.com/in/shaik-ghouse-mohiddin-shah" target="_blank" rel="noopener noreferrer"
-                class="pill-button-dark">
-                LINKEDIN ↗
-              </a>
-              <a href="https://github.com/SGM-SHAH" target="_blank" rel="noopener noreferrer" class="pill-button-dark">
-                GITHUB ↗
-              </a>
+              <!-- UIVERSE.IO ORIGAMI FAN CONTACT CARD -->
+              <div class="contact-card-wrap">
+                <!-- From Uiverse.io by ElsayedShamsEldeen --> 
+                <div class="main_card" id="contact-fan-card" tabindex="0" role="region" aria-label="Interactive Contact Links">
+                  <div class="background"></div>
+                  <div class="cool_card_logo">
+                    <p>CONTACT</p>
+                  </div>
+                  <a href="https://github.com/SGM-SHAH" target="_blank" rel="noopener noreferrer" class="box box1" aria-label="Open GitHub Profile">
+                    <span class="icon">GITHUB ↗</span>
+                  </a>
+                  <a href="https://linkedin.com/in/shaik-ghouse-mohiddin-shah" target="_blank" rel="noopener noreferrer" class="box box2" aria-label="Open LinkedIn Profile">
+                    <span class="icon">LINKEDIN ↗</span>
+                  </a>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sgmshah07@gmail.com" target="_blank" rel="noopener noreferrer" class="box box3" aria-label="Compose Email in Gmail">
+                    <span class="icon">EMAIL ↗</span>
+                  </a>
+                </div>
+                <span class="contact-fan-hint">HOVER OR TAP TO EXPAND DIRECT CHANNELS</span>
+              </div>
+
+              <!-- Quick direct clipboard copy action -->
+              <div class="contact-direct-actions">
+                <button type="button" class="pill-button-dark" id="copy-email-btn">
+                  <span>EMAIL: sgmshah07@gmail.com</span>
+                  <span style="color: var(--dark-text-muted);" id="copy-email-hint">[CLICK TO COPY]</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1104,7 +1121,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=37.0"></script>
+  <script src="script.js?v=38.0"></script>
 </body>
 
 </html>

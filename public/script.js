@@ -319,6 +319,35 @@ if (backToTopBtn) {
   });
 })();
 
+// INTERACTIVE CONTACT FAN CARD (UIVERSE-INSPIRED)
+(function initContactFanCard() {
+  const fanCard = document.getElementById('contact-fan-card');
+  if (!fanCard) return;
+
+  // Toggle active state on touch or keyboard Enter/Space
+  fanCard.addEventListener('click', (e) => {
+    // If the click is directly on one of the link boxes, allow native navigation
+    if (e.target.closest('.box')) return;
+    fanCard.classList.toggle('is-active');
+  });
+
+  fanCard.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (document.activeElement === fanCard) {
+        e.preventDefault();
+        fanCard.classList.toggle('is-active');
+      }
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!fanCard.contains(e.target)) {
+      fanCard.classList.remove('is-active');
+    }
+  });
+})();
+
 // VINYL RECORD MUSIC PLAYER CONTROLLER (UIVERSE-INSPIRED AUDIO ENGINE)
 (function initVinylAudioPlayer() {
   const tracks = [
