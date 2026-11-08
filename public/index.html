@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=36.0">
+  <link rel="stylesheet" href="style.css?v=37.0">
 </head>
 
 <body>
@@ -784,130 +784,131 @@
             </div>
           </div>
 
-          <!-- VINYL RECORD MUSIC PLAYER (UIVERSE-INSPIRED INTERACTIVE COMPONENT) -->
-          <div class="vinyl-player-section">
-            <div class="vinyl-player-container" id="vinyl-player-container">
-              
-              <!-- Top Vinyl Record (Peeks out when resting, slides down into sleeve on hover/play) -->
-              <div class="vinyl-slot" id="vinyl-slot">
-                <div class="vinyl-disc-outer">
-                  <svg width="128" height="128" viewBox="0 0 128 128" class="vinyl-disc-svg" id="vinyl-disc-top">
+          <!-- VINYL TURNTABLE MUSIC PLAYER (GLITCH-FREE OPTIMIZED AUDIO ENGINE) -->
+          <div class="vinyl-turntable-card" id="vinyl-turntable-card">
+            
+            <!-- Turntable Platter: Hardware-accelerated GPU Spinning Vinyl Disc -->
+            <div class="turntable-bay">
+              <div class="turntable-platter">
+                <div class="vinyl-disc-body" id="vinyl-disc-body">
+                  <svg width="136" height="136" viewBox="0 0 128 128" class="vinyl-svg-art">
                     <rect width="128" height="128" fill="#0b0c10" rx="64"></rect>
-                    <circle cx="20" cy="20" r="2" fill="#ffffff"></circle>
-                    <circle cx="40" cy="30" r="2" fill="#ffffff"></circle>
-                    <circle cx="60" cy="10" r="2" fill="#ffffff"></circle>
-                    <circle cx="80" cy="40" r="2" fill="#ffffff"></circle>
-                    <circle cx="100" cy="20" r="2" fill="#ffffff"></circle>
-                    <circle cx="120" cy="50" r="2" fill="#ffffff"></circle>
-                    <circle cx="90" cy="30" r="10" fill="#ffffff" fill-opacity="0.25"></circle>
-                    <circle cx="90" cy="30" r="8" fill="#ffffff"></circle>
+                    <!-- Concentric Vinyl LP Sound Grooves -->
+                    <circle cx="64" cy="64" r="58" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"></circle>
+                    <circle cx="64" cy="64" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.8"></circle>
+                    <circle cx="64" cy="64" r="42" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"></circle>
+                    <circle cx="64" cy="64" r="34" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.8"></circle>
+                    <circle cx="64" cy="64" r="26" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"></circle>
+                    <!-- Uiverse Stardust Constellations -->
+                    <circle cx="20" cy="20" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="40" cy="30" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="60" cy="12" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="80" cy="40" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="100" cy="20" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="118" cy="48" r="1.8" fill="#ffffff"></circle>
+                    <circle cx="90" cy="30" r="9" fill="#ffffff" fill-opacity="0.25"></circle>
+                    <circle cx="90" cy="30" r="6" fill="#ffffff"></circle>
+                    <!-- Soundwave Contour Strata (Monochrome Haute Palette) -->
                     <path d="M0 128 Q32 64 64 128 T128 128" fill="#181a22" stroke="#000000" stroke-width="1"></path>
                     <path d="M0 128 Q32 48 64 128 T128 128" fill="#222532" stroke="#000000" stroke-width="1"></path>
                     <path d="M0 128 Q32 32 64 128 T128 128" fill="#2c3040" stroke="#000000" stroke-width="1"></path>
                     <path d="M0 128 Q16 64 32 128 T64 128" fill="#1d202a" stroke="#000000" stroke-width="1"></path>
                     <path d="M64 128 Q80 64 96 128 T128 128" fill="#262a37" stroke="#000000" stroke-width="1"></path>
                   </svg>
-                  <div class="vinyl-spindle-top"></div>
+                  <div class="vinyl-spindle-center"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Console Deck: Metadata, Live Status, Scrubber & Controls -->
+            <div class="turntable-console">
+              
+              <!-- Console Header: Live Status Badge + Audio Waveform Indicator -->
+              <div class="console-header-row">
+                <div class="console-status-pill" id="console-status-pill">
+                  <span class="status-indicator-dot"></span>
+                  <span class="status-indicator-text" id="console-status-text">STANDBY</span>
+                </div>
+                <div class="audio-wave-bars" id="audio-wave-bars" aria-hidden="true">
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
                 </div>
               </div>
 
-              <!-- Sleek Player Deck (Expands on hover or while playing) -->
-              <div class="vinyl-deck" id="vinyl-deck">
-                
-                <!-- Deck Top: Mini spinning vinyl + Track title & artist -->
-                <div class="vinyl-deck-top">
-                  <div class="vinyl-mini-wrap">
-                    <div class="vinyl-mini-disc" id="vinyl-mini-disc">
-                      <svg width="96" height="96" viewBox="0 0 128 128" class="vinyl-disc-svg" id="vinyl-disc-mini">
-                        <rect width="128" height="128" fill="#0b0c10" rx="64"></rect>
-                        <circle cx="20" cy="20" r="2" fill="#ffffff"></circle>
-                        <circle cx="40" cy="30" r="2" fill="#ffffff"></circle>
-                        <circle cx="60" cy="10" r="2" fill="#ffffff"></circle>
-                        <circle cx="80" cy="40" r="2" fill="#ffffff"></circle>
-                        <circle cx="100" cy="20" r="2" fill="#ffffff"></circle>
-                        <circle cx="120" cy="50" r="2" fill="#ffffff"></circle>
-                        <circle cx="90" cy="30" r="10" fill="#ffffff" fill-opacity="0.25"></circle>
-                        <circle cx="90" cy="30" r="8" fill="#ffffff"></circle>
-                        <path d="M0 128 Q32 64 64 128 T128 128" fill="#181a22" stroke="#000000" stroke-width="1"></path>
-                        <path d="M0 128 Q32 48 64 128 T128 128" fill="#222532" stroke="#000000" stroke-width="1"></path>
-                        <path d="M0 128 Q32 32 64 128 T128 128" fill="#2c3040" stroke="#000000" stroke-width="1"></path>
-                        <path d="M0 128 Q16 64 32 128 T64 128" fill="#1d202a" stroke="#000000" stroke-width="1"></path>
-                        <path d="M64 128 Q80 64 96 128 T128 128" fill="#262a37" stroke="#000000" stroke-width="1"></path>
-                      </svg>
-                      <div class="vinyl-spindle-mini"></div>
-                    </div>
-                  </div>
+              <!-- Track Identity -->
+              <div class="console-track-identity">
+                <div class="console-track-title" id="vinyl-track-title">Maula Mere Maula</div>
+                <div class="console-track-artist" id="vinyl-track-artist">Anwar (2007) · Roop Kumar Rathod</div>
+              </div>
 
-                  <div class="vinyl-info-wrap">
-                    <div class="vinyl-track-title" id="vinyl-track-title">Maula Mere Maula</div>
-                    <div class="vinyl-track-artist" id="vinyl-track-artist">Anwar (2007) · Roop Kumar Rathod</div>
-                  </div>
+              <!-- Interactive Timeline Scrubber -->
+              <div class="console-scrubber-deck">
+                <span class="console-time-tag" id="vinyl-time-current">0:00</span>
+                <div class="console-slider-wrap">
+                  <input type="range" min="0" max="100" value="0" class="console-range-input" id="vinyl-slider" aria-label="Audio scrubber timeline">
+                  <div class="console-slider-track-fill" id="vinyl-slider-fill"></div>
                 </div>
+                <span class="console-time-tag" id="vinyl-time-total">0:00</span>
+              </div>
 
-                <!-- Deck Middle: Scrubber timeline bar with elapsed & total time -->
-                <div class="vinyl-scrubber-bar">
-                  <span class="vinyl-time-tag" id="vinyl-time-current">0:00</span>
-                  <input type="range" min="0" max="100" value="0" class="vinyl-range-slider" id="vinyl-slider" aria-label="Audio scrubber timeline">
-                  <span class="vinyl-time-tag" id="vinyl-time-total">0:00</span>
-                </div>
+              <!-- Controls Toolbar -->
+              <div class="console-controls-toolbar">
+                <button type="button" class="console-btn console-btn-mode" id="vinyl-mode-btn" title="Toggle repeat / shuffle" aria-label="Toggle repeat or shuffle mode">
+                  <svg class="feather feather-repeat" id="vinyl-icon-repeat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                  </svg>
+                  <svg class="feather feather-shuffle hidden" id="vinyl-icon-shuffle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                  </svg>
+                </button>
 
-                <!-- Deck Bottom: Playback Controls -->
-                <div class="vinyl-controls-row">
-                  <button type="button" class="vinyl-ctrl-btn vinyl-btn-mode" id="vinyl-mode-btn" title="Toggle repeat / shuffle" aria-label="Repeat or shuffle mode">
-                    <svg class="feather feather-repeat" id="vinyl-icon-repeat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="17 1 21 5 17 9"></polyline>
-                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                      <polyline points="7 23 3 19 7 15"></polyline>
-                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                    </svg>
-                    <svg class="feather feather-shuffle hidden" id="vinyl-icon-shuffle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="16 3 21 3 21 8"></polyline>
-                      <line x1="4" y1="20" x2="21" y2="3"></line>
-                      <polyline points="21 16 21 21 16 21"></polyline>
-                      <line x1="15" y1="15" x2="21" y2="21"></line>
-                      <line x1="4" y1="4" x2="9" y2="9"></line>
-                    </svg>
-                  </button>
+                <button type="button" class="console-btn" id="vinyl-prev-btn" title="Previous track" aria-label="Previous track">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="19" x2="5" y2="5"></line>
+                  </svg>
+                </button>
 
-                  <button type="button" class="vinyl-ctrl-btn" id="vinyl-prev-btn" title="Previous track" aria-label="Previous track">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="19 20 9 12 19 4 19 20"></polygon>
-                      <line x1="5" y1="19" x2="5" y2="5"></line>
-                    </svg>
-                  </button>
+                <button type="button" class="console-play-button" id="vinyl-play-btn" title="Play or pause track" aria-label="Play or pause track">
+                  <svg class="feather feather-play" id="vinyl-icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg>
+                  <svg class="feather feather-pause hidden" id="vinyl-icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                </button>
 
-                  <button type="button" class="vinyl-play-circle" id="vinyl-play-btn" title="Play or pause track" aria-label="Play or pause track">
-                    <svg class="feather feather-play" id="vinyl-icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                    </svg>
-                    <svg class="feather feather-pause hidden" id="vinyl-icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <rect x="6" y="4" width="4" height="16"></rect>
-                      <rect x="14" y="4" width="4" height="16"></rect>
-                    </svg>
-                  </button>
+                <button type="button" class="console-btn" id="vinyl-next-btn" title="Next track" aria-label="Next track">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                  </svg>
+                </button>
 
-                  <button type="button" class="vinyl-ctrl-btn" id="vinyl-next-btn" title="Next track" aria-label="Next track">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="5 4 15 12 5 20 5 4"></polygon>
-                      <line x1="19" y1="5" x2="19" y2="19"></line>
-                    </svg>
-                  </button>
-
-                  <button type="button" class="vinyl-ctrl-btn vinyl-btn-list" id="vinyl-list-btn" title="Scroll to tracklist" aria-label="Tracklist">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="8" y1="6" x2="21" y2="6"></line>
-                      <line x1="8" y1="12" x2="21" y2="12"></line>
-                      <line x1="8" y1="18" x2="21" y2="18"></line>
-                      <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                      <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                      <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                    </svg>
-                  </button>
-                </div>
-
+                <button type="button" class="console-btn console-btn-list" id="vinyl-list-btn" title="Scroll to tracklist" aria-label="Scroll to tracklist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                </button>
               </div>
 
             </div>
+
           </div>
 
           <div class="track-list" id="track-list-container">
@@ -1103,7 +1104,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=36.0"></script>
+  <script src="script.js?v=37.0"></script>
 </body>
 
 </html>

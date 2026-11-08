@@ -352,7 +352,9 @@ if (backToTopBtn) {
   audio.preload = 'metadata';
 
   // DOM Elements
-  const container = document.getElementById('vinyl-player-container');
+  const container = document.getElementById('vinyl-turntable-card');
+  const statusText = document.getElementById('console-status-text');
+  const sliderFill = document.getElementById('vinyl-slider-fill');
   const titleEl = document.getElementById('vinyl-track-title');
   const artistEl = document.getElementById('vinyl-track-artist');
   const timeCurEl = document.getElementById('vinyl-time-current');
@@ -383,6 +385,7 @@ if (backToTopBtn) {
     if (titleEl) titleEl.textContent = track.name;
     if (artistEl) artistEl.textContent = track.artist;
     if (slider) slider.value = 0;
+    if (sliderFill) sliderFill.style.width = '0%';
     if (timeCurEl) timeCurEl.textContent = '0:00';
     if (timeTotEl) timeTotEl.textContent = '0:00';
 
@@ -443,6 +446,10 @@ if (backToTopBtn) {
       }
     }
 
+    if (statusText) {
+      statusText.textContent = isPlaying ? 'LIVE STREAM' : 'STANDBY';
+    }
+
     if (playIcon && pauseIcon) {
       if (isPlaying) {
         playIcon.classList.add('hidden');
@@ -496,6 +503,7 @@ if (backToTopBtn) {
 
     if (!isUserSeeking && slider) {
       slider.value = pct;
+      if (sliderFill) sliderFill.style.width = pct + '%';
     }
     if (timeCurEl) timeCurEl.textContent = formatTime(cur);
 
@@ -517,6 +525,7 @@ if (backToTopBtn) {
   if (slider) {
     slider.addEventListener('input', () => {
       isUserSeeking = true;
+      if (sliderFill) sliderFill.style.width = slider.value + '%';
       if (audio.duration) {
         const target = (slider.value / 100) * audio.duration;
         if (timeCurEl) timeCurEl.textContent = formatTime(target);
