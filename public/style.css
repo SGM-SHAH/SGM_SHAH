@@ -661,6 +661,198 @@ main {
 }
 
 /* ===================================================
+   3B. ACADEMIC PEDIGREE & SCHOOLING
+=================================================== */
+.education-section {
+  position: relative;
+  background-color: transparent;
+  color: var(--dark-text);
+  padding: clamp(5rem, 8vw, 7.5rem) 0;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.education-ledger {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.education-card {
+  background: var(--dark-surface-elevated);
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 2.8rem;
+  transition: border-color 0.25s ease;
+}
+
+.education-card:hover {
+  border-color: var(--dark-border-strong);
+}
+
+.education-card-meta {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--dark-border);
+  padding-right: 2.4rem;
+}
+
+.education-code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--dark-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.education-period-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.education-period {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.education-status-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.education-level-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--dark-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.education-score-box {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.education-score-val {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.education-score-base {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--dark-text-muted);
+  margin-left: 2px;
+}
+
+.education-score-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--dark-text-muted);
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+.education-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.education-spec {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--dark-text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.education-institute {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.1rem;
+}
+
+.education-desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--dark-text-secondary);
+  margin-bottom: 1.6rem;
+}
+
+.education-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.education-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--dark-text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--dark-border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .education-card {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding: 1.8rem;
+  }
+  .education-card-meta {
+    border-right: none;
+    border-bottom: 1px solid var(--dark-border);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+  }
+  .education-score-box {
+    margin-top: 1rem;
+  }
+}
+
+/* ===================================================
    4. PROJECTS SHOWCASE & CAROUSEL
 =================================================== */
 .projects-section {
