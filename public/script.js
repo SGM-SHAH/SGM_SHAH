@@ -1,7 +1,7 @@
 /* ===================================================
-   HAUTE EDITORIAL ARCHITECTURAL SCRIPT ENGINE
+   BESPOKE EDITORIAL ENGINEERING SCRIPT ENGINE
    Shaik Ghouse Mohiddin Shah
-   Inspired by kulprakashsingh.vercel.app
+   Inspired by Linear / Vercel modern developer platforms
 =================================================== */
 
 // PROJECT SPECIFICATIONS DATA
@@ -146,33 +146,40 @@ const projectSpecs = {
   if (!backdrop) return;
 
   function openSpec(projectId) {
-    const spec = projectSpecs[projectId];
-    if (!spec) return;
+    const data = projectSpecs[projectId];
+    if (!data) return;
 
-    modalCategory.textContent = spec.category;
-    modalTitle.textContent = spec.title;
-    modalTagline.textContent = spec.tagline;
-    modalDesc.textContent = spec.description;
-    modalArch.textContent = spec.architecture;
+    if (modalCategory) modalCategory.textContent = data.category;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalTagline) modalTagline.textContent = data.tagline;
+    if (modalDesc) modalDesc.textContent = data.description;
+    if (modalArch) modalArch.textContent = data.architecture;
 
-    modalModules.innerHTML = '';
-    spec.keyModules.forEach(mod => {
-      const li = document.createElement('li');
-      li.className = 'project-story-modal__list-item';
-      li.textContent = mod;
-      modalModules.appendChild(li);
-    });
+    if (modalModules) {
+      modalModules.innerHTML = '';
+      data.keyModules.forEach(mod => {
+        const li = document.createElement('li');
+        li.textContent = mod;
+        modalModules.appendChild(li);
+      });
+    }
 
-    modalHighlights.innerHTML = '';
-    spec.technicalHighlights.forEach(hl => {
-      const li = document.createElement('li');
-      li.className = 'project-story-modal__list-item';
-      li.textContent = hl;
-      modalHighlights.appendChild(li);
-    });
+    if (modalHighlights) {
+      modalHighlights.innerHTML = '';
+      data.technicalHighlights.forEach(hl => {
+        const li = document.createElement('li');
+        li.textContent = hl;
+        modalHighlights.appendChild(li);
+      });
+    }
 
-    modalStack.textContent = spec.hardwareOrStack;
-    modalLiveLink.href = spec.liveUrl;
+    if (modalStack) modalStack.textContent = data.hardwareOrStack;
+
+    if (modalLiveLink) {
+      modalLiveLink.href = data.liveUrl;
+      const isRepo = data.liveUrl.includes('github.com');
+      modalLiveLink.textContent = isRepo ? 'VIEW REPOSITORY ↗' : 'LAUNCH LIVE APP ↗';
+    }
 
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -205,7 +212,7 @@ const projectSpecs = {
   });
 })();
 
-// STAT COUNTER ANIMATION
+// STAT COUNTER ANIMATION (SUPPORTS DECIMALS LIKE 8.2)
 (function initStatCounters() {
   const statElements = document.querySelectorAll('.stat-num[data-target]');
   if (!statElements.length) return;
@@ -214,7 +221,8 @@ const projectSpecs = {
     entries.forEach(e => {
       if (e.isIntersecting) {
         const el = e.target;
-        const target = +el.dataset.target;
+        const target = parseFloat(el.dataset.target);
+        const isDecimal = el.dataset.decimals === '1';
         let start = null;
         const dur = 1200;
 
@@ -222,11 +230,12 @@ const projectSpecs = {
           if (!start) start = ts;
           const prog = Math.min((ts - start) / dur, 1);
           const ease = 1 - Math.pow(1 - prog, 3);
-          el.textContent = Math.round(target * ease);
+          const currentVal = target * ease;
+          el.textContent = isDecimal ? currentVal.toFixed(1) : Math.round(currentVal);
           if (prog < 1) {
             requestAnimationFrame(step);
           } else {
-            el.textContent = target;
+            el.textContent = isDecimal ? target.toFixed(1) : target;
           }
         }
 
@@ -247,14 +256,14 @@ const projectSpecs = {
   if (toggleBtn && drawer) {
     toggleBtn.addEventListener('click', () => {
       const isOpen = drawer.classList.toggle('open');
-      toggleBtn.textContent = isOpen ? 'CLOSE' : 'MENU';
+      toggleBtn.textContent = isOpen ? 'Close' : 'Menu';
       toggleBtn.setAttribute('aria-expanded', isOpen);
     });
 
     drawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         drawer.classList.remove('open');
-        toggleBtn.textContent = 'MENU';
+        toggleBtn.textContent = 'Menu';
         toggleBtn.setAttribute('aria-expanded', 'false');
       });
     });
@@ -287,14 +296,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// BACK TO TOP
-const backToTopBtn = document.getElementById('back-to-top-btn');
-if (backToTopBtn) {
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
 // EMAIL COPY BUTTON
 (function initEmailCopy() {
   const copyBtn = document.getElementById('copy-email-btn');
@@ -306,11 +307,11 @@ if (backToTopBtn) {
   copyBtn.addEventListener('click', () => {
     const email = 'sgmshah07@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
-      if (hint) hint.textContent = '[COPIED // 200 OK]';
+      if (hint) hint.textContent = 'Copied to clipboard!';
       if (toast) toast.classList.add('show');
 
       setTimeout(() => {
-        if (hint) hint.textContent = '[CLICK TO COPY]';
+        if (hint) hint.textContent = 'Copy Email';
         if (toast) toast.classList.remove('show');
       }, 2500);
     }).catch(err => {
@@ -324,9 +325,7 @@ if (backToTopBtn) {
   const fanCard = document.getElementById('contact-fan-card');
   if (!fanCard) return;
 
-  // Toggle active state on touch or keyboard Enter/Space
   fanCard.addEventListener('click', (e) => {
-    // If the click is directly on one of the link boxes, allow native navigation
     if (e.target.closest('.box')) return;
     fanCard.classList.toggle('is-active');
   });
@@ -340,7 +339,6 @@ if (backToTopBtn) {
     }
   });
 
-  // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!fanCard.contains(e.target)) {
       fanCard.classList.remove('is-active');
@@ -348,285 +346,14 @@ if (backToTopBtn) {
   });
 })();
 
-// VINYL RECORD MUSIC PLAYER CONTROLLER (UIVERSE-INSPIRED AUDIO ENGINE)
-(function initVinylAudioPlayer() {
-  const tracks = [
-    {
-      name: 'Maula Mere Maula',
-      artist: 'Anwar (2007) · Roop Kumar Rathod',
-      src: 'assets/maula_mere_maula.mp3.mp3'
-    },
-    {
-      name: 'Mere Rashke Qamar',
-      artist: 'Nusrat Fateh Ali Khan · Qawwali Classical',
-      src: 'assets/mere_rashke_qamar.mp3.mp3'
-    },
-    {
-      name: 'Gehra Hua',
-      artist: 'Dhurandhar · Indie Acoustic',
-      src: 'assets/gehra_hua.mp3.mp3'
-    },
-    {
-      name: 'Aakhri Ishq',
-      artist: 'Dhurandhar 2 · Contemporary Indie',
-      src: 'assets/aakhri_ishq.mp3.mp3'
-    }
-  ];
-
-  let currentIndex = 0;
-  let isPlaying = false;
-  let isShuffle = false;
-  let isUserSeeking = false;
-  let audio = new Audio();
-  audio.preload = 'metadata';
-
-  // DOM Elements
-  const container = document.getElementById('vinyl-turntable-card');
-  const statusText = document.getElementById('console-status-text');
-  const sliderFill = document.getElementById('vinyl-slider-fill');
-  const titleEl = document.getElementById('vinyl-track-title');
-  const artistEl = document.getElementById('vinyl-track-artist');
-  const timeCurEl = document.getElementById('vinyl-time-current');
-  const timeTotEl = document.getElementById('vinyl-time-total');
-  const slider = document.getElementById('vinyl-slider');
-  const playBtn = document.getElementById('vinyl-play-btn');
-  const playIcon = document.getElementById('vinyl-icon-play');
-  const pauseIcon = document.getElementById('vinyl-icon-pause');
-  const prevBtn = document.getElementById('vinyl-prev-btn');
-  const nextBtn = document.getElementById('vinyl-next-btn');
-  const modeBtn = document.getElementById('vinyl-mode-btn');
-  const repeatIcon = document.getElementById('vinyl-icon-repeat');
-  const shuffleIcon = document.getElementById('vinyl-icon-shuffle');
-  const listBtn = document.getElementById('vinyl-list-btn');
-  const trackEls = document.querySelectorAll('.track[data-src]');
-
-  function formatTime(s) {
-    if (isNaN(s) || s < 0) return '0:00';
-    const m = Math.floor(s / 60);
-    const sec = Math.floor(s % 60);
-    return m + ':' + (sec < 10 ? '0' : '') + sec;
-  }
-
-  function setTrack(idx, autoPlay = false) {
-    currentIndex = (idx + tracks.length) % tracks.length;
-    const track = tracks[currentIndex];
-
-    if (titleEl) titleEl.textContent = track.name;
-    if (artistEl) artistEl.textContent = track.artist;
-    if (slider) slider.value = 0;
-    if (sliderFill) sliderFill.style.width = '0%';
-    if (timeCurEl) timeCurEl.textContent = '0:00';
-    if (timeTotEl) timeTotEl.textContent = '0:00';
-
-    audio.src = track.src;
-    audio.load();
-
-    // Update tracklist highlight
-    trackEls.forEach((el, i) => {
-      if (i === currentIndex) {
-        el.classList.add('active');
-      } else {
-        el.classList.remove('active');
-        const p = el.querySelector('.track-play');
-        if (p) p.textContent = '▶';
-        const fill = el.querySelector('.track-progress-fill');
-        if (fill) fill.style.width = '0%';
-        const t = el.querySelector('.track-time');
-        if (t) t.textContent = '0:00';
-      }
-    });
-
-    if (autoPlay) {
-      playAudio();
-    }
-  }
-
-  function playAudio() {
-    audio.play().then(() => {
-      isPlaying = true;
-      updatePlayUI();
-    }).catch(err => {
-      console.warn('Playback prevented:', err);
-    });
-  }
-
-  function pauseAudio() {
-    audio.pause();
-    isPlaying = false;
-    updatePlayUI();
-  }
-
-  function togglePlay() {
-    if (isPlaying) {
-      pauseAudio();
-    } else {
-      playAudio();
-    }
-  }
-
-  function updatePlayUI() {
-    if (container) {
-      if (isPlaying) {
-        container.classList.add('is-playing');
-        container.classList.remove('is-paused');
-      } else {
-        container.classList.remove('is-playing');
-        container.classList.add('is-paused');
-      }
-    }
-
-    if (statusText) {
-      statusText.textContent = isPlaying ? 'LIVE STREAM' : 'STANDBY';
-    }
-
-    if (playIcon && pauseIcon) {
-      if (isPlaying) {
-        playIcon.classList.add('hidden');
-        pauseIcon.classList.remove('hidden');
-      } else {
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-      }
-    }
-
-    // Update active track button in tracklist
-    const activeEl = trackEls[currentIndex];
-    if (activeEl) {
-      const p = activeEl.querySelector('.track-play');
-      if (p) p.textContent = isPlaying ? '⏸' : '▶';
-    }
-  }
-
-  function nextTrack() {
-    let nextIdx;
-    if (isShuffle) {
-      nextIdx = Math.floor(Math.random() * tracks.length);
-      if (nextIdx === currentIndex && tracks.length > 1) {
-        nextIdx = (currentIndex + 1) % tracks.length;
-      }
-    } else {
-      nextIdx = (currentIndex + 1) % tracks.length;
-    }
-    setTrack(nextIdx, true);
-  }
-
-  function prevTrack() {
-    if (audio.currentTime > 3) {
-      audio.currentTime = 0;
-      return;
-    }
-    const prevIdx = (currentIndex - 1 + tracks.length) % tracks.length;
-    setTrack(prevIdx, true);
-  }
-
-  // Audio events
-  audio.addEventListener('loadedmetadata', () => {
-    if (timeTotEl) timeTotEl.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('timeupdate', () => {
-    if (!audio.duration) return;
-    const cur = audio.currentTime;
-    const dur = audio.duration;
-    const pct = (cur / dur) * 100;
-
-    if (!isUserSeeking && slider) {
-      slider.value = pct;
-      if (sliderFill) sliderFill.style.width = pct + '%';
-    }
-    if (timeCurEl) timeCurEl.textContent = formatTime(cur);
-
-    // Sync active track row in tracklist
-    const activeEl = trackEls[currentIndex];
-    if (activeEl) {
-      const fill = activeEl.querySelector('.track-progress-fill');
-      if (fill) fill.style.width = pct + '%';
-      const timeEl = activeEl.querySelector('.track-time');
-      if (timeEl) timeEl.textContent = formatTime(cur);
-    }
-  });
-
-  audio.addEventListener('ended', () => {
-    nextTrack();
-  });
-
-  // Slider seeking
-  if (slider) {
-    slider.addEventListener('input', () => {
-      isUserSeeking = true;
-      if (sliderFill) sliderFill.style.width = slider.value + '%';
-      if (audio.duration) {
-        const target = (slider.value / 100) * audio.duration;
-        if (timeCurEl) timeCurEl.textContent = formatTime(target);
-      }
-    });
-
-    slider.addEventListener('change', () => {
-      if (audio.duration) {
-        audio.currentTime = (slider.value / 100) * audio.duration;
-      }
-      isUserSeeking = false;
-    });
-  }
-
-  // Controls event listeners
-  if (playBtn) playBtn.addEventListener('click', togglePlay);
-  if (nextBtn) nextBtn.addEventListener('click', nextTrack);
-  if (prevBtn) prevBtn.addEventListener('click', prevTrack);
-
-  if (modeBtn) {
-    modeBtn.addEventListener('click', () => {
-      isShuffle = !isShuffle;
-      if (repeatIcon && shuffleIcon) {
-        if (isShuffle) {
-          repeatIcon.classList.add('hidden');
-          shuffleIcon.classList.remove('hidden');
-          modeBtn.title = 'Shuffle active (click for sequential loop)';
-        } else {
-          repeatIcon.classList.remove('hidden');
-          shuffleIcon.classList.add('hidden');
-          modeBtn.title = 'Sequential loop active (click for shuffle)';
-        }
-      }
-    });
-  }
-
-  if (listBtn) {
-    listBtn.addEventListener('click', () => {
-      const listContainer = document.getElementById('track-list-container');
-      if (listContainer) {
-        listContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    });
-  }
-
-  // Tracklist click listeners
-  trackEls.forEach((el, index) => {
-    el.addEventListener('click', () => {
-      if (currentIndex === index && isPlaying) {
-        pauseAudio();
-      } else if (currentIndex === index && !isPlaying) {
-        playAudio();
-      } else {
-        setTrack(index, true);
-      }
-    });
-  });
-
-  // Initialize first track without autoplaying
-  setTrack(0, false);
-})();
-
 // CARD SCROLL REVEAL ENTRANCE ANIMATION
 (function initCardScrollReveal() {
   const cardSelectors = [
-    '.about-text-card',
-    '.about-hobbies-card',
-    '.education-card',
-    '.project-card',
-    '.skill-domain-card',
-    '.recognition-card',
-    '.playlist-card'
+    '.editorial-project',
+    '.about-editorial-card',
+    '.education-card-featured',
+    '.capability-row',
+    '.recognition-card'
   ];
 
   const cards = document.querySelectorAll(cardSelectors.join(', '));
