@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=42.0">
+  <link rel="stylesheet" href="style.css?v=43.0">
 </head>
 
 <body>
@@ -54,9 +54,14 @@
 
     <!-- HERO SECTION -->
     <section id="top" class="portfolio-hero" aria-label="Portfolio introduction">
+      <!-- Atmospheric Studio Backdrop (Strictly scoped to first page / hero background) -->
+      <div class="hero-studio-backdrop" aria-hidden="true">
+        <img src="assets/profile_studio.jpg" alt="" class="hero-studio-backdrop__img" loading="eager">
+      </div>
+
       <div class="site-container portfolio-hero__container">
         
-        <!-- Left Column: Identity, Punchy Headline, Quotes & Quick CTAs -->
+        <!-- Foreground Content: Identity, Headline, Quotes & Quick CTAs -->
         <div class="portfolio-hero__content">
           <!-- Top Left Quote (Philosophy Motto) -->
           <div class="portfolio-hero__quote-box portfolio-hero__quote-box--top" aria-label="Philosophical quote">
@@ -96,35 +101,6 @@
           <div class="portfolio-hero__quote-box portfolio-hero__quote-box--bottom" aria-label="Personal growth quote">
             <p class="portfolio-hero__quote-text portfolio-hero__quote-text--bottom">"The curious paradox of personal growth is that when we accept ourselves exactly as we are, we open the door to change."</p>
             <span class="portfolio-hero__quote-author">Carl Rogers</span>
-          </div>
-        </div>
-
-        <!-- Right Column: Featured Studio Portrait (Prominently Featured in ONLY ONE Place) -->
-        <div class="portfolio-hero__media">
-          <div class="contact-portrait-card" id="portrait-flip-card" role="button" tabindex="0"
-            aria-label="Click to flip portrait photo">
-            <div class="contact-portrait-top">
-              <span class="contact-portrait-tag">ENGINEER · SGM</span>
-              <span class="contact-portrait-status" id="portrait-flip-hint">CLICK TO FLIP</span>
-            </div>
-            <div class="contact-portrait-flipper-container">
-              <div class="contact-portrait-flipper" id="portrait-flipper">
-                <!-- Front Face: Studio Editorial Portrait -->
-                <div class="contact-portrait-face contact-portrait-front">
-                  <img src="assets/profile_studio.jpg" alt="Shaik Ghouse Mohiddin Shah - Studio Portrait" class="contact-portrait-img" loading="eager">
-                  <span class="contact-face-badge">STUDIO</span>
-                </div>
-                <!-- Back Face: Standard Portrait -->
-                <div class="contact-portrait-face contact-portrait-back">
-                  <img src="assets/profile.jpeg.jpg" alt="Shaik Ghouse Mohiddin Shah" class="contact-portrait-img" loading="lazy">
-                  <span class="contact-face-badge">PORTRAIT</span>
-                </div>
-              </div>
-            </div>
-            <div class="contact-portrait-caption">
-              <div class="contact-portrait-name">Shaik Ghouse Mohiddin Shah</div>
-              <div class="contact-portrait-role">B.Tech CSE AIML · SRM University AP</div>
-            </div>
           </div>
         </div>
 
@@ -1131,7 +1107,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=42.0"></script>
+  <script src="script.js?v=43.0"></script>
 </body>
 
 </html>

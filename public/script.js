@@ -617,31 +617,6 @@ if (backToTopBtn) {
   setTrack(0, false);
 })();
 
-// INTERACTIVE 3D PORTRAIT FLIP
-(function initPortraitFlip() {
-  const card = document.getElementById('portrait-flip-card');
-  const flipper = document.getElementById('portrait-flipper');
-  const hint = document.getElementById('portrait-flip-hint');
-  if (!card || !flipper) return;
-
-  function toggleFlip(e) {
-    if (e.target.closest('a, button')) return;
-    flipper.classList.toggle('is-flipped');
-    const isFlipped = flipper.classList.contains('is-flipped');
-    if (hint) {
-      hint.textContent = isFlipped ? 'CLICK TO FLIP' : 'CLICK TO FLIP';
-    }
-  }
-
-  card.addEventListener('click', toggleFlip);
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleFlip(e);
-    }
-  });
-})();
-
 // CARD SCROLL REVEAL ENTRANCE ANIMATION
 (function initCardScrollReveal() {
   const cardSelectors = [
@@ -651,8 +626,7 @@ if (backToTopBtn) {
     '.project-card',
     '.skill-domain-card',
     '.recognition-card',
-    '.playlist-card',
-    '.contact-portrait-card'
+    '.playlist-card'
   ];
 
   const cards = document.querySelectorAll(cardSelectors.join(', '));
