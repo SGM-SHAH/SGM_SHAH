@@ -8,7 +8,7 @@
 const projectSpecs = {
   campusx: {
     title: 'CampusX',
-    category: 'AI / MULTI-LLM CONSENSUS // PRJ-AI-01',
+    category: 'AI / Multi-LLM Consensus',
     tagline: 'Multi-LLM consensus aggregation engine for zero-hallucination inference',
     description: 'An intelligent consensus aggregation platform that queries multiple LLM providers simultaneously to cross-validate AI answers, compute semantic agreement, and drastically reduce hallucinations. Co-developed as a core teammate.',
     architecture: 'Distributed asynchronous FastAPI gateway with parallel fan-out RPC to diverse LLM endpoints, executing dynamic cosine similarity and token-level consensus voting.',
@@ -28,7 +28,7 @@ const projectSpecs = {
   },
   voca: {
     title: 'VOCA',
-    category: 'SPEECH AI & NLP // PRJ-VOX-02',
+    category: 'Speech AI & NLP',
     tagline: 'Interactive real-time speech evaluation and conversational language companion',
     description: 'Interactive AI language learning platform built for Hack The Winter. Features live speech evaluation, accent detection, and dynamic conversational scenarios.',
     architecture: 'Client-side Web Speech API capture feeding low-latency streaming audio buffers into LLM conversational evaluation pipelines with Firebase state persistence.',
@@ -48,7 +48,7 @@ const projectSpecs = {
   },
   safeecho: {
     title: 'SafeEcho',
-    category: 'NLP SENTIMENT & EMPATHY // PRJ-PSY-03',
+    category: 'Sentiment Analysis & Privacy',
     tagline: 'Empathy-focused sentiment analyzer and gentle coping companion',
     description: 'Empathy-focused web application designed to analyze sentiment in user logs and provide gentle, AI-guided coping techniques and supportive resources in real time.',
     architecture: 'Client-side sentiment analysis and classification engine operating with strict zero-logging privacy standards to deliver gentle guidance and grounding tools.',
@@ -68,7 +68,7 @@ const projectSpecs = {
   },
   ipl: {
     title: 'IPL Mega Auction Platform',
-    category: 'REAL-TIME DB SYSTEMS // PRJ-DAT-04',
+    category: 'Real-Time Distributed DB',
     tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
     description: 'A real-time IPL Mega Auction platform that simulates the bidding process for cricket teams. Features live auction mechanics and team purse management. Deployed on Firebase.',
     architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with atomic transaction locking on player bids and budget caps.',
@@ -88,7 +88,7 @@ const projectSpecs = {
   },
   resume: {
     title: 'Dynamic Resume Writer',
-    category: 'PRODUCTIVITY SYSTEMS // PRJ-DOC-05',
+    category: 'Web Productivity Tools',
     tagline: 'Instantaneous LaTeX-inspired resume generator and real-time formatting previewer',
     description: 'A dynamic Resume Generator web app that lets users fill in their details and instantly preview a professionally formatted resume. Built with a clean, interactive UI.',
     architecture: 'Reactive dual-pane DOM architecture with real-time state synchronization between input schema controls and print-optimized PDF preview layouts.',
@@ -108,7 +108,7 @@ const projectSpecs = {
   },
   flappy: {
     title: 'Flappy Bhai - SRM AP Edition',
-    category: 'CANVAS ARCADE & LEADERBOARDS // PRJ-GAME-06',
+    category: 'HTML5 Canvas & Physics',
     tagline: 'Custom campus-themed 60FPS canvas arcade game with global Firebase leaderboards',
     description: 'Arcade game simulation featuring custom SRM AP campus graphics, interactive obstacles, and real-time Firebase global leaderboard.',
     architecture: 'Optimized requestAnimationFrame 60FPS 2D canvas game loop with deterministic collision detection and cloud leaderboard sync.',
