@@ -24,7 +24,7 @@ const projectSpecs = {
       'Custom heuristic scoring algorithm weighting model domain expertise'
     ],
     hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
-    liveUrl: 'https://github.com'
+    liveUrl: 'https://github.com/SGM-SHAH/CampusX'
   },
   voca: {
     title: 'VOCA',
@@ -44,7 +44,7 @@ const projectSpecs = {
       'Resilient offline session caching with automatic cloud synchronization'
     ],
     hardwareOrStack: 'React 19 / Web Speech API / LLM Integration / Firebase / Tailwind CSS',
-    liveUrl: 'https://github.com'
+    liveUrl: 'https://github.com/SGM-SHAH/VOCA-SpeechAI'
   },
   safeecho: {
     title: 'SafeEcho',
@@ -64,7 +64,7 @@ const projectSpecs = {
       'Lightweight client bundle ensuring instant accessibility even on low-bandwidth networks'
     ],
     hardwareOrStack: 'JavaScript ESNext / Sentiment NLP / HTML5 / CSS3 / LocalStorage Security',
-    liveUrl: 'https://github.com'
+    liveUrl: 'https://github.com/SGM-SHAH/SafeEcho'
   },
   ipl: {
     title: 'IPL Mega Auction Platform',
@@ -124,7 +124,7 @@ const projectSpecs = {
       'Bespoke campus-inspired pixel art and responsive touch controls'
     ],
     hardwareOrStack: 'HTML5 Canvas / Vanilla JavaScript / Firebase Realtime DB',
-    liveUrl: 'https://github.com'
+    liveUrl: 'https://sgm-shah.github.io/Flappy-Bhai/'
   }
 };
 

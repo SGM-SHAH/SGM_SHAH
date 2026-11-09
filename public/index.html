@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=43.0">
+  <link rel="stylesheet" href="style.css?v=44.0">
 </head>
 
 <body>
@@ -54,21 +54,16 @@
 
     <!-- HERO SECTION -->
     <section id="top" class="portfolio-hero" aria-label="Portfolio introduction">
-      <!-- Atmospheric Studio Backdrop (Strictly scoped to first page / hero background) -->
-      <div class="hero-studio-backdrop" aria-hidden="true">
-        <img src="assets/profile_studio.jpg" alt="" class="hero-studio-backdrop__img" loading="eager">
-      </div>
-
       <div class="site-container portfolio-hero__container">
         
-        <!-- Foreground Content: Identity, Headline, Quotes & Quick CTAs -->
-        <div class="portfolio-hero__content">
-          <!-- Top Left Quote (Philosophy Motto) -->
-          <div class="portfolio-hero__quote-box portfolio-hero__quote-box--top" aria-label="Philosophical quote">
-            <p class="portfolio-hero__quote-text">"The soul becomes dyed with the color of its thoughts."</p>
-            <span class="portfolio-hero__quote-author">Marcus Aurelius</span>
-          </div>
+        <!-- Top Philosophy Motto -->
+        <div class="portfolio-hero__quote-box portfolio-hero__quote-box--top" aria-label="Philosophical quote">
+          <p class="portfolio-hero__quote-text">"The soul becomes dyed with the color of its thoughts."</p>
+          <span class="portfolio-hero__quote-author">Marcus Aurelius</span>
+        </div>
 
+        <!-- Hero Header & Alignment Block (Positioned Cleanly Above Portrait) -->
+        <div class="portfolio-hero__header">
           <!-- Monumental Name Title -->
           <div class="portfolio-hero__title-wrap">
             <h1 class="portfolio-hero__title">
@@ -77,27 +72,39 @@
             </h1>
           </div>
 
-          <!-- Clean Punchy Headline & Value Statement -->
-          <div class="portfolio-hero__headline-box">
-            <p class="portfolio-hero__headline">
-              Full-Stack Engineer &amp; AI/ML Developer | Building Intelligent Systems &amp; Web Apps
-            </p>
-            <p class="portfolio-hero__sublead">
-              Undergraduate in Computer Science &amp; Engineering (AI/ML) at SRM University AP. Designing production-ready web platforms, distributed workflows, and applied intelligent systems.
-            </p>
-          </div>
+          <!-- Exact Requested Role Tagline -->
+          <p class="portfolio-hero__tagline">
+            Full-Stack Engineer &amp; AI Systems Developer
+          </p>
 
-          <!-- Quick Action Links -->
+          <!-- Crisp Sublead Statement -->
+          <p class="portfolio-hero__sublead">
+            Undergraduate in Computer Science &amp; Engineering (AI/ML) at SRM University AP. Building production-ready web platforms, distributed systems, and applied intelligent agents.
+          </p>
+
+          <!-- CTA Action Buttons (Aligned Cleanly Above Portrait) -->
           <div class="portfolio-hero__actions">
             <a href="#projects" class="hero-cta-btn hero-cta-btn--primary">
-              EXPLORE PROJECTS ↓
+              Explore Projects ↓
             </a>
             <a href="#contact" class="hero-cta-btn hero-cta-btn--secondary">
-              GET IN TOUCH →
+              Get in Touch →
             </a>
           </div>
+        </div>
 
-          <!-- Bottom Left Quote (Personal Growth Motto) -->
+        <!-- Dedicated Clean Framed Portrait Card (Positioned Directly Below Header & CTAs) -->
+        <div class="hero-portrait-frame">
+          <div class="hero-portrait-card">
+            <img src="assets/profile_studio.jpg" alt="Shaik Ghouse Mohiddin Shah" class="hero-portrait-img" loading="eager">
+            <div class="hero-portrait-fade" aria-hidden="true"></div>
+            <div class="hero-portrait-caption">
+              <span class="hero-portrait-status-dot"></span>
+              <span>SRM UNIVERSITY AP · CSE (AI/ML)</span>
+            </div>
+          </div>
+
+          <!-- Bottom Personal Growth Motto Alongside/Below Portrait -->
           <div class="portfolio-hero__quote-box portfolio-hero__quote-box--bottom" aria-label="Personal growth quote">
             <p class="portfolio-hero__quote-text portfolio-hero__quote-text--bottom">"The curious paradox of personal growth is that when we accept ourselves exactly as we are, we open the door to change."</p>
             <span class="portfolio-hero__quote-author">Carl Rogers</span>
@@ -250,16 +257,16 @@
             <h3 class="project-title">CampusX</h3>
             <p class="project-tagline">Multi-LLM consensus aggregation engine</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Queries multiple LLM providers simultaneously to cross-validate responses, compute semantic similarity, and reduce hallucinations in academic query workflows.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Built with FastAPI and Python AsyncIO; orchestrates concurrent multi-model streaming inference with dynamic token agreement scoring and sub-second aggregation.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Eliminates AI hallucinations for students and researchers by querying multiple LLM providers concurrently and synthesizing a consensus response.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Engineered with FastAPI and AsyncIO to run parallel fan-out RPCs with sub-second token agreement scoring and dynamic cosine consensus.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">FastAPI</span>
@@ -271,8 +278,12 @@
 
             <div class="project-card-actions">
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="campusx">
-                Specification ↗
+                Documentation / Spec ↗
               </button>
+              <a href="https://github.com/SGM-SHAH/CampusX" target="_blank" rel="noopener noreferrer"
+                class="project-btn project-btn--ghost">
+                GitHub ↗
+              </a>
             </div>
           </article>
 
@@ -286,16 +297,16 @@
             <h3 class="project-title">VOCA</h3>
             <p class="project-tagline">Interactive AI speech &amp; language tutor</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Interactive speech-AI language tutor delivering live phonetic pronunciation evaluation, accent feedback, and real-time conversational simulations.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Developed using React 19, Web Speech API, and LLM streaming; delivers sub-second acoustic cadence analysis with client-side audio processing.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Accelerates conversational language fluency for learners through real-time phonetic feedback, accent analysis, and contextual voice drills.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Built with React 19 and Web Speech API streaming into an LLM pipeline to achieve sub-250ms cadence analysis and Firebase state sync.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">React 19</span>
@@ -307,8 +318,12 @@
 
             <div class="project-card-actions">
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="voca">
-                Specification ↗
+                Documentation / Spec ↗
               </button>
+              <a href="https://github.com/SGM-SHAH/VOCA-SpeechAI" target="_blank" rel="noopener noreferrer"
+                class="project-btn project-btn--ghost">
+                GitHub ↗
+              </a>
             </div>
           </article>
 
@@ -322,16 +337,16 @@
             <h3 class="project-title">SafeEcho</h3>
             <p class="project-tagline">Empathy-driven mental health companion</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Empathy-focused wellness application that analyzes emotional tone in personal journals and suggests gentle, AI-guided coping techniques.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Engineered with pure client-side NLP sentiment heuristics and local storage persistence, guaranteeing zero-logging data privacy with zero cloud telemetry.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Provides an empathetic journaling companion and grounding toolkit for users managing emotional stress without tracking personal data.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Executes client-side NLP sentiment heuristics entirely in-browser with zero cloud logging to guarantee complete user privacy and offline support.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">NLP Sentiment</span>
@@ -342,8 +357,12 @@
 
             <div class="project-card-actions">
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="safeecho">
-                Specification ↗
+                Documentation / Spec ↗
               </button>
+              <a href="https://github.com/SGM-SHAH/SafeEcho" target="_blank" rel="noopener noreferrer"
+                class="project-btn project-btn--ghost">
+                GitHub ↗
+              </a>
             </div>
           </article>
 
@@ -357,20 +376,20 @@
             <h3 class="project-title">IPL Mega Auction</h3>
             <p class="project-tagline">Real-time multiplayer bidding simulation</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Real-time multiplayer cricket auction simulator modeling competitive bidding wars, atomic team budget caps, and dynamic player rosters.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Powered by Firebase Realtime DB with synchronized multi-client state under 50ms latency, handling concurrent bids without purse overflows.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Simulates high-stakes cricket player auctions for sports fans through a synchronized multiplayer live bidding arena.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Powered by Firebase Realtime Database with atomic transaction locking to handle concurrent purse deductions under 50ms without race conditions.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">Firebase Realtime DB</span>
-              <span class="project-tech-tag">JavaScript</span>
+              <span class="project-tech-tag">JavaScript ESNext</span>
               <span class="project-tech-tag">Concurrency</span>
               <span class="project-tech-tag">Firebase Hosting</span>
             </div>
@@ -381,7 +400,7 @@
                 View Live ↗
               </a>
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="ipl">
-                Specification ↗
+                Source / Spec ↗
               </button>
             </div>
           </article>
@@ -396,16 +415,16 @@
             <h3 class="project-title">Dynamic Resume Writer</h3>
             <p class="project-tagline">Real-time ATS resume formatter &amp; generator</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Live ATS-friendly resume generation tool enabling developers to compose structured profiles with instant preview formatting.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Built with reactive dual-pane vanilla JS and custom print CSS pagination engines for clean, vector-rendered ATS-compliant PDF exports.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Empowers job seekers to create ATS-optimized, high-impact engineering resumes with an instantaneous split-pane preview editor.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Leverages reactive vanilla TypeScript DOM architecture and print CSS pagination for vector-sharp, pixel-perfect PDF export.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">JavaScript ESNext</span>
@@ -420,7 +439,7 @@
                 View Live ↗
               </a>
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="resume">
-                Specification ↗
+                Source / Spec ↗
               </button>
             </div>
           </article>
@@ -435,16 +454,16 @@
             <h3 class="project-title">Flappy Bhai</h3>
             <p class="project-tagline">SRM AP campus arcade simulation</p>
             
-            <div class="project-points">
-              <div class="project-point">
-                <span class="point-label">Solution:</span>
-                <p class="point-text">Campus-themed 2D arcade game tailored for SRM AP students featuring custom illustrated campus artwork and responsive obstacle mechanics.</p>
-              </div>
-              <div class="project-point">
-                <span class="point-label">Tech &amp; Impact:</span>
-                <p class="point-text">Programmed in raw HTML5 Canvas at locked 60 FPS with deterministic collision physics and live Firebase global leaderboards.</p>
-              </div>
-            </div>
+            <ul class="project-bullets">
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Delivers a campus-themed 2D obstacle arcade experience for SRM AP university students with bespoke campus landmarks and collegiate flair.</span>
+              </li>
+              <li class="project-bullet">
+                <span class="project-bullet-dot" aria-hidden="true">•</span>
+                <span>Developed in raw HTML5 Canvas running at a deterministic 60 FPS with pixel-precise collision detection and global Firebase leaderboards.</span>
+              </li>
+            </ul>
 
             <div class="project-tech-tags">
               <span class="project-tech-tag">HTML5 Canvas</span>
@@ -454,8 +473,12 @@
             </div>
 
             <div class="project-card-actions">
+              <a href="https://sgm-shah.github.io/Flappy-Bhai/" target="_blank" rel="noopener noreferrer"
+                class="project-btn project-btn--live">
+                View Live ↗
+              </a>
               <button type="button" class="btn-open-spec project-btn project-btn--spec" data-project="flappy">
-                Specification ↗
+                Source / Spec ↗
               </button>
             </div>
           </article>
@@ -1107,7 +1130,7 @@
 
   <div id="email-toast">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=43.0"></script>
+  <script src="script.js?v=44.0"></script>
 </body>
 
 </html>
