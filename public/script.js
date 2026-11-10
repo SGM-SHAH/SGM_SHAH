@@ -9,7 +9,7 @@ const projectSpecs = {
   campusx: {
     title: 'CampusX',
     category: 'AI / Multi-LLM Consensus',
-    tagline: 'Multi-LLM consensus aggregation engine for zero-hallucination inference',
+    tagline: 'Multi-LLM consensus aggregation engine for grounded multi-model inference',
     description: 'An intelligent consensus aggregation platform that queries multiple LLM providers in parallel to cross-validate responses, compute semantic agreement, and drastically minimize hallucinations in student queries.',
     architecture: 'Distributed asynchronous FastAPI gateway with parallel fan-out RPC to diverse LLM endpoints, executing dynamic cosine similarity and token-level consensus voting.',
     keyModules: [
@@ -19,8 +19,8 @@ const projectSpecs = {
       'Telemetry logging inference latency, token usage, and cost economics'
     ],
     technicalHighlights: [
-      'Sub-second parallel dispatch reducing aggregate query wait times',
-      'Pydantic schema validation ensuring zero malformed prompt returns',
+      'Low-latency parallel dispatch reducing aggregate query wait times',
+      'Pydantic schema validation ensuring clean structured prompt returns',
       'Custom heuristic scoring algorithm weighting model domain expertise'
     ],
     hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
@@ -39,7 +39,7 @@ const projectSpecs = {
       'Progress tracker synchronizing session metrics to Firebase'
     ],
     technicalHighlights: [
-      'Sub-second audio capture and real-time voice recognition telemetry loop',
+      'Real-time audio capture and speech recognition telemetry loop',
       'Dynamic vocabulary difficulty scaling based on user response fluency',
       'Resilient offline session caching with automatic cloud synchronization'
     ],
@@ -50,16 +50,16 @@ const projectSpecs = {
     title: 'IPL Mega Auction Platform',
     category: 'Real-Time Distributed DB',
     tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
-    description: 'A real-time IPL Mega Auction platform that simulates competitive franchise bidding. Features atomic budget constraints, live team purse tracking, and instantaneous state sync across all participants.',
-    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with atomic transaction locking on player bids and purse limits.',
+    description: 'A real-time IPL Mega Auction platform that simulates competitive franchise bidding. Features team budget constraints, live team purse tracking, and real-time state sync across all participants.',
+    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with transaction validation on player bids and purse limits.',
     keyModules: [
-      'Atomic bidding engine with multi-user concurrency control',
+      'Real-time bidding engine with multi-user concurrency control',
       'Live team purse and squad composition constraint validator',
       'Real-time bid broadcast pipeline reflecting updates across connected clients',
       'Complete player catalogue with filtering by role, nationality, and base price'
     ],
     technicalHighlights: [
-      'Sub-50ms synchronization across concurrent bidding participants',
+      'Real-time synchronization across concurrent bidding participants',
       'Strict transaction guards preventing purse overflows and duplicate concurrent bids',
       'Production deployment on Firebase Hosting with instantaneous initial load'
     ],
@@ -71,7 +71,7 @@ const projectSpecs = {
     category: 'Sentiment Analysis & Privacy',
     tagline: 'Empathy-focused sentiment analyzer and gentle coping companion',
     description: 'Privacy-first web application designed to analyze sentiment in personal logs and provide AI-guided coping techniques and grounding resources without transmitting user data.',
-    architecture: 'Client-side sentiment analysis and classification engine operating with strict zero-cloud-logging standards to deliver grounding tools locally.',
+    architecture: 'Client-side sentiment analysis and classification engine operating without remote server logging to deliver grounding tools locally.',
     keyModules: [
       'Multi-tier lexical sentiment scoring pipeline detecting distress patterns',
       'Dynamic grounding exercise generator (breathing pacers, cognitive reframing)',
@@ -79,7 +79,7 @@ const projectSpecs = {
       'Localized encrypted journal storage ensuring 100% user privacy'
     ],
     technicalHighlights: [
-      'Zero telemetry data leakage: sensitive sentiment logs remain strictly in local storage',
+      'Local-only data storage: sensitive sentiment logs remain strictly in local storage',
       'Calming, non-intrusive micro-interactions engineered to reduce cognitive overload',
       'Lightweight client bundle ensuring instant accessibility on any device'
     ],
@@ -99,7 +99,7 @@ const projectSpecs = {
       'Client-side print styling engine eliminating third-party rendering servers'
     ],
     technicalHighlights: [
-      'Real-time reactive preview with zero render lag or layout shifting',
+      'Real-time reactive preview without layout shifting',
       'Strict adherence to ATS-friendly typography, hierarchy, and margins',
       'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
     ],
@@ -109,9 +109,9 @@ const projectSpecs = {
   flappy: {
     title: 'Flappy Bhai - SRM AP Edition',
     category: 'HTML5 Canvas & Physics',
-    tagline: 'Custom campus-themed 60FPS canvas arcade game with global Firebase leaderboards',
+    tagline: 'Custom campus-themed 2D canvas arcade game with global Firebase leaderboards',
     description: 'Arcade game simulation featuring custom SRM AP campus graphics, interactive obstacles, deterministic collision physics, and real-time Firebase global leaderboard synchronization.',
-    architecture: 'Optimized requestAnimationFrame 60FPS 2D canvas game loop with deterministic collision detection and cloud leaderboard sync.',
+    architecture: 'Optimized requestAnimationFrame 2D canvas game loop with deterministic collision detection and cloud leaderboard sync.',
     keyModules: [
       'Delta-time normalized physics loop with velocity and gravity dampening',
       'AABB bounding box collision detection engine',
@@ -119,7 +119,7 @@ const projectSpecs = {
       'Responsive canvas scaler preserving aspect ratios across mobile screens'
     ],
     technicalHighlights: [
-      'Smooth 60FPS execution with zero garbage collection spikes',
+      'Smooth 2D canvas execution with optimized memory lifecycle',
       'Anti-cheat client validation for submitted high-score runs',
       'Bespoke campus-inspired pixel art and responsive touch controls'
     ],

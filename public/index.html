@@ -117,112 +117,143 @@
         <header class="section-header">
           <h2 id="work-heading" class="section-title">Selected Work</h2>
           <p class="section-intro">
-            Three core engineering projects exploring multi-LLM consensus, low-latency speech AI, and atomic state synchronization in real-time auctions.
+            Three core engineering projects exploring multi-LLM consensus, low-latency speech AI, and real-time state synchronization in simulated auctions.
           </p>
         </header>
 
         <div class="work-showcase">
 
-          <!-- PROJECT 1: CampusX (Asymmetric 60/40 Split Layout) -->
-          <article class="work-case work-case--split" id="case-campusx">
+          <!-- PROJECT 1: CampusX (Two-Column Grid: Visual Left, Text Right) -->
+          <article class="work-case" id="case-campusx">
             <div class="work-case__visual">
               <picture class="project-picture">
                 <source srcset="assets/campusx.webp" type="image/webp">
-                <img src="assets/campusx.webp" alt="CampusX Multi-LLM Consensus Architecture" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+                <img src="assets/campusx.webp" alt="CampusX multi-LLM parallel fan-out architecture pipeline" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
               </picture>
             </div>
 
             <div class="work-case__content">
-              <span class="case-number">01</span>
-              <h3 class="case-title">CampusX</h3>
-              <p class="case-tagline">Multi-LLM consensus aggregation engine for zero-hallucination query resolution</p>
-
-              <div class="case-spec-block">
-                <div class="spec-row">
-                  <span class="spec-label">Problem</span>
-                  <p class="spec-text">Researchers and students receive inconsistent or hallucinated answers when querying a single LLM without independent verification.</p>
-                </div>
-
-                <div class="spec-row">
-                  <span class="spec-label">What I built</span>
-                  <p class="spec-text">Co-developed an asynchronous FastAPI gateway that fans out prompt RPCs simultaneously across multiple model providers, evaluates semantic agreement via cosine distance, and aggregates consensus responses.</p>
-                </div>
-
-                <!-- REWRITE IN MY OWN WORDS: I would replace client-side polling with persistent Server-Sent Events (SSE) to stream intermediate agreement scores token-by-token as individual provider streams complete. -->
+              <div class="work-case__header">
+                <span class="case-number">01</span>
+                <h3 class="case-title">CampusX</h3>
+                <p class="case-tagline">Multi-LLM consensus aggregation engine for grounded query resolution</p>
               </div>
 
-              <div class="case-facts">
-                <span class="case-fact">Competed at HackSRM 2026</span>
-                <span class="case-fact">Sub-second parallel dispatch reducing aggregate query wait times</span>
-                <span class="case-fact">Dynamic token agreement and cosine similarity consensus scoring</span>
-              </div>
+              <div class="work-case__body">
+                <div class="case-spec-block">
+                  <div class="spec-row">
+                    <span class="spec-label">Problem</span>
+                    <p class="spec-text">Researchers and students receive inconsistent or hallucinated answers when querying a single LLM without independent verification.</p>
+                  </div>
 
-              <div class="case-links">
-                <button type="button" class="link-btn btn-open-spec" data-project="campusx">
-                  Write-up
-                </button>
+                  <div class="spec-row">
+                    <span class="spec-label">What I built</span>
+                    <p class="spec-text">Co-developed an asynchronous FastAPI gateway that fans out prompt RPCs simultaneously across multiple model providers, evaluates semantic agreement via cosine distance, and aggregates consensus responses.</p>
+                  </div>
+
+                  <!-- TODO: What I'd do differently -->
+                </div>
+
+                <div class="case-facts">
+                  <span class="case-fact">Competed at HackSRM 2026</span>
+                  <span class="case-fact">Low-latency parallel dispatch reducing aggregate query wait times</span>
+                  <span class="case-fact">Dynamic token agreement and cosine similarity consensus scoring</span>
+                </div>
+
+                <div class="case-links">
+                  <button type="button" class="link-btn btn-open-spec" data-project="campusx">
+                    Write-up
+                  </button>
+                  <!-- TODO: repo URL -->
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- PROJECT 2: VOCA (Widescreen Inverted Editorial Layout) -->
-          <article class="work-case work-case--inverted" id="case-voca">
-            <div class="work-case__content">
-              <span class="case-number">02</span>
-              <h3 class="case-title">VOCA</h3>
-              <p class="case-tagline">Real-time speech evaluation and conversational language learning companion</p>
-
-              <div class="case-spec-block">
-                <div class="spec-row">
-                  <span class="spec-label">Problem</span>
-                  <p class="spec-text">Language learners lack affordable, immediate feedback on pronunciation cadence, accent divergence, and contextual conversational dialogue.</p>
-                </div>
-
-                <div class="spec-row">
-                  <span class="spec-label">What I built</span>
-                  <p class="spec-text">Built an interactive speech evaluation platform utilizing the Web Speech API to capture live audio cadence, route phonetic buffers into an LLM scoring pipeline, and persist session metrics to Firebase.</p>
-                </div>
-
-                <!-- REWRITE IN MY OWN WORDS: I would integrate a client-side WebAssembly phoneme classifier to execute phonetic analysis offline without depending on browser-specific speech synthesis engines. -->
-              </div>
-
-              <div class="case-facts">
-                <span class="case-fact">Built for Hack The Winter</span>
-                <span class="case-fact">Sub-second audio capture and real-time voice feedback loop</span>
-                <span class="case-fact">React 19, Web Speech API, and Firebase state sync</span>
-              </div>
-
-              <div class="case-links">
-                <button type="button" class="link-btn btn-open-spec" data-project="voca">
-                  Write-up
-                </button>
-              </div>
-            </div>
-
+          <!-- PROJECT 2: VOCA (Two-Column Grid: Text Left, Visual Right) -->
+          <article class="work-case work-case--reverse" id="case-voca">
             <div class="work-case__visual">
               <picture class="project-picture">
                 <source srcset="assets/voca.webp" type="image/webp">
-                <img src="assets/voca.webp" alt="VOCA Speech Evaluation and Pronunciation Analysis Interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
-              </picture>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: IPL Mega Auction (Full-Width Architectural Blueprint Layout) -->
-          <article class="work-case work-case--blueprint" id="case-ipl">
-            <div class="work-case__visual">
-              <picture class="project-picture">
-                <source srcset="assets/ipl-auction.webp" type="image/webp">
-                <img src="assets/ipl-auction.webp" alt="IPL Mega Auction Live Multiplayer Bidding Room Interface" width="1200" height="675" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+                <img src="assets/voca.webp" alt="VOCA speech evaluation and pronunciation analysis interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
               </picture>
             </div>
 
             <div class="work-case__content">
-              <div class="blueprint-header">
-                <div>
-                  <span class="case-number">03</span>
-                  <h3 class="case-title">IPL Mega Auction Platform</h3>
-                  <p class="case-tagline">Real-time multiplayer simulated cricket franchise auction with live bidding mechanics</p>
+              <div class="work-case__header">
+                <span class="case-number">02</span>
+                <h3 class="case-title">VOCA</h3>
+                <p class="case-tagline">Real-time speech evaluation and conversational language learning companion</p>
+              </div>
+
+              <div class="work-case__body">
+                <div class="case-spec-block">
+                  <div class="spec-row">
+                    <span class="spec-label">Problem</span>
+                    <p class="spec-text">Language learners lack affordable, immediate feedback on pronunciation cadence, accent divergence, and contextual conversational dialogue.</p>
+                  </div>
+
+                  <div class="spec-row">
+                    <span class="spec-label">What I built</span>
+                    <p class="spec-text">Built an interactive speech evaluation platform utilizing the Web Speech API to capture live audio cadence, route phonetic buffers into an LLM scoring pipeline, and persist session metrics to Firebase.</p>
+                  </div>
+
+                  <!-- TODO: What I'd do differently -->
                 </div>
+
+                <div class="case-facts">
+                  <span class="case-fact">Built for Hack The Winter</span>
+                  <span class="case-fact">Real-time audio capture and voice feedback loop</span>
+                  <span class="case-fact">React 19, Web Speech API, and Firebase state sync</span>
+                </div>
+
+                <div class="case-links">
+                  <button type="button" class="link-btn btn-open-spec" data-project="voca">
+                    Write-up
+                  </button>
+                  <!-- TODO: repo URL -->
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: IPL Mega Auction (Two-Column Grid: Visual Left, Text Right) -->
+          <article class="work-case" id="case-ipl">
+            <div class="work-case__visual">
+              <picture class="project-picture">
+                <source srcset="assets/ipl-auction.webp" type="image/webp">
+                <img src="assets/ipl-auction.webp" alt="IPL Mega Auction live multiplayer franchise bidding room interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+              </picture>
+            </div>
+
+            <div class="work-case__content">
+              <div class="work-case__header">
+                <span class="case-number">03</span>
+                <h3 class="case-title">IPL Mega Auction Platform</h3>
+                <p class="case-tagline">Real-time multiplayer simulated cricket franchise auction with live bidding mechanics</p>
+              </div>
+
+              <div class="work-case__body">
+                <div class="case-spec-block">
+                  <div class="spec-row">
+                    <span class="spec-label">Problem</span>
+                    <p class="spec-text">Multiplayer auction simulations frequently suffer from race conditions, duplicate high bids, and purse overdrafts under simultaneous client updates.</p>
+                  </div>
+
+                  <div class="spec-row">
+                    <span class="spec-label">What I built</span>
+                    <p class="spec-text">Designed an event-driven bidding engine powered by Firebase Realtime Database with transaction guards to validate purse balance constraints and broadcast updates in real time.</p>
+                  </div>
+
+                  <!-- TODO: What I'd do differently -->
+                </div>
+
+                <div class="case-facts">
+                  <span class="case-fact">Deployed live on Firebase Hosting</span>
+                  <span class="case-fact">Real-time synchronized state across connected clients</span>
+                  <span class="case-fact">Strict transaction guards preventing purse overflows and duplicate concurrent bids</span>
+                </div>
+
                 <div class="case-links">
                   <a href="https://ipl-auction-a81df.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
                     Live
@@ -230,27 +261,8 @@
                   <button type="button" class="link-btn btn-open-spec" data-project="ipl">
                     Write-up
                   </button>
+                  <!-- TODO: repo URL -->
                 </div>
-              </div>
-
-              <div class="case-spec-grid">
-                <div class="spec-col">
-                  <span class="spec-label">Problem</span>
-                  <p class="spec-text">Multiplayer auction simulations frequently suffer from race conditions, duplicate high bids, and purse overdrafts under simultaneous client updates.</p>
-                </div>
-
-                <div class="spec-col">
-                  <span class="spec-label">What I built</span>
-                  <p class="spec-text">Designed an event-driven bidding engine powered by Firebase Realtime Database using atomic transaction locks to validate purse balance constraints and broadcast updates under 50ms.</p>
-                </div>
-
-                <!-- REWRITE IN MY OWN WORDS: I would migrate stateful auction synchronization to an Elixir/Phoenix channel cluster or Redis Pub/Sub backend to support thousands of concurrent spectator connections per room. -->
-              </div>
-
-              <div class="case-facts">
-                <span class="case-fact">Deployed live on Firebase Hosting</span>
-                <span class="case-fact">Sub-50ms synchronized state across connected clients</span>
-                <span class="case-fact">Strict transaction guards preventing purse overflows and duplicate concurrent bids</span>
               </div>
             </div>
           </article>
@@ -274,7 +286,7 @@
                 <strong>SafeEcho</strong>
               </div>
               <div class="build-desc" role="cell">
-                Empathy-focused wellness companion executing sentiment classification in-browser with zero cloud logging.
+                Empathy-focused wellness companion executing sentiment classification in-browser with local privacy preservation.
               </div>
               <div class="build-stack" role="cell">
                 <code>JavaScript · Local NLP · LocalStorage</code>
@@ -308,7 +320,7 @@
                 Campus-themed arcade runner with custom 2D canvas collision physics and global cloud leaderboards.
               </div>
               <div class="build-stack" role="cell">
-                <code>HTML5 Canvas · 60 FPS Loop · Firebase</code>
+                <code>HTML5 Canvas · 2D Physics · Firebase</code>
               </div>
               <div class="build-links" role="cell">
                 <button type="button" class="inline-link btn-open-spec" data-project="flappy">Write-up</button>
@@ -331,7 +343,7 @@
         <div class="about-content">
           <div class="about-prose">
             <p>
-              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, current CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; and an IPL Mega Auction simulator with atomic bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
+              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, first-year CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; and an IPL Mega Auction simulator with real-time bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
             </p>
           </div>
 
@@ -381,10 +393,10 @@
             <div class="stack-tier__items">
               <span class="stack-item">Firebase Realtime DB</span>
               <span class="stack-item">C / C++</span>
+              <span class="stack-item">Java</span>
               <span class="stack-item">SQL (Relational Design)</span>
               <span class="stack-item">Web Speech API</span>
               <span class="stack-item">HTML5 Canvas (2D)</span>
-              <span class="stack-item">Docker</span>
               <span class="stack-item">Vercel &amp; Firebase Hosting</span>
             </div>
           </div>
