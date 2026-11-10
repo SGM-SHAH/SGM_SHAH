@@ -1,26 +1,26 @@
-/* ===================================================
-   BESPOKE EDITORIAL ENGINEERING SCRIPT ENGINE
-   Shaik Ghouse Mohiddin Shah
-   Inspired by Linear / Vercel modern developer platforms
-=================================================== */
+/**
+ * SGM Portfolio Script Engine
+ * High-performance editorial script controller
+ * Features: Accessible modal specs, vinyl player controller, keyboard navigation
+ */
 
-// PROJECT SPECIFICATIONS DATA
+// 1. PROJECT SPECIFICATIONS DATA
 const projectSpecs = {
   campusx: {
     title: 'CampusX',
     category: 'AI / Multi-LLM Consensus',
     tagline: 'Multi-LLM consensus aggregation engine for zero-hallucination inference',
-    description: 'An intelligent consensus aggregation platform that queries multiple LLM providers simultaneously to cross-validate AI answers, compute semantic agreement, and drastically reduce hallucinations. Co-developed as a core teammate.',
+    description: 'An intelligent consensus aggregation platform that queries multiple LLM providers in parallel to cross-validate responses, compute semantic agreement, and drastically minimize hallucinations in student queries.',
     architecture: 'Distributed asynchronous FastAPI gateway with parallel fan-out RPC to diverse LLM endpoints, executing dynamic cosine similarity and token-level consensus voting.',
     keyModules: [
       'Parallel asynchronous client querying OpenAI, Anthropic, and open-weights models',
-      'Vector agreement matrix evaluating semantic divergence across outputs',
+      'Vector agreement matrix evaluating semantic divergence across model outputs',
       'Automated fallback handler with heuristic confidence thresholds',
-      'Telemetry dashboard logging inference latency and token economics'
+      'Telemetry logging inference latency, token usage, and cost economics'
     ],
     technicalHighlights: [
       'Sub-second parallel dispatch reducing aggregate query wait times',
-      'Robust schema validation ensuring zero malformed prompt returns',
+      'Pydantic schema validation ensuring zero malformed prompt returns',
       'Custom heuristic scoring algorithm weighting model domain expertise'
     ],
     hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
@@ -30,7 +30,7 @@ const projectSpecs = {
     title: 'VOCA',
     category: 'Speech AI & NLP',
     tagline: 'Interactive real-time speech evaluation and conversational language companion',
-    description: 'Interactive AI language learning platform built for Hack The Winter. Features live speech evaluation, accent detection, and dynamic conversational scenarios.',
+    description: 'Interactive speech evaluation platform built for Hack The Winter 2026. Features live pronunciation analysis, accent cadence detection, and conversational scenarios.',
     architecture: 'Client-side Web Speech API capture feeding low-latency streaming audio buffers into LLM conversational evaluation pipelines with Firebase state persistence.',
     keyModules: [
       'Live acoustic feedback loop capturing phonetic cadence and pronunciation',
@@ -39,19 +39,39 @@ const projectSpecs = {
       'Progress tracker synchronizing session metrics to Firebase'
     ],
     technicalHighlights: [
-      'Low-latency real-time voice recognition and audio waveform telemetry',
+      'Sub-250ms voice recognition and audio waveform telemetry loop',
       'Dynamic vocabulary difficulty scaling based on user response fluency',
       'Resilient offline session caching with automatic cloud synchronization'
     ],
     hardwareOrStack: 'React 19 / Web Speech API / LLM Integration / Firebase / Tailwind CSS',
     liveUrl: 'https://github.com/SGM-SHAH/VOCA-SpeechAI'
   },
+  ipl: {
+    title: 'IPL Mega Auction Platform',
+    category: 'Real-Time Distributed DB',
+    tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
+    description: 'A real-time IPL Mega Auction platform that simulates competitive franchise bidding. Features atomic budget constraints, live team purse tracking, and instantaneous state sync across all participants.',
+    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with atomic transaction locking on player bids and purse limits.',
+    keyModules: [
+      'Atomic bidding engine with multi-user concurrency control',
+      'Live team purse and squad composition constraint validator',
+      'Real-time bid broadcast pipeline reflecting updates across connected clients',
+      'Complete player catalogue with filtering by role, nationality, and base price'
+    ],
+    technicalHighlights: [
+      'Sub-50ms synchronization across concurrent bidding participants',
+      'Strict transaction guards preventing purse overshoots or duplicate bids',
+      'Production deployment on Firebase Hosting with instantaneous initial load'
+    ],
+    hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
+    liveUrl: 'https://ipl-auction-a81df.web.app'
+  },
   safeecho: {
     title: 'SafeEcho',
     category: 'Sentiment Analysis & Privacy',
     tagline: 'Empathy-focused sentiment analyzer and gentle coping companion',
-    description: 'Empathy-focused web application designed to analyze sentiment in user logs and provide gentle, AI-guided coping techniques and supportive resources in real time.',
-    architecture: 'Client-side sentiment analysis and classification engine operating with strict zero-logging privacy standards to deliver gentle guidance and grounding tools.',
+    description: 'Privacy-first web application designed to analyze sentiment in personal logs and provide AI-guided coping techniques and grounding resources without transmitting user data.',
+    architecture: 'Client-side sentiment analysis and classification engine operating with strict zero-cloud-logging standards to deliver grounding tools locally.',
     keyModules: [
       'Multi-tier lexical sentiment scoring pipeline detecting distress patterns',
       'Dynamic grounding exercise generator (breathing pacers, cognitive reframing)',
@@ -59,58 +79,38 @@ const projectSpecs = {
       'Localized encrypted journal storage ensuring 100% user privacy'
     ],
     technicalHighlights: [
-      'Zero telemetry data leakage: all sensitive sentiment logs remain strictly in local storage',
+      'Zero telemetry data leakage: sensitive sentiment logs remain strictly in local storage',
       'Calming, non-intrusive micro-interactions engineered to reduce cognitive overload',
-      'Lightweight client bundle ensuring instant accessibility even on low-bandwidth networks'
+      'Lightweight client bundle ensuring instant accessibility on any device'
     ],
     hardwareOrStack: 'JavaScript ESNext / Sentiment NLP / HTML5 / CSS3 / LocalStorage Security',
     liveUrl: 'https://github.com/SGM-SHAH/SafeEcho'
   },
-  ipl: {
-    title: 'IPL Mega Auction Platform',
-    category: 'Real-Time Distributed DB',
-    tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
-    description: 'A real-time IPL Mega Auction platform that simulates the bidding process for cricket teams. Features live auction mechanics and team purse management. Deployed on Firebase.',
-    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with atomic transaction locking on player bids and budget caps.',
-    keyModules: [
-      'Atomic bidding engine with multi-user concurrency control',
-      'Live team purse and player slot constraint validator',
-      'Real-time bid broadcast pipeline reflecting updates across all connected clients',
-      'Complete player catalogue with filtering by role, nationality, and base price'
-    ],
-    technicalHighlights: [
-      'Sub-50ms websocket synchronization across simultaneous bidding participants',
-      'Strict transaction guards preventing purse overshoots or duplicate bids',
-      'Production deployment on Firebase Hosting with zero cold-start latency'
-    ],
-    hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
-    liveUrl: 'https://ipl-auction-a81df.web.app'
-  },
   resume: {
     title: 'Dynamic Resume Writer',
     category: 'Web Productivity Tools',
-    tagline: 'Instantaneous LaTeX-inspired resume generator and real-time formatting previewer',
-    description: 'A dynamic Resume Generator web app that lets users fill in their details and instantly preview a professionally formatted resume. Built with a clean, interactive UI.',
+    tagline: 'ATS-optimized resume generator with real-time reactive DOM preview',
+    description: 'An interactive Resume Generator web application that lets users fill in structured career details and instantly preview a professionally formatted resume with pixel-perfect print CSS.',
     architecture: 'Reactive dual-pane DOM architecture with real-time state synchronization between input schema controls and print-optimized PDF preview layouts.',
     keyModules: [
       'Dynamic reactive form parser supporting multi-section reordering',
-      'Print-optimized CSS pagination ensuring pixel-perfect letter/A4 page breaks',
+      'Print-optimized CSS pagination ensuring pixel-perfect A4/Letter breaks',
       'JSON resume schema importer/exporter for instant profile backups',
-      'Instant client-side PDF generation pipeline'
+      'Client-side print styling engine eliminating third-party rendering servers'
     ],
     technicalHighlights: [
       'Real-time reactive preview with zero render lag or layout shifting',
-      'Strict adherence to professional ATS-friendly typography and margins',
-      'Fully responsive dual-view interface adapting to mobile and desktop displays'
+      'Strict adherence to ATS-friendly typography, hierarchy, and margins',
+      'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
     ],
-    hardwareOrStack: 'JavaScript ESNext / HTML5 / CSS3 Print Engine / Vercel',
+    hardwareOrStack: 'TypeScript / HTML5 / CSS3 Print Engine / Vercel',
     liveUrl: 'https://resume-writer-sigma.vercel.app/'
   },
   flappy: {
     title: 'Flappy Bhai - SRM AP Edition',
     category: 'HTML5 Canvas & Physics',
     tagline: 'Custom campus-themed 60FPS canvas arcade game with global Firebase leaderboards',
-    description: 'Arcade game simulation featuring custom SRM AP campus graphics, interactive obstacles, and real-time Firebase global leaderboard.',
+    description: 'Arcade game simulation featuring custom SRM AP campus graphics, interactive obstacles, deterministic collision physics, and real-time Firebase global leaderboard synchronization.',
     architecture: 'Optimized requestAnimationFrame 60FPS 2D canvas game loop with deterministic collision detection and cloud leaderboard sync.',
     keyModules: [
       'Delta-time normalized physics loop with velocity and gravity dampening',
@@ -128,9 +128,11 @@ const projectSpecs = {
   }
 };
 
-// PROJECT MODAL CONTROLLER
+// 2. ACCESSIBLE SPECIFICATION MODAL CONTROLLER
 (function initProjectModal() {
   const backdrop = document.getElementById('project-story-backdrop');
+  if (!backdrop) return;
+
   const closeBtn = document.getElementById('modal-close-btn');
   const closeBtnBottom = document.getElementById('modal-close-btn-bottom');
   const modalCategory = document.getElementById('modal-category');
@@ -143,22 +145,25 @@ const projectSpecs = {
   const modalStack = document.getElementById('modal-stack');
   const modalLiveLink = document.getElementById('modal-live-link');
 
-  if (!backdrop) return;
+  let lastActiveElement = null;
 
-  function openSpec(projectId) {
-    const data = projectSpecs[projectId];
-    if (!data) return;
+  function openSpec(projectId, triggerBtn) {
+    const spec = projectSpecs[projectId];
+    if (!spec) return;
 
-    if (modalCategory) modalCategory.textContent = data.category;
-    if (modalTitle) modalTitle.textContent = data.title;
-    if (modalTagline) modalTagline.textContent = data.tagline;
-    if (modalDesc) modalDesc.textContent = data.description;
-    if (modalArch) modalArch.textContent = data.architecture;
+    lastActiveElement = triggerBtn || document.activeElement;
+
+    if (modalCategory) modalCategory.textContent = spec.category;
+    if (modalTitle) modalTitle.textContent = spec.title;
+    if (modalTagline) modalTagline.textContent = spec.tagline;
+    if (modalDesc) modalDesc.textContent = spec.description;
+    if (modalArch) modalArch.textContent = spec.architecture;
 
     if (modalModules) {
       modalModules.innerHTML = '';
-      data.keyModules.forEach(mod => {
+      spec.keyModules.forEach(mod => {
         const li = document.createElement('li');
+        li.className = 'modal-list-item';
         li.textContent = mod;
         modalModules.appendChild(li);
       });
@@ -166,35 +171,48 @@ const projectSpecs = {
 
     if (modalHighlights) {
       modalHighlights.innerHTML = '';
-      data.technicalHighlights.forEach(hl => {
+      spec.technicalHighlights.forEach(hl => {
         const li = document.createElement('li');
+        li.className = 'modal-list-item';
         li.textContent = hl;
         modalHighlights.appendChild(li);
       });
     }
 
-    if (modalStack) modalStack.textContent = data.hardwareOrStack;
+    if (modalStack) modalStack.textContent = spec.hardwareOrStack;
 
     if (modalLiveLink) {
-      modalLiveLink.href = data.liveUrl;
-      const isRepo = data.liveUrl.includes('github.com');
-      modalLiveLink.textContent = isRepo ? 'VIEW REPOSITORY ↗' : 'LAUNCH LIVE APP ↗';
+      modalLiveLink.href = spec.liveUrl;
+      const isGitHub = spec.liveUrl.includes('github.com');
+      modalLiveLink.textContent = isGitHub ? 'View on GitHub' : 'View Live Deployment';
     }
 
     backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    // Set focus into modal for keyboard navigation
+    if (closeBtn) {
+      setTimeout(() => closeBtn.focus(), 60);
+    }
   }
 
   function closeSpec() {
     backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
   }
 
+  // Bind write-up buttons
   document.querySelectorAll('.btn-open-spec').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const id = btn.dataset.project;
-      openSpec(id);
+      openSpec(id, btn);
     });
   });
 
@@ -205,50 +223,41 @@ const projectSpecs = {
     if (e.target === backdrop) closeSpec();
   });
 
+  // Keyboard navigation & Focus trap inside modal
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+    if (!backdrop.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
       closeSpec();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableEls = backdrop.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusableEls.length) return;
+
+      const firstEl = focusableEls[0];
+      const lastEl = focusableEls[focusableEls.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
     }
   });
 })();
 
-// STAT COUNTER ANIMATION (SUPPORTS DECIMALS LIKE 8.2)
-(function initStatCounters() {
-  const statElements = document.querySelectorAll('.stat-num[data-target]');
-  if (!statElements.length) return;
-
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        const target = parseFloat(el.dataset.target);
-        const isDecimal = el.dataset.decimals === '1';
-        let start = null;
-        const dur = 1200;
-
-        function step(ts) {
-          if (!start) start = ts;
-          const prog = Math.min((ts - start) / dur, 1);
-          const ease = 1 - Math.pow(1 - prog, 3);
-          const currentVal = target * ease;
-          el.textContent = isDecimal ? currentVal.toFixed(1) : Math.round(currentVal);
-          if (prog < 1) {
-            requestAnimationFrame(step);
-          } else {
-            el.textContent = isDecimal ? target.toFixed(1) : target;
-          }
-        }
-
-        requestAnimationFrame(step);
-        statObs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  statElements.forEach(el => statObs.observe(el));
-})();
-
-// NAVIGATION TOGGLE
+// 3. NAVIGATION CONTROLLER (Mobile Drawer & Accessible ARIA)
 (function initNavigation() {
   const toggleBtn = document.getElementById('nav-toggle-btn');
   const drawer = document.getElementById('nav-mobile-drawer');
@@ -257,7 +266,8 @@ const projectSpecs = {
     toggleBtn.addEventListener('click', () => {
       const isOpen = drawer.classList.toggle('open');
       toggleBtn.textContent = isOpen ? 'Close' : 'Menu';
-      toggleBtn.setAttribute('aria-expanded', isOpen);
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     });
 
     drawer.querySelectorAll('a').forEach(link => {
@@ -265,18 +275,19 @@ const projectSpecs = {
         drawer.classList.remove('open');
         toggleBtn.textContent = 'Menu';
         toggleBtn.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
       });
     });
   }
 })();
 
-// SMOOTH SCROLL FOR ANCHOR LINKS
+// 4. SMOOTH SCROLL WITH HEADER OFFSET
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href');
     if (!targetId || targetId === '#') return;
 
-    if (targetId === '#top') {
+    if (targetId === '#hero' || targetId === '#top') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -285,18 +296,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const targetEl = document.querySelector(targetId);
     if (targetEl) {
       e.preventDefault();
-      const nav = document.querySelector('.portfolio-navigation');
-      const navHeight = nav ? nav.offsetHeight : 72;
+      const nav = document.querySelector('.site-header');
+      const navHeight = nav ? nav.offsetHeight : 64;
       const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: Math.max(0, targetPos - navHeight),
+        top: Math.max(0, targetPos - navHeight - 16),
         behavior: 'smooth'
       });
     }
   });
 });
 
-// EMAIL COPY BUTTON
+// 5. ACCESSIBLE EMAIL COPY
 (function initEmailCopy() {
   const copyBtn = document.getElementById('copy-email-btn');
   const hint = document.getElementById('copy-email-hint');
@@ -307,68 +318,288 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   copyBtn.addEventListener('click', () => {
     const email = 'sgmshah07@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
-      if (hint) hint.textContent = 'Copied to clipboard!';
+      if (hint) hint.textContent = 'Copied';
       if (toast) toast.classList.add('show');
 
       setTimeout(() => {
-        if (hint) hint.textContent = 'Copy Email';
+        if (hint) hint.textContent = 'Copy';
         if (toast) toast.classList.remove('show');
       }, 2500);
     }).catch(err => {
-      console.error('Clipboard copy failed', err);
+      console.warn('Clipboard write error:', err);
     });
   });
 })();
 
-// INTERACTIVE CONTACT FAN CARD (UIVERSE-INSPIRED)
-(function initContactFanCard() {
-  const fanCard = document.getElementById('contact-fan-card');
-  if (!fanCard) return;
-
-  fanCard.addEventListener('click', (e) => {
-    if (e.target.closest('.box')) return;
-    fanCard.classList.toggle('is-active');
-  });
-
-  fanCard.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      if (document.activeElement === fanCard) {
-        e.preventDefault();
-        fanCard.classList.toggle('is-active');
-      }
+// 6. VINYL RECORD MUSIC PLAYER CONTROLLER
+(function initVinylAudioPlayer() {
+  const tracks = [
+    {
+      name: 'Maula Mere Maula',
+      artist: 'Anwar (2007) · Roop Kumar Rathod',
+      src: 'assets/maula_mere_maula.mp3.mp3'
+    },
+    {
+      name: 'Mere Rashke Qamar',
+      artist: 'Nusrat Fateh Ali Khan · Qawwali Classical',
+      src: 'assets/mere_rashke_qamar.mp3.mp3'
+    },
+    {
+      name: 'Gehra Hua',
+      artist: 'Dhurandhar · Indie Acoustic',
+      src: 'assets/gehra_hua.mp3.mp3'
+    },
+    {
+      name: 'Aakhri Ishq',
+      artist: 'Dhurandhar 2 · Contemporary Indie',
+      src: 'assets/aakhri_ishq.mp3.mp3'
     }
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!fanCard.contains(e.target)) {
-      fanCard.classList.remove('is-active');
-    }
-  });
-})();
-
-// CARD SCROLL REVEAL ENTRANCE ANIMATION
-(function initCardScrollReveal() {
-  const cardSelectors = [
-    '.editorial-project',
-    '.about-editorial-card',
-    '.education-card-featured',
-    '.capability-row',
-    '.recognition-card'
   ];
 
-  const cards = document.querySelectorAll(cardSelectors.join(', '));
-  if (!cards.length) return;
+  let currentIndex = 0;
+  let isPlaying = false;
+  let isShuffle = false;
+  let isUserSeeking = false;
+  const audio = new Audio();
+  audio.preload = 'metadata';
 
-  cards.forEach(card => card.classList.add('card-revealing'));
+  // DOM references
+  const container = document.getElementById('vinyl-turntable-card');
+  const statusText = document.getElementById('console-status-text');
+  const sliderFill = document.getElementById('vinyl-slider-fill');
+  const titleEl = document.getElementById('vinyl-track-title');
+  const artistEl = document.getElementById('vinyl-track-artist');
+  const timeCurEl = document.getElementById('vinyl-time-current');
+  const timeTotEl = document.getElementById('vinyl-time-total');
+  const slider = document.getElementById('vinyl-slider');
+  const playBtn = document.getElementById('vinyl-play-btn');
+  const playIcon = document.getElementById('vinyl-icon-play');
+  const pauseIcon = document.getElementById('vinyl-icon-pause');
+  const prevBtn = document.getElementById('vinyl-prev-btn');
+  const nextBtn = document.getElementById('vinyl-next-btn');
+  const modeBtn = document.getElementById('vinyl-mode-btn');
+  const repeatIcon = document.getElementById('vinyl-icon-repeat');
+  const shuffleIcon = document.getElementById('vinyl-icon-shuffle');
+  const trackEls = document.querySelectorAll('.track[data-src]');
+
+  function formatTime(s) {
+    if (isNaN(s) || s < 0) return '0:00';
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function setTrack(idx, autoPlay = false) {
+    currentIndex = (idx + tracks.length) % tracks.length;
+    const track = tracks[currentIndex];
+
+    if (titleEl) titleEl.textContent = track.name;
+    if (artistEl) artistEl.textContent = track.artist;
+    if (slider) slider.value = 0;
+    if (sliderFill) sliderFill.style.width = '0%';
+    if (timeCurEl) timeCurEl.textContent = '0:00';
+    if (timeTotEl) timeTotEl.textContent = '0:00';
+
+    audio.src = track.src;
+    audio.load();
+
+    trackEls.forEach((el, i) => {
+      if (i === currentIndex) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+        const p = el.querySelector('.track-play');
+        if (p) p.textContent = '▶';
+        const fill = el.querySelector('.track-progress-fill');
+        if (fill) fill.style.width = '0%';
+        const t = el.querySelector('.track-time');
+        if (t) t.textContent = '0:00';
+      }
+    });
+
+    if (autoPlay) {
+      playAudio();
+    }
+  }
+
+  function playAudio() {
+    audio.play().then(() => {
+      isPlaying = true;
+      updatePlayUI();
+    }).catch(err => {
+      console.warn('Playback prevented by browser policy:', err);
+    });
+  }
+
+  function pauseAudio() {
+    audio.pause();
+    isPlaying = false;
+    updatePlayUI();
+  }
+
+  function togglePlay() {
+    if (isPlaying) {
+      pauseAudio();
+    } else {
+      playAudio();
+    }
+  }
+
+  function updatePlayUI() {
+    if (container) {
+      if (isPlaying) {
+        container.classList.add('is-playing');
+        container.classList.remove('is-paused');
+      } else {
+        container.classList.remove('is-playing');
+        container.classList.add('is-paused');
+      }
+    }
+
+    if (statusText) {
+      statusText.textContent = isPlaying ? 'PLAYING' : 'STANDBY';
+    }
+
+    if (playIcon && pauseIcon) {
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      }
+    }
+
+    const activeEl = trackEls[currentIndex];
+    if (activeEl) {
+      const p = activeEl.querySelector('.track-play');
+      if (p) p.textContent = isPlaying ? '⏸' : '▶';
+    }
+  }
+
+  function nextTrack() {
+    let nextIdx;
+    if (isShuffle) {
+      nextIdx = Math.floor(Math.random() * tracks.length);
+      if (nextIdx === currentIndex && tracks.length > 1) {
+        nextIdx = (currentIndex + 1) % tracks.length;
+      }
+    } else {
+      nextIdx = (currentIndex + 1) % tracks.length;
+    }
+    setTrack(nextIdx, true);
+  }
+
+  function prevTrack() {
+    if (audio.currentTime > 3) {
+      audio.currentTime = 0;
+      return;
+    }
+    const prevIdx = (currentIndex - 1 + tracks.length) % tracks.length;
+    setTrack(prevIdx, true);
+  }
+
+  // Audio lifecycle listeners
+  audio.addEventListener('loadedmetadata', () => {
+    if (timeTotEl) timeTotEl.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+    const cur = audio.currentTime;
+    const dur = audio.duration;
+    const pct = (cur / dur) * 100;
+
+    if (!isUserSeeking && slider) {
+      slider.value = pct;
+      if (sliderFill) sliderFill.style.width = pct + '%';
+    }
+    if (timeCurEl) timeCurEl.textContent = formatTime(cur);
+
+    const activeEl = trackEls[currentIndex];
+    if (activeEl) {
+      const fill = activeEl.querySelector('.track-progress-fill');
+      if (fill) fill.style.width = pct + '%';
+      const timeEl = activeEl.querySelector('.track-time');
+      if (timeEl) timeEl.textContent = formatTime(cur);
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    nextTrack();
+  });
+
+  // Slider interaction
+  if (slider) {
+    slider.addEventListener('input', () => {
+      isUserSeeking = true;
+      if (sliderFill) sliderFill.style.width = slider.value + '%';
+      if (audio.duration) {
+        const target = (slider.value / 100) * audio.duration;
+        if (timeCurEl) timeCurEl.textContent = formatTime(target);
+      }
+    });
+
+    slider.addEventListener('change', () => {
+      if (audio.duration) {
+        audio.currentTime = (slider.value / 100) * audio.duration;
+      }
+      isUserSeeking = false;
+    });
+  }
+
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (nextBtn) nextBtn.addEventListener('click', nextTrack);
+  if (prevBtn) prevBtn.addEventListener('click', prevTrack);
+
+  if (modeBtn) {
+    modeBtn.addEventListener('click', () => {
+      isShuffle = !isShuffle;
+      if (repeatIcon && shuffleIcon) {
+        if (isShuffle) {
+          repeatIcon.classList.add('hidden');
+          shuffleIcon.classList.remove('hidden');
+          modeBtn.title = 'Shuffle active';
+        } else {
+          repeatIcon.classList.remove('hidden');
+          shuffleIcon.classList.add('hidden');
+          modeBtn.title = 'Sequential loop active';
+        }
+      }
+    });
+  }
+
+  trackEls.forEach((el, index) => {
+    el.addEventListener('click', () => {
+      if (currentIndex === index && isPlaying) {
+        pauseAudio();
+      } else if (currentIndex === index && !isPlaying) {
+        playAudio();
+      } else {
+        setTrack(index, true);
+      }
+    });
+  });
+
+  // Initialize first track without autoplay
+  setTrack(0, false);
+})();
+
+// 7. SUBTLE EDITORIAL SECTION REVEALS (Respects prefers-reduced-motion)
+(function initSectionReveals() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const revealTargets = document.querySelectorAll('section, .work-case, .builds-ledger, .timeline-entry');
+  if (!revealTargets.length || !('IntersectionObserver' in window)) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('card-revealed');
+        entry.target.classList.add('reveal-in');
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-  cards.forEach(card => observer.observe(card));
+  revealTargets.forEach(el => observer.observe(el));
 })();
