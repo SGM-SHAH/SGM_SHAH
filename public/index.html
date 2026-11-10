@@ -126,29 +126,10 @@
           <!-- PROJECT 1: CampusX (Asymmetric 60/40 Split Layout) -->
           <article class="work-case work-case--split" id="case-campusx">
             <div class="work-case__visual">
-              <div class="visual-placeholder" aria-label="Project screenshot placeholder">
-                <div class="visual-placeholder__header">
-                  <span class="visual-tag">CampusX Architecture</span>
-                  <span class="visual-metric">FastAPI · Multi-LLM Fan-Out</span>
-                </div>
-                <div class="visual-placeholder__canvas">
-                  <div class="wireframe-diagram">
-                    <div class="diagram-node">Client Query</div>
-                    <div class="diagram-arrow">→</div>
-                    <div class="diagram-node diagram-node--accent">FastAPI Async Gateway</div>
-                    <div class="diagram-split">
-                      <div class="diagram-subnode">OpenAI</div>
-                      <div class="diagram-subnode">Anthropic</div>
-                      <div class="diagram-subnode">Open Weights</div>
-                    </div>
-                    <div class="diagram-arrow">→</div>
-                    <div class="diagram-node">Cosine Agreement Matrix</div>
-                  </div>
-                </div>
-                <div class="visual-placeholder__footer">
-                  <code>[TODO: screenshot or screen recording of CampusX live query agreement dashboard]</code>
-                </div>
-              </div>
+              <picture class="project-picture">
+                <source srcset="assets/campusx.webp" type="image/webp">
+                <img src="assets/campusx.webp" alt="CampusX Multi-LLM Consensus Architecture" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+              </picture>
             </div>
 
             <div class="work-case__content">
@@ -167,22 +148,16 @@
                   <p class="spec-text">Co-developed an asynchronous FastAPI gateway that fans out prompt RPCs simultaneously across multiple model providers, evaluates semantic agreement via cosine distance, and aggregates consensus responses.</p>
                 </div>
 
-                <div class="spec-row">
-                  <span class="spec-label">What I'd do differently</span>
-                  <p class="spec-text">I would replace client-side polling with persistent Server-Sent Events (SSE) to stream intermediate agreement scores token-by-token as individual provider streams complete.</p>
-                </div>
+                <!-- REWRITE IN MY OWN WORDS: I would replace client-side polling with persistent Server-Sent Events (SSE) to stream intermediate agreement scores token-by-token as individual provider streams complete. -->
               </div>
 
               <div class="case-facts">
                 <span class="case-fact">Competed at HackSRM 2026</span>
-                <span class="case-fact">Parallel async dispatch across diverse LLM APIs</span>
-                <span class="case-fact">Dynamic cosine similarity and token voting</span>
+                <span class="case-fact">Sub-second parallel dispatch reducing aggregate query wait times</span>
+                <span class="case-fact">Dynamic token agreement and cosine similarity consensus scoring</span>
               </div>
 
               <div class="case-links">
-                <a href="https://github.com/SGM-SHAH/CampusX" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  GitHub
-                </a>
                 <button type="button" class="link-btn btn-open-spec" data-project="campusx">
                   Write-up
                 </button>
@@ -208,22 +183,16 @@
                   <p class="spec-text">Built an interactive speech evaluation platform utilizing the Web Speech API to capture live audio cadence, route phonetic buffers into an LLM scoring pipeline, and persist session metrics to Firebase.</p>
                 </div>
 
-                <div class="spec-row">
-                  <span class="spec-label">What I'd do differently</span>
-                  <p class="spec-text">I would integrate a client-side WebAssembly phoneme classifier to execute phonetic analysis offline without depending on browser-specific speech synthesis engines.</p>
-                </div>
+                <!-- REWRITE IN MY OWN WORDS: I would integrate a client-side WebAssembly phoneme classifier to execute phonetic analysis offline without depending on browser-specific speech synthesis engines. -->
               </div>
 
               <div class="case-facts">
-                <span class="case-fact">Built for Hack The Winter 2026</span>
-                <span class="case-fact">Sub-250ms audio capture feedback loop</span>
+                <span class="case-fact">Built for Hack The Winter</span>
+                <span class="case-fact">Sub-second audio capture and real-time voice feedback loop</span>
                 <span class="case-fact">React 19, Web Speech API, and Firebase state sync</span>
               </div>
 
               <div class="case-links">
-                <a href="https://github.com/SGM-SHAH/VOCA-SpeechAI" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  GitHub
-                </a>
                 <button type="button" class="link-btn btn-open-spec" data-project="voca">
                   Write-up
                 </button>
@@ -231,68 +200,20 @@
             </div>
 
             <div class="work-case__visual">
-              <div class="visual-placeholder" aria-label="Project screenshot placeholder">
-                <div class="visual-placeholder__header">
-                  <span class="visual-tag">VOCA Speech Telemetry</span>
-                  <span class="visual-metric">Web Speech API · Sub-250ms</span>
-                </div>
-                <div class="visual-placeholder__canvas visual-placeholder__canvas--waveform">
-                  <div class="audio-waveform-graphic">
-                    <span style="height: 25%;"></span>
-                    <span style="height: 55%;"></span>
-                    <span style="height: 80%;"></span>
-                    <span style="height: 40%;"></span>
-                    <span style="height: 95%;"></span>
-                    <span style="height: 70%;"></span>
-                    <span style="height: 45%;"></span>
-                    <span style="height: 85%;"></span>
-                    <span style="height: 60%;"></span>
-                    <span style="height: 30%;"></span>
-                    <span style="height: 75%;"></span>
-                    <span style="height: 90%;"></span>
-                    <span style="height: 50%;"></span>
-                    <span style="height: 35%;"></span>
-                  </div>
-                  <div class="waveform-legend">Live Phoneme Alignment &amp; Accent Scorer</div>
-                </div>
-                <div class="visual-placeholder__footer">
-                  <code>[TODO: screenshot or screen recording of VOCA live pronunciation evaluation interface]</code>
-                </div>
-              </div>
+              <picture class="project-picture">
+                <source srcset="assets/voca.webp" type="image/webp">
+                <img src="assets/voca.webp" alt="VOCA Speech Evaluation and Pronunciation Analysis Interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+              </picture>
             </div>
           </article>
 
           <!-- PROJECT 3: IPL Mega Auction (Full-Width Architectural Blueprint Layout) -->
           <article class="work-case work-case--blueprint" id="case-ipl">
             <div class="work-case__visual">
-              <div class="visual-placeholder" aria-label="Project screenshot placeholder">
-                <div class="visual-placeholder__header">
-                  <span class="visual-tag">IPL Auction Live Room</span>
-                  <span class="visual-metric">Firebase Realtime DB · Atomic Transactions</span>
-                </div>
-                <div class="visual-placeholder__canvas visual-placeholder__canvas--ledger">
-                  <div class="auction-mock-grid">
-                    <div class="auction-mock-col">
-                      <div class="mock-cell mock-cell--title">Current Player</div>
-                      <div class="mock-cell">Base Price: ₹2.00 Cr</div>
-                      <div class="mock-cell mock-cell--highlight">Current Bid: ₹12.50 Cr (CSK)</div>
-                    </div>
-                    <div class="auction-mock-col">
-                      <div class="mock-cell mock-cell--title">Team Purse Status</div>
-                      <div class="mock-cell">CSK Remaining: ₹18.25 Cr</div>
-                      <div class="mock-cell">MI Remaining: ₹22.00 Cr</div>
-                    </div>
-                    <div class="auction-mock-col">
-                      <div class="mock-cell mock-cell--title">Lock Guard</div>
-                      <div class="mock-cell">Atomic Transaction: Active</div>
-                      <div class="mock-cell">Latency: &lt;50ms</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="visual-placeholder__footer">
-                  <code>[TODO: screenshot or screen recording of IPL Mega Auction multiplayer bidding interface]</code>
-                </div>
-              </div>
+              <picture class="project-picture">
+                <source srcset="assets/ipl-auction.webp" type="image/webp">
+                <img src="assets/ipl-auction.webp" alt="IPL Mega Auction Live Multiplayer Bidding Room Interface" width="1200" height="675" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+              </picture>
             </div>
 
             <div class="work-case__content">
@@ -323,16 +244,13 @@
                   <p class="spec-text">Designed an event-driven bidding engine powered by Firebase Realtime Database using atomic transaction locks to validate purse balance constraints and broadcast updates under 50ms.</p>
                 </div>
 
-                <div class="spec-col">
-                  <span class="spec-label">What I'd do differently</span>
-                  <p class="spec-text">I would migrate stateful auction synchronization to an Elixir/Phoenix channel cluster or Redis Pub/Sub backend to support thousands of concurrent spectator connections per room.</p>
-                </div>
+                <!-- REWRITE IN MY OWN WORDS: I would migrate stateful auction synchronization to an Elixir/Phoenix channel cluster or Redis Pub/Sub backend to support thousands of concurrent spectator connections per room. -->
               </div>
 
               <div class="case-facts">
                 <span class="case-fact">Deployed live on Firebase Hosting</span>
                 <span class="case-fact">Sub-50ms synchronized state across connected clients</span>
-                <span class="case-fact">Zero purse race conditions via atomic transaction guards</span>
+                <span class="case-fact">Strict transaction guards preventing purse overflows and duplicate concurrent bids</span>
               </div>
             </div>
           </article>
@@ -362,7 +280,6 @@
                 <code>JavaScript · Local NLP · LocalStorage</code>
               </div>
               <div class="build-links" role="cell">
-                <a href="https://github.com/SGM-SHAH/SafeEcho" target="_blank" rel="noopener noreferrer" class="inline-link">GitHub</a>
                 <button type="button" class="inline-link btn-open-spec" data-project="safeecho">Write-up</button>
               </div>
             </div>
@@ -375,7 +292,7 @@
                 ATS-optimized resume generator with real-time reactive DOM preview and pixel-perfect print CSS pagination.
               </div>
               <div class="build-stack" role="cell">
-                <code>TypeScript · Print Engine · Vercel</code>
+                <code>JavaScript · HTML5 / CSS3 · Print Engine · Vercel</code>
               </div>
               <div class="build-links" role="cell">
                 <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-link">Live</a>
@@ -394,7 +311,6 @@
                 <code>HTML5 Canvas · 60 FPS Loop · Firebase</code>
               </div>
               <div class="build-links" role="cell">
-                <a href="https://sgm-shah.github.io/Flappy-Bhai/" target="_blank" rel="noopener noreferrer" class="inline-link">Live</a>
                 <button type="button" class="inline-link btn-open-spec" data-project="flappy">Write-up</button>
               </div>
             </div>
@@ -415,28 +331,8 @@
         <div class="about-content">
           <div class="about-prose">
             <p>
-              I am an undergraduate in Computer Science &amp; Engineering with a specialization in Artificial Intelligence and Machine Learning at SRM University AP (2025–2029, current CGPA: 8.2).
+              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, current CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; and an IPL Mega Auction simulator with atomic bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
             </p>
-            <p>
-              My engineering focus is centered on applied intelligence and distributed web architectures: building asynchronous multi-agent inference pipelines, designing low-latency API gateways, and implementing reliable real-time state synchronization. I prefer shipping tools that resolve real friction rather than wrapping APIs in speculative user interfaces.
-            </p>
-            <p>
-              Outside code, my approach to problem-solving is shaped by four long-standing disciplines:
-            </p>
-            <ul class="about-interests">
-              <li>
-                <strong>Cinema:</strong> Studying scene pacing, editing rhythm, and visual economy translates directly to how I structure user experiences and interface transitions.
-              </li>
-              <li>
-                <strong>Cricket:</strong> Playing competitively reinforces situational awareness, team communication, and the discipline to execute fundamental mechanics under time pressure.
-              </li>
-              <li>
-                <strong>Competitive debate:</strong> Testing propositions against first principles trains me to defend technical architectural tradeoffs with concrete evidence rather than dogma.
-              </li>
-              <li>
-                <strong>Acoustic music:</strong> Listening to analog, unadorned arrangements provides a quiet backdrop for deep technical focus and iterative refactoring.
-              </li>
-            </ul>
           </div>
 
           <aside class="about-meta">
@@ -444,7 +340,7 @@
               <h3 class="meta-card-title">Education</h3>
               <p class="meta-card-degree">B.Tech in Computer Science &amp; Engineering (AI/ML)</p>
               <p class="meta-card-institution">SRM University AP, Andhra Pradesh</p>
-              <p class="meta-card-period">2025 – 2029 [Expected]</p>
+              <p class="meta-card-period">2025 – 2029</p>
               <p class="meta-card-score">First-year CGPA: 8.2 / 10.0</p>
             </div>
           </aside>
@@ -516,7 +412,7 @@
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-body">
               <div class="timeline-badge">Hackathon Highlight</div>
-              <h3 class="timeline-title">Hack The Winter 2026</h3>
+              <h3 class="timeline-title">Hack The Winter</h3>
               <p class="timeline-issuer">Graphic Era Hill University · Hackathon Community</p>
               <p class="timeline-desc">
                 Competed as core developer of <strong>VOCA</strong>, an interactive AI speech evaluation companion delivering live pronunciation cadence analysis.
@@ -649,13 +545,13 @@
 
               <!-- Time & Scrub Slider -->
               <div class="console-scrub">
-                <span class="time-readout" id="vinyl-time-current">0:00</span>
+                <span class="time-readout" id="vinyl-time-current">–:––</span>
                 <div class="scrub-slider-wrap">
                   <input type="range" class="scrub-slider" id="vinyl-slider" min="0" max="100" value="0"
                     aria-label="Audio playback scrub">
                   <div class="scrub-fill" id="vinyl-slider-fill"></div>
                 </div>
-                <span class="time-readout" id="vinyl-time-total">0:00</span>
+                <span class="time-readout" id="vinyl-time-total">–:––</span>
               </div>
 
               <!-- Control Buttons -->
@@ -715,7 +611,7 @@
                 <span class="track-sub">Anwar (2007) · Roop Kumar Rathod</span>
               </div>
               <div class="track-time-wrap">
-                <span class="track-time">0:00</span>
+                <span class="track-time">–:––</span>
                 <div class="track-progress"><div class="track-progress-fill"></div></div>
               </div>
             </div>
@@ -728,7 +624,7 @@
                 <span class="track-sub">Nusrat Fateh Ali Khan · Qawwali Classical</span>
               </div>
               <div class="track-time-wrap">
-                <span class="track-time">0:00</span>
+                <span class="track-time">–:––</span>
                 <div class="track-progress"><div class="track-progress-fill"></div></div>
               </div>
             </div>
@@ -741,7 +637,7 @@
                 <span class="track-sub">Dhurandhar · Indie Acoustic</span>
               </div>
               <div class="track-time-wrap">
-                <span class="track-time">0:00</span>
+                <span class="track-time">–:––</span>
                 <div class="track-progress"><div class="track-progress-fill"></div></div>
               </div>
             </div>
@@ -754,7 +650,7 @@
                 <span class="track-sub">Dhurandhar 2 · Contemporary Indie</span>
               </div>
               <div class="track-time-wrap">
-                <span class="track-time">0:00</span>
+                <span class="track-time">–:––</span>
                 <div class="track-progress"><div class="track-progress-fill"></div></div>
               </div>
             </div>
@@ -825,10 +721,10 @@
   <footer class="site-footer" role="contentinfo">
     <div class="site-container site-footer__inner">
       <p class="site-footer__text">
-        © 2026 Shaik Ghouse Mohiddin Shah. Designed with editorial typography and built with semantic HTML &amp; CSS.
+        © 2026 Shaik Ghouse Mohiddin Shah
       </p>
       <a href="#hero" class="site-footer__top-link">
-        Back to top ↑
+        Back to top
       </a>
     </div>
   </footer>
@@ -876,8 +772,8 @@
       </div>
 
       <footer class="modal-footer">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link">
-          Source / Live
+        <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link" style="display: none;">
+          View Live Deployment
         </a>
         <button type="button" class="btn btn-secondary" id="modal-close-btn-bottom">
           Close

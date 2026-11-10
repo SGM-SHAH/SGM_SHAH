@@ -279,9 +279,8 @@ input:focus-visible {
    2. HERO SECTION
 =================================================== */
 .hero-section {
-  padding: clamp(3.5rem, 8vh, 6rem) 0 clamp(4rem, 9vh, 7rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
   border-bottom: 1px solid var(--border-subtle);
-  min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;
 }
@@ -377,7 +376,7 @@ input:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
   border-top: 1px solid var(--border-subtle);
   padding-top: 3.5rem;
 }
@@ -488,7 +487,7 @@ input:focus-visible {
 
 @media (min-width: 768px) {
   .case-spec-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -564,16 +563,32 @@ input:focus-visible {
   width: 100%;
 }
 
-.visual-placeholder {
+.project-picture {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  display: block;
+}
+
+.work-case__visual.is-hidden {
+  display: none !important;
+}
+
+.work-case--split.work-case--no-visual,
+.work-case--inverted.work-case--no-visual,
+.work-case--blueprint.work-case--no-visual {
+  grid-template-columns: 1fr !important;
+}
+
+.work-case--no-visual .work-case__content {
+  max-width: 860px;
 }
 
 .visual-placeholder__header {
@@ -1115,7 +1130,8 @@ input:focus-visible {
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  max-width: 820px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .turntable-console__inner {
@@ -1400,12 +1416,19 @@ input:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: 820px;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 640px) {
   .contact-methods {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-methods {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -1449,15 +1472,6 @@ input:focus-visible {
 .contact-text {
   font-size: 0.95rem;
   color: var(--text-secondary);
-}
-
-.todo-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent);
-  background-color: var(--accent-muted);
-  padding: 2px 6px;
-  border-radius: 3px;
 }
 
 /* ===================================================

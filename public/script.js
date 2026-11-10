@@ -24,13 +24,13 @@ const projectSpecs = {
       'Custom heuristic scoring algorithm weighting model domain expertise'
     ],
     hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
-    liveUrl: 'https://github.com/SGM-SHAH/CampusX'
+    liveUrl: null
   },
   voca: {
     title: 'VOCA',
     category: 'Speech AI & NLP',
     tagline: 'Interactive real-time speech evaluation and conversational language companion',
-    description: 'Interactive speech evaluation platform built for Hack The Winter 2026. Features live pronunciation analysis, accent cadence detection, and conversational scenarios.',
+    description: 'Interactive speech evaluation platform built for Hack The Winter. Features live pronunciation analysis, accent cadence detection, and conversational scenarios.',
     architecture: 'Client-side Web Speech API capture feeding low-latency streaming audio buffers into LLM conversational evaluation pipelines with Firebase state persistence.',
     keyModules: [
       'Live acoustic feedback loop capturing phonetic cadence and pronunciation',
@@ -39,12 +39,12 @@ const projectSpecs = {
       'Progress tracker synchronizing session metrics to Firebase'
     ],
     technicalHighlights: [
-      'Sub-250ms voice recognition and audio waveform telemetry loop',
+      'Sub-second audio capture and real-time voice recognition telemetry loop',
       'Dynamic vocabulary difficulty scaling based on user response fluency',
       'Resilient offline session caching with automatic cloud synchronization'
     ],
     hardwareOrStack: 'React 19 / Web Speech API / LLM Integration / Firebase / Tailwind CSS',
-    liveUrl: 'https://github.com/SGM-SHAH/VOCA-SpeechAI'
+    liveUrl: null
   },
   ipl: {
     title: 'IPL Mega Auction Platform',
@@ -60,7 +60,7 @@ const projectSpecs = {
     ],
     technicalHighlights: [
       'Sub-50ms synchronization across concurrent bidding participants',
-      'Strict transaction guards preventing purse overshoots or duplicate bids',
+      'Strict transaction guards preventing purse overflows and duplicate concurrent bids',
       'Production deployment on Firebase Hosting with instantaneous initial load'
     ],
     hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
@@ -84,7 +84,7 @@ const projectSpecs = {
       'Lightweight client bundle ensuring instant accessibility on any device'
     ],
     hardwareOrStack: 'JavaScript ESNext / Sentiment NLP / HTML5 / CSS3 / LocalStorage Security',
-    liveUrl: 'https://github.com/SGM-SHAH/SafeEcho'
+    liveUrl: null
   },
   resume: {
     title: 'Dynamic Resume Writer',
@@ -103,7 +103,7 @@ const projectSpecs = {
       'Strict adherence to ATS-friendly typography, hierarchy, and margins',
       'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
     ],
-    hardwareOrStack: 'TypeScript / HTML5 / CSS3 Print Engine / Vercel',
+    hardwareOrStack: 'JavaScript ESNext / HTML5 / CSS3 Print Engine / Vercel',
     liveUrl: 'https://resume-writer-sigma.vercel.app/'
   },
   flappy: {
@@ -124,7 +124,7 @@ const projectSpecs = {
       'Bespoke campus-inspired pixel art and responsive touch controls'
     ],
     hardwareOrStack: 'HTML5 Canvas / Vanilla JavaScript / Firebase Realtime DB',
-    liveUrl: 'https://sgm-shah.github.io/Flappy-Bhai/'
+    liveUrl: null
   }
 };
 
@@ -182,9 +182,13 @@ const projectSpecs = {
     if (modalStack) modalStack.textContent = spec.hardwareOrStack;
 
     if (modalLiveLink) {
-      modalLiveLink.href = spec.liveUrl;
-      const isGitHub = spec.liveUrl.includes('github.com');
-      modalLiveLink.textContent = isGitHub ? 'View on GitHub' : 'View Live Deployment';
+      if (spec.liveUrl) {
+        modalLiveLink.style.display = 'inline-flex';
+        modalLiveLink.href = spec.liveUrl;
+        modalLiveLink.textContent = 'View Live Deployment';
+      } else {
+        modalLiveLink.style.display = 'none';
+      }
     }
 
     backdrop.classList.add('open');
@@ -253,6 +257,23 @@ const projectSpecs = {
           firstEl.focus();
         }
       }
+    }
+  });
+})();
+
+// 2b. CONDITIONAL PROJECT VISUALS HANDLER
+(function initProjectVisuals() {
+  document.querySelectorAll('.project-img').forEach(img => {
+    function handleMissing() {
+      const visual = img.closest('.work-case__visual');
+      const workCase = img.closest('.work-case');
+      if (visual) visual.classList.add('is-hidden');
+      if (workCase) workCase.classList.add('work-case--no-visual');
+    }
+
+    img.addEventListener('error', handleMissing);
+    if (img.complete && img.naturalWidth === 0) {
+      handleMissing();
     }
   });
 })();
@@ -383,7 +404,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const trackEls = document.querySelectorAll('.track[data-src]');
 
   function formatTime(s) {
-    if (isNaN(s) || s < 0) return '0:00';
+    if (isNaN(s) || s <= 0 || !isFinite(s) || s === null) return '–:––';
     const m = Math.floor(s / 60);
     const sec = Math.floor(s % 60);
     return m + ':' + (sec < 10 ? '0' : '') + sec;
@@ -398,7 +419,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (slider) slider.value = 0;
     if (sliderFill) sliderFill.style.width = '0%';
     if (timeCurEl) timeCurEl.textContent = '0:00';
-    if (timeTotEl) timeTotEl.textContent = '0:00';
+    if (timeTotEl) timeTotEl.textContent = '–:––';
 
     audio.src = track.src;
     audio.load();
@@ -412,8 +433,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (p) p.textContent = '▶';
         const fill = el.querySelector('.track-progress-fill');
         if (fill) fill.style.width = '0%';
-        const t = el.querySelector('.track-time');
-        if (t) t.textContent = '0:00';
       }
     });
 
@@ -502,6 +521,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   // Audio lifecycle listeners
   audio.addEventListener('loadedmetadata', () => {
     if (timeTotEl) timeTotEl.textContent = formatTime(audio.duration);
+    const activeEl = trackEls[currentIndex];
+    if (activeEl) {
+      const timeEl = activeEl.querySelector('.track-time');
+      if (timeEl) timeEl.textContent = formatTime(audio.duration);
+    }
+  });
+
+  // Preload track durations via metadata
+  tracks.forEach((track, i) => {
+    const tempAudio = new Audio();
+    tempAudio.preload = 'metadata';
+    tempAudio.src = track.src;
+    tempAudio.addEventListener('loadedmetadata', () => {
+      const el = trackEls[i];
+      if (el) {
+        const timeEl = el.querySelector('.track-time');
+        if (timeEl && (timeEl.textContent === '–:––' || timeEl.textContent === '0:00')) {
+          timeEl.textContent = formatTime(tempAudio.duration);
+        }
+      }
+    });
   });
 
   audio.addEventListener('timeupdate', () => {
