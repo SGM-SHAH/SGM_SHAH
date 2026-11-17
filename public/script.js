@@ -340,3 +340,72 @@ const projectSpecs = {
     }
   });
 })();
+
+// 5. SIGNATURE MOMENT: LIVE IPL AUCTION SIMULATION TICKER
+(function initIplAuctionTicker() {
+  const highBidEl = document.getElementById('ipl-high-bid');
+  const highTeamEl = document.getElementById('ipl-high-team');
+  const teamPurseEl = document.getElementById('ipl-team-purse');
+  const logEl = document.getElementById('ipl-bid-log');
+  const userBidBtn = document.getElementById('ipl-user-bid-btn');
+  const toggleBtn = document.getElementById('ipl-ticker-toggle-btn');
+
+  if (!highBidEl || !userBidBtn) return;
+
+  const franchises = [
+    { name: 'Mumbai Indians', initialPurse: 120.0 },
+    { name: 'Chennai Super Kings', initialPurse: 120.0 },
+    { name: 'Royal Challengers Bengaluru', initialPurse: 120.0 },
+    { name: 'Kolkata Knight Riders', initialPurse: 120.0 }
+  ];
+
+  let currentBidCr = 18.50;
+  let currentLeader = 'Mumbai Indians';
+  let isPaused = false;
+  let tickerTimer = null;
+
+  // Respect prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    isPaused = true;
+    if (toggleBtn) toggleBtn.textContent = 'Resume';
+  }
+
+  function updateDisplay(team, bid, message) {
+    currentBidCr = bid;
+    currentLeader = team;
+    highBidEl.textContent = `₹${bid.toFixed(2)} Cr`;
+    highTeamEl.textContent = team;
+    const remainingPurse = Math.max(0, 120.0 - bid);
+    teamPurseEl.textContent = `₹${remainingPurse.toFixed(2)} Cr`;
+    if (logEl) {
+      logEl.textContent = message || `Live: ${team} holds high bid at ₹${bid.toFixed(2)} Cr`;
+    }
+  }
+
+  function simulateNextBid() {
+    if (isPaused) return;
+    if (currentBidCr >= 25.0) {
+      currentBidCr = 18.0;
+    }
+    const nextBid = +(currentBidCr + 0.50).toFixed(2);
+    const otherTeams = franchises.filter(f => f.name !== currentLeader);
+    const chosen = otherTeams[Math.floor(Math.random() * otherTeams.length)].name;
+    updateDisplay(chosen, nextBid, `Live: ${chosen} raises bid to ₹${nextBid.toFixed(2)} Cr · Purse valid`);
+  }
+
+  userBidBtn.addEventListener('click', () => {
+    const nextBid = +(currentBidCr + 0.50).toFixed(2);
+    updateDisplay('Your Franchise (Bidder)', nextBid, `You placed bid of ₹${nextBid.toFixed(2)} Cr · Transaction verified`);
+  });
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      isPaused = !isPaused;
+      toggleBtn.textContent = isPaused ? 'Resume' : 'Pause';
+    });
+  }
+
+  // Auto-tick every 4.5 seconds if motion is enabled
+  tickerTimer = setInterval(simulateNextBid, 4500);
+})();

@@ -23,20 +23,20 @@
   
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-prominent: rgba(255, 255, 255, 0.16);
-  --border-active: #fbbf24;
+  --border-active: #fb923c;
 
   --text-primary: #f4f4f5;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
 
-  --accent: #fbbf24;
-  --accent-contrast: #18181b;
-  --accent-dim: rgba(251, 191, 36, 0.12);
-  --accent-border: rgba(251, 191, 36, 0.35);
+  --accent: #fb923c;
+  --accent-contrast: #0e1015;
+  --accent-dim: rgba(251, 146, 60, 0.12);
+  --accent-border: rgba(251, 146, 60, 0.35);
 
-  --badge-flagship-bg: rgba(251, 191, 36, 0.15);
-  --badge-flagship-text: #fbbf24;
-  --badge-flagship-border: rgba(251, 191, 36, 0.4);
+  --badge-flagship-bg: rgba(251, 146, 60, 0.15);
+  --badge-flagship-text: #fb923c;
+  --badge-flagship-border: rgba(251, 146, 60, 0.4);
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
@@ -52,20 +52,20 @@
 
   --border-subtle: rgba(24, 24, 27, 0.1);
   --border-prominent: rgba(24, 24, 27, 0.2);
-  --border-active: #1e3a8a;
+  --border-active: #c2410c;
 
   --text-primary: #18181b;
   --text-secondary: #52525b;
   --text-muted: #71717a;
 
-  --accent: #1e3a8a;
+  --accent: #c2410c;
   --accent-contrast: #ffffff;
-  --accent-dim: rgba(30, 58, 138, 0.08);
-  --accent-border: rgba(30, 58, 138, 0.3);
+  --accent-dim: rgba(194, 65, 12, 0.08);
+  --accent-border: rgba(194, 65, 12, 0.3);
 
-  --badge-flagship-bg: rgba(30, 58, 138, 0.1);
-  --badge-flagship-text: #1e3a8a;
-  --badge-flagship-border: rgba(30, 58, 138, 0.3);
+  --badge-flagship-bg: rgba(194, 65, 12, 0.1);
+  --badge-flagship-text: #c2410c;
+  --badge-flagship-border: rgba(194, 65, 12, 0.3);
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -1474,4 +1474,155 @@ button {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   14. SIGNATURE INTERACTION: IPL LIVE BIDDING ROOM WIDGET
+   ========================================================================== */
+.live-bidding-widget {
+  margin-top: 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease;
+}
+
+.live-bidding-widget:hover {
+  border-color: var(--accent-border);
+}
+
+.ticker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+}
+
+.ticker-player {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ticker-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.player-label {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.player-label strong {
+  color: var(--accent);
+}
+
+.ticker-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ticker-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  transition: all 0.15s ease;
+}
+
+.ticker-btn--bid {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border: 1px solid var(--accent);
+}
+
+.ticker-btn--bid:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ticker-btn--bid:active {
+  transform: translateY(0);
+}
+
+.ticker-btn--toggle {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.ticker-btn--toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-prominent);
+}
+
+.ticker-stream {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .ticker-stream {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.stream-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-val--team {
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.stream-feed {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
