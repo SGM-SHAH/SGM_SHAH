@@ -1,11 +1,53 @@
 /**
- * SGM Portfolio Script Engine
- * High-performance editorial script controller
- * Features: Accessible modal specs, keyboard navigation
+ * SGM Editorial Portfolio Script Engine
+ * High-performance, accessible script controller
+ * Features: Dual-theme switcher (localStorage + system sync), accessible modal specs, keyboard navigation
  */
 
 // 1. PROJECT SPECIFICATIONS DATA
 const projectSpecs = {
+  rootmap: {
+    title: 'RootMap',
+    category: 'Geospatial & Civic Data',
+    tagline: 'Interactive political and administrative atlas of India with 786-district directory',
+    description: 'A responsive geospatial and administrative explorer of the Republic of India. Features complete profiles for all 28 States and 8 Union Territories, cabinet rosters, 786 administrative districts, and constitutional Seventh Schedule context.',
+    architecture: 'Client-side SPA built with React 19, Three.js, and D3 Geo rendering interactive state boundaries, reactive demographic filtering, and instant search across administrative divisions.',
+    keyModules: [
+      'Geospatial boundary visualizer with interactive state and district geometry',
+      'Executive cabinet profiles detailing Chief Ministers, Governors, and portfolios',
+      'Complete 786-district directory with administrative headquarters and regional highlights',
+      'Seventh Schedule constitutional guide detailing Union, State, and Concurrent distribution'
+    ],
+    technicalHighlights: [
+      'Production deployment on Firebase Hosting with fast initial asset delivery',
+      'Optimized client-side spatial datasets supporting instant multi-attribute search',
+      'Responsive multi-modal interface with desktop dual-pane and mobile navigation'
+    ],
+    hardwareOrStack: 'React 19 / Three.js / D3 Geo / Tailwind CSS / Vite / Firebase Hosting',
+    codeUrl: 'https://github.com/SGM-SHAH/ROOTMAP',
+    liveUrl: 'https://rootmap-app.web.app'
+  },
+  ipl: {
+    title: 'IPL Mega Auction Platform',
+    category: 'Real-Time Distributed DB',
+    tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
+    description: 'A real-time IPL Mega Auction platform that simulates competitive franchise bidding. Features team budget constraints, live team purse tracking, and real-time state sync across all participants.',
+    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with transaction validation on player bids and purse limits.',
+    keyModules: [
+      'Real-time bidding engine with multi-user concurrency control',
+      'Live team purse and squad composition constraint validator',
+      'Real-time bid broadcast pipeline reflecting updates across connected clients',
+      'Complete player catalogue with filtering by role, nationality, and base price'
+    ],
+    technicalHighlights: [
+      'Real-time synchronization across concurrent bidding participants',
+      'Strict transaction guards preventing purse overflows and duplicate concurrent bids',
+      'Production deployment on Firebase Hosting with instantaneous initial load'
+    ],
+    hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
+    codeUrl: 'https://github.com/SGM-SHAH/IPL-AUCTION',
+    liveUrl: 'https://ipl-auction-a81df.web.app'
+  },
   campusx: {
     title: 'CampusX',
     category: 'AI / Multi-LLM Consensus',
@@ -19,11 +61,12 @@ const projectSpecs = {
       'Telemetry logging inference latency, token usage, and cost economics'
     ],
     technicalHighlights: [
-      'Low-latency parallel dispatch reducing aggregate query wait times',
+      'Parallel dispatch across multiple model providers reducing aggregate wait times',
       'Pydantic schema validation ensuring clean structured prompt returns',
       'Custom heuristic scoring algorithm weighting model domain expertise'
     ],
     hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
+    codeUrl: 'https://github.com/SGM-SHAH/CampusX',
     liveUrl: null
   },
   voca: {
@@ -44,47 +87,29 @@ const projectSpecs = {
       'Resilient offline session caching with automatic cloud synchronization'
     ],
     hardwareOrStack: 'React 19 / Web Speech API / LLM Integration / Firebase / Tailwind CSS',
+    codeUrl: 'https://github.com/SGM-SHAH/VOCA-SpeechAI',
     liveUrl: null
   },
-  ipl: {
-    title: 'IPL Mega Auction Platform',
-    category: 'Real-Time Distributed DB',
-    tagline: 'Real-time multiplayer simulated cricket auction with live bidding mechanics',
-    description: 'A real-time IPL Mega Auction platform that simulates competitive franchise bidding. Features team budget constraints, live team purse tracking, and real-time state sync across all participants.',
-    architecture: 'Event-driven state synchronization architecture powered by Firebase Realtime Database with transaction validation on player bids and purse limits.',
+  resume: {
+    title: 'Dynamic Resume Writer',
+    category: 'Web Productivity Tools',
+    tagline: 'ATS-optimized resume generator with real-time reactive DOM preview',
+    description: 'An interactive Resume Generator web application that lets users fill in structured career details and instantly preview a professionally formatted resume with vector print CSS.',
+    architecture: 'Reactive dual-pane DOM architecture with real-time state synchronization between input schema controls and print-optimized PDF preview layouts.',
     keyModules: [
-      'Real-time bidding engine with multi-user concurrency control',
-      'Live team purse and squad composition constraint validator',
-      'Real-time bid broadcast pipeline reflecting updates across connected clients',
-      'Complete player catalogue with filtering by role, nationality, and base price'
+      'Dynamic reactive form parser supporting multi-section reordering',
+      'Print-optimized CSS pagination ensuring pixel-perfect A4/Letter breaks',
+      'JSON resume schema importer/exporter for instant profile backups',
+      'Client-side print styling engine eliminating third-party rendering servers'
     ],
     technicalHighlights: [
-      'Real-time synchronization across concurrent bidding participants',
-      'Strict transaction guards preventing purse overflows and duplicate concurrent bids',
-      'Production deployment on Firebase Hosting with instantaneous initial load'
+      'Real-time reactive preview without layout shifting',
+      'Strict adherence to ATS-friendly typography, hierarchy, and margins',
+      'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
     ],
-    hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
-    liveUrl: 'https://ipl-auction-a81df.web.app'
-  },
-  rootmap: {
-    title: 'RootMap',
-    category: 'Geospatial & Civic Data',
-    tagline: 'Interactive political and administrative atlas of India with 786-district directory',
-    description: 'A responsive geospatial and administrative explorer of the Republic of India. Features complete profiles for all 28 States and 8 Union Territories, cabinet rosters, 786 administrative districts, and constitutional Seventh Schedule context.',
-    architecture: 'Client-side SPA built with React 19, Three.js, and D3 Geo rendering interactive state boundaries, reactive demographic filtering, and instant search across administrative divisions.',
-    keyModules: [
-      'Geospatial boundary visualizer with interactive state and district geometry',
-      'Executive cabinet profiles detailing Chief Ministers, Governors, and portfolios',
-      'Complete 786-district directory with administrative headquarters and regional highlights',
-      'Seventh Schedule constitutional guide detailing Union, State, and Concurrent distribution'
-    ],
-    technicalHighlights: [
-      'Production deployment on Firebase Hosting with fast initial asset delivery',
-      'Optimized client-side spatial datasets supporting instant multi-attribute search',
-      'Responsive multi-modal interface with desktop dual-pane and mobile navigation'
-    ],
-    hardwareOrStack: 'React 19 / Three.js / D3 Geo / Tailwind CSS / Vite / Firebase Hosting',
-    liveUrl: 'https://rootmap-app.web.app'
+    hardwareOrStack: 'JavaScript ESNext / HTML5 / CSS3 Print Engine / Vercel',
+    codeUrl: 'https://github.com/SGM-SHAH/RESUME-WRITER',
+    liveUrl: 'https://resume-writer-sigma.vercel.app/'
   },
   safeecho: {
     title: 'SafeEcho',
@@ -104,27 +129,8 @@ const projectSpecs = {
       'Lightweight client bundle ensuring instant accessibility on any device'
     ],
     hardwareOrStack: 'JavaScript ESNext / Sentiment NLP / HTML5 / CSS3 / LocalStorage Security',
+    codeUrl: 'https://github.com/SGM-SHAH/SafeEcho',
     liveUrl: null
-  },
-  resume: {
-    title: 'Dynamic Resume Writer',
-    category: 'Web Productivity Tools',
-    tagline: 'ATS-optimized resume generator with real-time reactive DOM preview',
-    description: 'An interactive Resume Generator web application that lets users fill in structured career details and instantly preview a professionally formatted resume with pixel-perfect print CSS.',
-    architecture: 'Reactive dual-pane DOM architecture with real-time state synchronization between input schema controls and print-optimized PDF preview layouts.',
-    keyModules: [
-      'Dynamic reactive form parser supporting multi-section reordering',
-      'Print-optimized CSS pagination ensuring pixel-perfect A4/Letter breaks',
-      'JSON resume schema importer/exporter for instant profile backups',
-      'Client-side print styling engine eliminating third-party rendering servers'
-    ],
-    technicalHighlights: [
-      'Real-time reactive preview without layout shifting',
-      'Strict adherence to ATS-friendly typography, hierarchy, and margins',
-      'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
-    ],
-    hardwareOrStack: 'JavaScript ESNext / HTML5 / CSS3 Print Engine / Vercel',
-    liveUrl: 'https://resume-writer-sigma.vercel.app/'
   },
   flappy: {
     title: 'Flappy Bhai - SRM AP Edition',
@@ -144,11 +150,47 @@ const projectSpecs = {
       'Bespoke campus-inspired pixel art and responsive touch controls'
     ],
     hardwareOrStack: 'HTML5 Canvas / Vanilla JavaScript / Firebase Realtime DB',
-    liveUrl: null
+    codeUrl: 'https://github.com/SGM-SHAH/Flappy-Bhai',
+    liveUrl: 'https://sgm-shah.github.io/Flappy-Bhai/'
   }
 };
 
-// 2. ACCESSIBLE SPECIFICATION MODAL CONTROLLER
+// 2. THEME CONTROLLER (LIGHT / DARK SYSTEM)
+(function initThemeEngine() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  function getTheme() {
+    return document.documentElement.className.includes('theme-light') ? 'theme-light' : 'theme-dark';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.className = theme;
+    document.body.className = theme;
+    localStorage.setItem('sgm-theme', theme);
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'theme-light' ? '#fbfbf9' : '#0e1015');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const current = getTheme();
+    const next = current === 'theme-light' ? 'theme-dark' : 'theme-light';
+    applyTheme(next);
+  });
+
+  // Listen to OS theme changes if user has not explicitly chosen
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('sgm-theme')) {
+        applyTheme(e.matches ? 'theme-dark' : 'theme-light');
+      }
+    });
+  }
+})();
+
+// 3. ACCESSIBLE SPECIFICATION MODAL CONTROLLER
 (function initProjectModal() {
   const backdrop = document.getElementById('project-story-backdrop');
   if (!backdrop) return;
@@ -164,6 +206,7 @@ const projectSpecs = {
   const modalHighlights = document.getElementById('modal-highlights');
   const modalStack = document.getElementById('modal-stack');
   const modalLiveLink = document.getElementById('modal-live-link');
+  const modalCodeLink = document.getElementById('modal-code-link');
 
   let lastActiveElement = null;
 
@@ -173,7 +216,7 @@ const projectSpecs = {
 
     lastActiveElement = triggerBtn || document.activeElement;
 
-    if (modalCategory) modalCategory.textContent = spec.category;
+    if (modalCategory) modalCategory.textContent = spec.category.toUpperCase();
     if (modalTitle) modalTitle.textContent = spec.title;
     if (modalTagline) modalTagline.textContent = spec.tagline;
     if (modalDesc) modalDesc.textContent = spec.description;
@@ -201,11 +244,19 @@ const projectSpecs = {
 
     if (modalStack) modalStack.textContent = spec.hardwareOrStack;
 
+    if (modalCodeLink) {
+      if (spec.codeUrl) {
+        modalCodeLink.style.display = 'inline-flex';
+        modalCodeLink.href = spec.codeUrl;
+      } else {
+        modalCodeLink.style.display = 'none';
+      }
+    }
+
     if (modalLiveLink) {
       if (spec.liveUrl) {
         modalLiveLink.style.display = 'inline-flex';
         modalLiveLink.href = spec.liveUrl;
-        modalLiveLink.textContent = 'View Live Deployment';
       } else {
         modalLiveLink.style.display = 'none';
       }
@@ -215,178 +266,77 @@ const projectSpecs = {
     backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    // Set focus into modal for keyboard navigation
-    if (closeBtn) {
-      setTimeout(() => closeBtn.focus(), 60);
-    }
+    // Focus close button
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeSpec() {
     backdrop.classList.remove('open');
     backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-
     if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
       lastActiveElement.focus();
     }
   }
 
-  // Bind write-up buttons
-  document.querySelectorAll('.btn-open-spec').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = btn.dataset.project;
-      openSpec(id, btn);
-    });
+  // Event Delegation for write-up buttons
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-open-spec');
+    if (btn) {
+      const proj = btn.getAttribute('data-project');
+      if (proj) {
+        e.preventDefault();
+        openSpec(proj, btn);
+      }
+    }
   });
 
   if (closeBtn) closeBtn.addEventListener('click', closeSpec);
   if (closeBtnBottom) closeBtnBottom.addEventListener('click', closeSpec);
 
+  // Close on backdrop click outside dialog
   backdrop.addEventListener('click', (e) => {
     if (e.target === backdrop) closeSpec();
   });
 
-  // Keyboard navigation & Focus trap inside modal
+  // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (!backdrop.classList.contains('open')) return;
-
-    if (e.key === 'Escape') {
-      e.preventDefault();
+    if (e.key === 'Escape' && backdrop.classList.contains('open')) {
       closeSpec();
-      return;
-    }
-
-    if (e.key === 'Tab') {
-      const focusableEls = backdrop.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      if (!focusableEls.length) return;
-
-      const firstEl = focusableEls[0];
-      const lastEl = focusableEls[focusableEls.length - 1];
-
-      if (e.shiftKey) {
-        if (document.activeElement === firstEl) {
-          e.preventDefault();
-          lastEl.focus();
-        }
-      } else {
-        if (document.activeElement === lastEl) {
-          e.preventDefault();
-          firstEl.focus();
-        }
-      }
     }
   });
 })();
 
-// 2b. CONDITIONAL PROJECT VISUALS HANDLER
-(function initProjectVisuals() {
-  document.querySelectorAll('.project-img').forEach(img => {
-    function handleMissing() {
-      const visual = img.closest('.work-case__visual');
-      const workCase = img.closest('.work-case');
-      if (visual) visual.classList.add('is-hidden');
-      if (workCase) workCase.classList.add('work-case--no-visual');
-    }
-
-    img.addEventListener('error', handleMissing);
-    if (img.complete && img.naturalWidth === 0) {
-      handleMissing();
-    }
-  });
-})();
-
-// 3. NAVIGATION CONTROLLER (Mobile Drawer & Accessible ARIA)
-(function initNavigation() {
-  const toggleBtn = document.getElementById('nav-toggle-btn');
-  const drawer = document.getElementById('nav-mobile-drawer');
-
-  if (toggleBtn && drawer) {
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = drawer.classList.toggle('open');
-      toggleBtn.textContent = isOpen ? 'Close' : 'Menu';
-      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-    });
-
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        toggleBtn.textContent = 'Menu';
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-      });
-    });
-  }
-})();
-
-// 4. SMOOTH SCROLL WITH HEADER OFFSET
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    if (!targetId || targetId === '#') return;
-
-    if (targetId === '#hero' || targetId === '#top') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    const targetEl = document.querySelector(targetId);
-    if (targetEl) {
-      e.preventDefault();
-      const nav = document.querySelector('.site-header');
-      const navHeight = nav ? nav.offsetHeight : 64;
-      const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: Math.max(0, targetPos - navHeight - 16),
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// 5. ACCESSIBLE EMAIL COPY
-(function initEmailCopy() {
+// 4. COPY EMAIL CONTROLLER
+(function initCopyEmail() {
   const copyBtn = document.getElementById('copy-email-btn');
-  const hint = document.getElementById('copy-email-hint');
   const toast = document.getElementById('email-toast');
+  const email = 'sgmshah07@gmail.com';
 
   if (!copyBtn) return;
 
-  copyBtn.addEventListener('click', () => {
-    const email = 'sgmshah07@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
-      if (hint) hint.textContent = 'Copied';
-      if (toast) toast.classList.add('show');
-
-      setTimeout(() => {
-        if (hint) hint.textContent = 'Copy';
-        if (toast) toast.classList.remove('show');
-      }, 2500);
-    }).catch(err => {
-      console.warn('Clipboard write error:', err);
-    });
-  });
-})();
-
-// 6. SUBTLE EDITORIAL SECTION REVEALS (Respects prefers-reduced-motion)
-(function initSectionReveals() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const revealTargets = document.querySelectorAll('section, .work-case, .builds-ledger, .timeline-entry');
-  if (!revealTargets.length || !('IntersectionObserver' in window)) return;
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-in');
-        obs.unobserve(entry.target);
+  copyBtn.addEventListener('click', async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
       }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-  revealTargets.forEach(el => observer.observe(el));
+      if (toast) {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+      }
+    } catch (err) {
+      console.error('Clipboard copy failed:', err);
+    }
+  });
 })();

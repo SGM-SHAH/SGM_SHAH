@@ -4,33 +4,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Developer</title>
+  <title>Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Systems Developer</title>
   <meta name="description"
-    content="Personal portfolio of Shaik Ghouse Mohiddin Shah, Computer Science undergraduate at SRM University AP building multi-model AI systems, real-time distributed platforms, and web applications.">
+    content="Personal portfolio of Shaik Ghouse Mohiddin Shah, Computer Science undergraduate at SRM University AP building distributed real-time platforms, multi-model AI workflows, and civic web tools.">
   
+  <!-- Canonical & Sitemap -->
+  <link rel="canonical" href="https://sgm-shah.github.io/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Developer">
+  <meta property="og:url" content="https://sgm-shah.github.io/">
+  <meta property="og:title" content="Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Systems Developer">
   <meta property="og:description"
-    content="Undergraduate at SRM University AP building multi-model AI workflows, real-time distributed platforms, and web applications.">
-  <meta property="og:image" content="assets/profile_studio.jpg">
+    content="Undergraduate at SRM University AP building distributed real-time systems, multi-model AI workflows, and civic web tools.">
+  <meta property="og:image" content="https://sgm-shah.github.io/assets/profile_studio.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Developer">
+  <meta name="twitter:title" content="Shaik Ghouse Mohiddin Shah — Software Engineer &amp; AI Systems Developer">
   <meta name="twitter:description"
-    content="Undergraduate at SRM University AP building multi-model AI workflows, real-time distributed platforms, and web applications.">
-  <meta name="twitter:image" content="assets/profile_studio.jpg">
+    content="Undergraduate at SRM University AP building distributed real-time systems, multi-model AI workflows, and civic web tools.">
+  <meta name="twitter:image" content="https://sgm-shah.github.io/assets/profile_studio.jpg">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="theme-color" content="#0c0d10">
+  <meta name="theme-color" content="#0e1015">
 
-  <!-- Typography: Inter (400, 500, 700) + JetBrains Mono (400, 500) -->
+  <!-- Preload Critical Hero Asset -->
+  <link rel="preload" as="image" href="assets/profile_studio.webp" type="image/webp">
+
+  <!-- Typography: Fraunces (Editorial Display Serif) + Plus Jakarta Sans (Grotesk Body) + JetBrains Mono (Code/Metrics) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=50.0">
+  <link rel="stylesheet" href="style.css?v=60.0">
+
+  <!-- Theme init script to prevent flash of unstyled theme -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('sgm-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'theme-dark' : 'theme-light');
+      document.documentElement.className = theme;
+    })();
+  </script>
 </head>
 
 <body class="theme-dark">
@@ -38,11 +56,12 @@
   <!-- ACCESSIBLE SKIP TO MAIN LINK -->
   <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-  <!-- MINIMALIST EDITORIAL HEADER -->
+  <!-- EDITORIAL SITE HEADER -->
   <header class="site-header" role="banner">
     <div class="site-container site-header__inner">
-      <a class="site-header__brand" href="#hero" aria-label="Shaik Ghouse Mohiddin Shah - Back to top">
-        SGM
+      <a class="site-header__brand" href="#hero" aria-label="Shaik Ghouse Mohiddin Shah - Home">
+        <span class="brand-full">Shaik Ghouse Mohiddin Shah</span>
+        <span class="brand-short" aria-hidden="true">SGM</span>
       </a>
       
       <nav class="site-header__nav" aria-label="Primary navigation">
@@ -53,264 +72,294 @@
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <button type="button" class="site-header__menu-toggle" id="nav-toggle-btn" aria-expanded="false"
-        aria-controls="nav-mobile-drawer" aria-label="Toggle navigation menu">
-        Menu
-      </button>
-    </div>
-
-    <!-- Mobile Drawer -->
-    <div class="site-header__drawer" id="nav-mobile-drawer" aria-hidden="true">
-      <nav class="site-header__drawer-nav" aria-label="Mobile navigation">
-        <a href="#work" class="drawer-link">Work</a>
-        <a href="#about" class="drawer-link">About</a>
-        <a href="#stack" class="drawer-link">Stack</a>
-        <a href="#recognition" class="drawer-link">Recognition</a>
-        <a href="#contact" class="drawer-link">Contact</a>
-      </nav>
+      <div class="site-header__actions">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content">
 
     <!-- 1. HERO SECTION -->
-    <section id="hero" class="hero-section" aria-label="Introduction">
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
       <div class="site-container hero-container">
         
-        <!-- Left: Confident Identity, Positioning & Single CTA -->
-        <div class="hero-intro">
-          <h1 class="hero-name">
-            Shaik Ghouse Mohiddin Shah
+        <div class="hero-content">
+          <div class="hero-kicker">Undergraduate Software Engineer · SRM University AP</div>
+          <h1 id="hero-title" class="hero-headline">
+            Engineering distributed systems, real-time web engines, and verifiable AI workflows.
           </h1>
-
-          <p class="hero-positioning">
-            Computer science undergraduate at SRM University AP building multi-model AI workflows, real-time distributed systems, and web applications.
+          <p class="hero-summary">
+            I build full-stack platforms with strict concurrency guarantees and low-latency client pipelines. Currently seeking software engineering roles where performance, system correctness, and deliberate interface design matter.
           </p>
 
           <div class="hero-actions">
             <a href="#work" class="btn btn-primary">
-              View Selected Work ↓
+              Explore Selected Work ↓
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Get in Touch ↗
             </a>
           </div>
         </div>
 
-        <!-- Right: Clearly Visible Portrait Photo (Corrected Exposure & Crop) -->
-        <div class="hero-portrait">
-          <div class="hero-portrait__frame">
+        <div class="hero-visual">
+          <div class="hero-portrait-frame">
             <picture>
               <source srcset="assets/profile_studio.webp" type="image/webp">
-              <img src="assets/profile_studio.jpg" alt="Shaik Ghouse Mohiddin Shah" class="hero-portrait__img"
+              <img src="assets/profile_studio.jpg" alt="Shaik Ghouse Mohiddin Shah" class="hero-portrait-img"
                 width="764" height="1024" loading="eager" decoding="async">
             </picture>
+            <div class="hero-portrait-caption">
+              <span class="caption-name">Shaik Ghouse Mohiddin Shah</span>
+              <span class="caption-detail">Amaravati, Andhra Pradesh</span>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 2. SELECTED WORK -->
+    <!-- 2. SELECTED WORK SECTION -->
     <section id="work" class="work-section" aria-labelledby="work-heading">
       <div class="site-container">
         
         <header class="section-header">
+          <div class="section-kicker">Selected Engineering Case Studies</div>
           <h2 id="work-heading" class="section-title">Selected Work</h2>
           <p class="section-intro">
-            Four core engineering projects exploring multi-LLM consensus, low-latency speech AI, real-time state synchronization, and geospatial civic data.
+            Four focused builds exploring geospatial directory architecture, event-driven concurrency in simulated auctions, parallel multi-LLM consensus, and browser-native speech AI.
           </p>
         </header>
 
         <div class="work-showcase">
 
-          <!-- PROJECT 1: CampusX (Two-Column Grid: Visual Left, Text Right) -->
-          <article class="work-case" id="case-campusx">
-            <div class="work-case__visual">
+          <!-- FLAGSHIP CASE STUDY: RootMap -->
+          <article class="work-case work-case--flagship" id="case-rootmap">
+            <div class="flagship-header">
+              <div class="flagship-badge-row">
+                <span class="status-pill status-pill--flagship">Flagship Project</span>
+                <span class="tech-tag">React 19 · Three.js · D3 Geo · Firebase</span>
+              </div>
+              <h3 class="flagship-title">RootMap</h3>
+              <p class="flagship-tagline">
+                Interactive political and administrative atlas of India with real-time geospatial rendering and a complete 786-district directory
+              </p>
+            </div>
+
+            <div class="flagship-visual">
               <picture class="project-picture">
-                <source srcset="assets/campusx.webp" type="image/webp">
-                <img src="assets/campusx.webp" alt="CampusX multi-LLM parallel fan-out architecture pipeline" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+                <source srcset="assets/rootmap.webp" type="image/webp">
+                <img src="assets/rootmap.webp" alt="RootMap interactive political directory of India interface" width="1200" height="750" loading="lazy" class="project-img">
               </picture>
             </div>
 
-            <div class="work-case__content">
-              <div class="work-case__header">
-                <span class="case-number">01</span>
-                <h3 class="case-title">CampusX</h3>
-                <p class="case-tagline">Multi-LLM consensus aggregation engine for grounded query resolution</p>
+            <div class="flagship-narrative">
+              <div class="narrative-block">
+                <h4 class="narrative-heading">Context &amp; Problem</h4>
+                <p class="narrative-text">
+                  Civic data, state executive cabinets, Seventh Schedule constitutional distributions (Article 246), and administrative district profiles across India were fragmented across archaic government websites with zero unified cross-referencing.
+                </p>
               </div>
 
-              <div class="work-case__body">
-                <div class="case-spec-block">
-                  <div class="spec-row">
-                    <span class="spec-label">Problem</span>
-                    <p class="spec-text">Researchers and students receive inconsistent or hallucinated answers when querying a single LLM without independent verification.</p>
-                  </div>
-
-                  <div class="spec-row">
-                    <span class="spec-label">What I built</span>
-                    <p class="spec-text">Co-developed an asynchronous FastAPI gateway that fans out prompt RPCs simultaneously across multiple model providers, evaluates semantic agreement via cosine distance, and aggregates consensus responses.</p>
-                  </div>
-
-                  <!-- TODO: What I'd do differently -->
-                </div>
-
-                <div class="case-facts">
-                  <span class="case-fact">Competed at HackSRM 2026</span>
-                  <span class="case-fact">Low-latency parallel dispatch reducing aggregate query wait times</span>
-                  <span class="case-fact">Dynamic token agreement and cosine similarity consensus scoring</span>
-                </div>
-
-                <div class="case-links">
-                  <button type="button" class="link-btn btn-open-spec" data-project="campusx">
-                    Write-up
-                  </button>
-                  <!-- TODO: repo URL -->
-                </div>
+              <div class="narrative-block">
+                <h4 class="narrative-heading">Technical Decision</h4>
+                <p class="narrative-text">
+                  Engineered a client-side spatial directory using React 19, Three.js 3D boundary geometry, and D3 Geo spatial projection. Built pre-indexed spatial datasets covering all 28 States, 8 Union Territories, and 786 administrative districts, enabling instant sub-millisecond filtering with zero remote server lag.
+                </p>
               </div>
+
+              <div class="narrative-block">
+                <h4 class="narrative-heading">Measured Result</h4>
+                <p class="narrative-text">
+                  Complete directory indexing 28 States, 8 UTs, and all 786 administrative districts with real-time search, demographic filters, and Seventh Schedule constitutional guides; deployed live on Firebase Hosting.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-actions">
+              <a href="https://github.com/SGM-SHAH/ROOTMAP" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
+                Code ↗
+              </a>
+              <a href="https://rootmap-app.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
+                Live ↗
+              </a>
+              <button type="button" class="link-btn btn-open-spec" data-project="rootmap">
+                Architecture Spec
+              </button>
             </div>
           </article>
 
-          <!-- PROJECT 2: VOCA (Two-Column Grid: Text Left, Visual Right) -->
-          <article class="work-case work-case--reverse" id="case-voca">
-            <div class="work-case__visual">
-              <picture class="project-picture">
-                <source srcset="assets/voca.webp" type="image/webp">
-                <img src="assets/voca.webp" alt="VOCA speech evaluation and pronunciation analysis interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
-              </picture>
-            </div>
-
-            <div class="work-case__content">
-              <div class="work-case__header">
-                <span class="case-number">02</span>
-                <h3 class="case-title">VOCA</h3>
-                <p class="case-tagline">Real-time speech evaluation and conversational language learning companion</p>
-              </div>
-
-              <div class="work-case__body">
-                <div class="case-spec-block">
-                  <div class="spec-row">
-                    <span class="spec-label">Problem</span>
-                    <p class="spec-text">Language learners lack affordable, immediate feedback on pronunciation cadence, accent divergence, and contextual conversational dialogue.</p>
-                  </div>
-
-                  <div class="spec-row">
-                    <span class="spec-label">What I built</span>
-                    <p class="spec-text">Built an interactive speech evaluation platform utilizing the Web Speech API to capture live audio cadence, route phonetic buffers into an LLM scoring pipeline, and persist session metrics to Firebase.</p>
-                  </div>
-
-                  <!-- TODO: What I'd do differently -->
-                </div>
-
-                <div class="case-facts">
-                  <span class="case-fact">Built for Hack The Winter</span>
-                  <span class="case-fact">Real-time audio capture and voice feedback loop</span>
-                  <span class="case-fact">React 19, Web Speech API, and Firebase state sync</span>
-                </div>
-
-                <div class="case-links">
-                  <button type="button" class="link-btn btn-open-spec" data-project="voca">
-                    Write-up
-                  </button>
-                  <!-- TODO: repo URL -->
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: IPL Mega Auction (Two-Column Grid: Visual Left, Text Right) -->
-          <article class="work-case" id="case-ipl">
+          <!-- CASE STUDY 2: IPL Mega Auction Platform -->
+          <article class="work-case work-case--split" id="case-ipl">
             <div class="work-case__visual">
               <picture class="project-picture">
                 <source srcset="assets/ipl-auction.webp" type="image/webp">
-                <img src="assets/ipl-auction.webp" alt="IPL Mega Auction live multiplayer franchise bidding room interface" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+                <img src="assets/ipl-auction.webp" alt="IPL Mega Auction live franchise bidding arena" width="1200" height="750" loading="lazy" class="project-img">
               </picture>
             </div>
 
             <div class="work-case__content">
               <div class="work-case__header">
-                <span class="case-number">03</span>
+                <span class="tech-tag">Firebase Realtime DB · Concurrency Engine</span>
                 <h3 class="case-title">IPL Mega Auction Platform</h3>
-                <p class="case-tagline">Real-time multiplayer simulated cricket franchise auction with live bidding mechanics</p>
+                <p class="case-tagline">
+                  Real-time multiplayer franchise bidding simulation with strict transaction guards and live purse constraints
+                </p>
               </div>
 
-              <div class="work-case__body">
-                <div class="case-spec-block">
-                  <div class="spec-row">
-                    <span class="spec-label">Problem</span>
-                    <p class="spec-text">Multiplayer auction simulations frequently suffer from race conditions, duplicate high bids, and purse overdrafts under simultaneous client updates.</p>
-                  </div>
-
-                  <div class="spec-row">
-                    <span class="spec-label">What I built</span>
-                    <p class="spec-text">Designed an event-driven bidding engine powered by Firebase Realtime Database with transaction guards to validate purse balance constraints and broadcast updates in real time.</p>
-                  </div>
-
-                  <!-- TODO: What I'd do differently -->
+              <div class="work-case__narrative">
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Context &amp; Cricket Analytics</h4>
+                  <p class="narrative-text">
+                    Multiplayer auction simulations frequently suffer from race conditions, duplicate high bids, and negative purse overdrafts when multiple franchise participants place simultaneous bids within milliseconds.
+                  </p>
                 </div>
 
-                <div class="case-facts">
-                  <span class="case-fact">Deployed live on Firebase Hosting</span>
-                  <span class="case-fact">Real-time synchronized state across connected clients</span>
-                  <span class="case-fact">Strict transaction guards preventing purse overflows and duplicate concurrent bids</span>
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Technical Decision</h4>
+                  <p class="narrative-text">
+                    Designed an event-driven bidding engine backed by Firebase Realtime Database with atomic transaction validation guards. When multiple franchises bid concurrently, optimistic client updates rollback if purse limits or squad composition constraints are violated.
+                  </p>
                 </div>
 
-                <div class="case-links">
-                  <a href="https://ipl-auction-a81df.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
-                    Live
-                  </a>
-                  <button type="button" class="link-btn btn-open-spec" data-project="ipl">
-                    Write-up
-                  </button>
-                  <!-- TODO: repo URL -->
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Measured Result</h4>
+                  <p class="narrative-text">
+                    Eliminated negative purse race conditions and duplicate winning bids across concurrent client bidding rooms; deployed live on Firebase Hosting.
+                  </p>
                 </div>
+              </div>
+
+              <div class="case-actions">
+                <a href="https://github.com/SGM-SHAH/IPL-AUCTION" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
+                  Code ↗
+                </a>
+                <a href="https://ipl-auction-a81df.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
+                  Live ↗
+                </a>
+                <button type="button" class="link-btn btn-open-spec" data-project="ipl">
+                  Architecture Spec
+                </button>
               </div>
             </div>
           </article>
 
-          <!-- PROJECT 4: RootMap (Two-Column Grid: Text Left, Visual Right) -->
-          <article class="work-case work-case--reverse" id="case-rootmap">
+          <!-- CASE STUDY 3: CampusX -->
+          <article class="work-case work-case--split work-case--reverse" id="case-campusx">
             <div class="work-case__visual">
               <picture class="project-picture">
-                <source srcset="assets/rootmap.webp" type="image/webp">
-                <img src="assets/rootmap.webp" alt="RootMap interactive political and administrative atlas of India" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+                <source srcset="assets/campusx.webp" type="image/webp">
+                <img src="assets/campusx.webp" alt="CampusX Multi-LLM parallel consensus architecture" width="1200" height="750" loading="lazy" class="project-img">
               </picture>
             </div>
 
             <div class="work-case__content">
               <div class="work-case__header">
-                <span class="case-number">04</span>
-                <h3 class="case-title">RootMap</h3>
-                <p class="case-tagline">Interactive political and administrative atlas of India with 786-district directory</p>
+                <span class="tech-tag">FastAPI · Multi-LLM Consensus</span>
+                <h3 class="case-title">CampusX</h3>
+                <p class="case-tagline">
+                  Asynchronous fan-out gateway evaluating semantic agreement across multiple model providers
+                </p>
               </div>
 
-              <div class="work-case__body">
-                <div class="case-spec-block">
-                  <div class="spec-row">
-                    <span class="spec-label">Problem</span>
-                    <p class="spec-text">Civic data, state executive cabinets, constitutional 7th Schedule distributions, and administrative district profiles across India are fragmented across outdated government portals.</p>
-                  </div>
-
-                  <div class="spec-row">
-                    <span class="spec-label">What I built</span>
-                    <p class="spec-text">Built a responsive geospatial explorer using React 19, Three.js, D3 Geo, and Tailwind CSS. Features an interactive map of all 28 States and 8 UTs, executive cabinet rosters, real-time demographic filters, 786 district dossiers, and Article 246 constitutional guide.</p>
-                  </div>
-
-                  <!-- TODO: What I'd do differently -->
+              <div class="work-case__narrative">
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Context &amp; Problem</h4>
+                  <p class="narrative-text">
+                    Researchers and students querying single LLM endpoints receive divergent or hallucinated responses without cross-validation or verifiable agreement scoring.
+                  </p>
                 </div>
 
-                <div class="case-facts">
-                  <span class="case-fact">Deployed live on Firebase Hosting</span>
-                  <span class="case-fact">Complete directory of all 28 States, 8 Union Territories, and 786 administrative districts</span>
-                  <span class="case-fact">React 19, Three.js, D3 Geo, and Tailwind CSS</span>
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Technical Decision</h4>
+                  <p class="narrative-text">
+                    Co-developed an asynchronous FastAPI gateway that fans out prompt RPCs simultaneously across multiple model providers, projects token completions into vector space, and computes cosine similarity agreement matrices.
+                  </p>
                 </div>
 
-                <div class="case-links">
-                  <a href="https://rootmap-app.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
-                    Live
-                  </a>
-                  <button type="button" class="link-btn btn-open-spec" data-project="rootmap">
-                    Write-up
-                  </button>
-                  <!-- TODO: repo URL -->
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Measured Result</h4>
+                  <p class="narrative-text">
+                    Competed at HackSRM 2026; parallel dispatch across 3 model providers with dynamic agreement scoring, reducing single-model hallucination variance.
+                  </p>
                 </div>
+              </div>
+
+              <div class="case-actions">
+                <a href="https://github.com/SGM-SHAH/CampusX" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
+                  Code ↗
+                </a>
+                <button type="button" class="link-btn btn-open-spec" data-project="campusx">
+                  Architecture Spec
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE STUDY 4: VOCA -->
+          <article class="work-case work-case--split" id="case-voca">
+            <div class="work-case__visual">
+              <picture class="project-picture">
+                <source srcset="assets/voca.webp" type="image/webp">
+                <img src="assets/voca.webp" alt="VOCA speech evaluation and pronunciation analysis interface" width="1200" height="750" loading="lazy" class="project-img">
+              </picture>
+            </div>
+
+            <div class="work-case__content">
+              <div class="work-case__header">
+                <span class="tech-tag">React 19 · Web Speech API · LLM Pipeline</span>
+                <h3 class="case-title">VOCA</h3>
+                <p class="case-tagline">
+                  Interactive real-time speech evaluation companion with phoneme cadence telemetry
+                </p>
+              </div>
+
+              <div class="work-case__narrative">
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Context &amp; Language Acquisition</h4>
+                  <p class="narrative-text">
+                    Language learners lack accessible, immediate conversational feedback on speech cadence, accent stress divergence, and contextual conversational dialogue.
+                  </p>
+                </div>
+
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Technical Decision</h4>
+                  <p class="narrative-text">
+                    Built a browser-native audio companion using the Web Speech API to capture live phoneme cadence, stream audio buffers into an LLM scoring pipeline, and persist session metrics to Firebase.
+                  </p>
+                </div>
+
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Measured Result</h4>
+                  <p class="narrative-text">
+                    Built for Hack The Winter; provides real-time pronunciation scoring, conversational practice drills, and speech cadence telemetry.
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-actions">
+                <a href="https://github.com/SGM-SHAH/VOCA-SpeechAI" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
+                  Code ↗
+                </a>
+                <button type="button" class="link-btn btn-open-spec" data-project="voca">
+                  Architecture Spec
+                </button>
               </div>
             </div>
           </article>
@@ -319,29 +368,14 @@
 
         <!-- MORE BUILDS: Compact Editorial Ledger -->
         <div class="more-builds-wrapper">
-          <h3 class="more-builds-title">More Builds</h3>
+          <h3 class="more-builds-title">Additional Builds</h3>
           
           <div class="builds-ledger" role="table" aria-label="Additional projects">
             <div class="builds-ledger__header" role="row">
               <span role="columnheader">Project</span>
               <span role="columnheader">Description</span>
               <span role="columnheader">Stack</span>
-              <span role="columnheader">Links</span>
-            </div>
-
-            <div class="builds-ledger__row" role="row">
-              <div class="build-name" role="cell">
-                <strong>SafeEcho</strong>
-              </div>
-              <div class="build-desc" role="cell">
-                Empathy-focused wellness companion executing sentiment classification in-browser with local privacy preservation.
-              </div>
-              <div class="build-stack" role="cell">
-                <code>JavaScript · Local NLP · LocalStorage</code>
-              </div>
-              <div class="build-links" role="cell">
-                <button type="button" class="inline-link btn-open-spec" data-project="safeecho">Write-up</button>
-              </div>
+              <span role="columnheader">Actions</span>
             </div>
 
             <div class="builds-ledger__row" role="row">
@@ -349,29 +383,48 @@
                 <strong>Dynamic Resume Writer</strong>
               </div>
               <div class="build-desc" role="cell">
-                ATS-optimized resume generator with real-time reactive DOM preview and pixel-perfect print CSS pagination.
+                ATS-optimized engineering resume generator with split-pane reactive DOM preview and vector print CSS pagination.
               </div>
               <div class="build-stack" role="cell">
-                <code>JavaScript · HTML5 / CSS3 · Print Engine · Vercel</code>
+                <span class="inline-code">JavaScript · HTML5 · Print CSS</span>
               </div>
               <div class="build-links" role="cell">
-                <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-link">Live</a>
-                <button type="button" class="inline-link btn-open-spec" data-project="resume">Write-up</button>
+                <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-link">Live ↗</a>
+                <a href="https://github.com/SGM-SHAH/RESUME-WRITER" target="_blank" rel="noopener noreferrer" class="inline-link">Code ↗</a>
+                <button type="button" class="inline-link btn-open-spec" data-project="resume">Spec</button>
               </div>
             </div>
 
             <div class="builds-ledger__row" role="row">
               <div class="build-name" role="cell">
-                <strong>Flappy Bhai (SRM AP Edition)</strong>
+                <strong>SafeEcho</strong>
               </div>
               <div class="build-desc" role="cell">
-                Campus-themed arcade runner with custom 2D canvas collision physics and global cloud leaderboards.
+                Privacy-first sentiment companion executing in-browser NLP classification with local encrypted storage.
               </div>
               <div class="build-stack" role="cell">
-                <code>HTML5 Canvas · 2D Physics · Firebase</code>
+                <span class="inline-code">JavaScript · Local NLP · LocalStorage</span>
               </div>
               <div class="build-links" role="cell">
-                <button type="button" class="inline-link btn-open-spec" data-project="flappy">Write-up</button>
+                <a href="https://github.com/SGM-SHAH/SafeEcho" target="_blank" rel="noopener noreferrer" class="inline-link">Code ↗</a>
+                <button type="button" class="inline-link btn-open-spec" data-project="safeecho">Spec</button>
+              </div>
+            </div>
+
+            <div class="builds-ledger__row" role="row">
+              <div class="build-name" role="cell">
+                <strong>Flappy Bhai</strong>
+              </div>
+              <div class="build-desc" role="cell">
+                SRM AP campus-themed 2D obstacle arcade simulation running in raw HTML5 Canvas with cloud leaderboards.
+              </div>
+              <div class="build-stack" role="cell">
+                <span class="inline-code">HTML5 Canvas · Vanilla JS · Firebase</span>
+              </div>
+              <div class="build-links" role="cell">
+                <a href="https://sgm-shah.github.io/Flappy-Bhai/" target="_blank" rel="noopener noreferrer" class="inline-link">Live ↗</a>
+                <a href="https://github.com/SGM-SHAH/Flappy-Bhai" target="_blank" rel="noopener noreferrer" class="inline-link">Code ↗</a>
+                <button type="button" class="inline-link btn-open-spec" data-project="flappy">Spec</button>
               </div>
             </div>
           </div>
@@ -385,13 +438,20 @@
       <div class="site-container">
         
         <header class="section-header">
-          <h2 id="about-heading" class="section-title">About</h2>
+          <div class="section-kicker">Background &amp; Philosophy</div>
+          <h2 id="about-heading" class="section-title">About Me</h2>
         </header>
 
         <div class="about-content">
           <div class="about-prose">
             <p>
-              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, first-year CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; RootMap, an interactive civic atlas; and an IPL Mega Auction simulator with real-time bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
+              I am a Computer Science &amp; Engineering undergraduate specializing in Artificial Intelligence and Machine Learning at SRM University AP (2025–2029, first-year CGPA: 8.2). My work centers on distributed systems, real-time client state synchronization, and verifiable AI workflows—ranging from multi-LLM consensus gateways to responsive geospatial atlases.
+            </p>
+            <p>
+              I care deeply about software that is fast, resilient under network strain, and crafted with intentional typography and semantic structure rather than generic templates.
+            </p>
+            <p class="about-interests">
+              Outside code, I compete in university parliamentary debate, follow test cricket analytics and franchise strategy, study cinema direction, and play acoustic guitar.
             </p>
           </div>
 
@@ -401,7 +461,10 @@
               <p class="meta-card-degree">B.Tech in Computer Science &amp; Engineering (AI/ML)</p>
               <p class="meta-card-institution">SRM University AP, Andhra Pradesh</p>
               <p class="meta-card-period">2025 – 2029</p>
-              <p class="meta-card-score">First-year CGPA: 8.2 / 10.0</p>
+              <div class="meta-card-score-pill">
+                <span class="score-label">First-year CGPA</span>
+                <span class="score-val">8.2 / 10.0</span>
+              </div>
             </div>
           </aside>
         </div>
@@ -414,7 +477,8 @@
       <div class="site-container">
         
         <header class="section-header">
-          <h2 id="stack-heading" class="section-title">Stack</h2>
+          <div class="section-kicker">Tooling &amp; Infrastructure</div>
+          <h2 id="stack-heading" class="section-title">Technical Stack</h2>
           <p class="section-intro">
             Languages, frameworks, and infrastructure tools grouped by daily working frequency.
           </p>
@@ -440,6 +504,8 @@
             <h3 class="stack-tier__heading">Have shipped with</h3>
             <div class="stack-tier__items">
               <span class="stack-item">Firebase Realtime DB</span>
+              <span class="stack-item">Three.js</span>
+              <span class="stack-item">D3 Geo</span>
               <span class="stack-item">C / C++</span>
               <span class="stack-item">Java</span>
               <span class="stack-item">SQL (Relational Design)</span>
@@ -454,113 +520,118 @@
       </div>
     </section>
 
-    <!-- 5. RECOGNITION TIMELINE -->
+    <!-- 5. RECOGNITION SECTION -->
     <section id="recognition" class="recognition-section" aria-labelledby="recognition-heading">
       <div class="site-container">
         
         <header class="section-header">
+          <div class="section-kicker">Honors &amp; Verified Accomplishments</div>
           <h2 id="recognition-heading" class="section-title">Recognition</h2>
           <p class="section-intro">
-            Hackathons, engineering workshops, and verified credentials.
+            Hackathon engineering achievements and verified technical credentials.
           </p>
         </header>
 
         <div class="recognition-timeline">
 
-          <!-- Highlight: Hack The Winter (VOCA) -->
+          <!-- Prominent Hackathon Highlight 1: Hack The Winter -->
           <div class="timeline-entry timeline-entry--highlight">
-            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-badge">Hackathon Highlight</div>
             <div class="timeline-body">
-              <div class="timeline-badge">Hackathon Highlight</div>
               <h3 class="timeline-title">Hack The Winter</h3>
               <p class="timeline-issuer">Graphic Era Hill University · Hackathon Community</p>
               <p class="timeline-desc">
                 Competed as core developer of <strong>VOCA</strong>, an interactive AI speech evaluation companion delivering live pronunciation cadence analysis.
               </p>
               <a href="assets/certificates/hack_the_winter.pdf" target="_blank" rel="noopener noreferrer" class="timeline-link">
-                View Certificate (PDF)
+                View Certificate (PDF) ↗
               </a>
             </div>
           </div>
 
-          <!-- Highlight: HackSRM (CampusX) -->
-          <div class="timeline-entry">
-            <div class="timeline-marker" aria-hidden="true"></div>
+          <!-- Prominent Hackathon Highlight 2: HackSRM -->
+          <div class="timeline-entry timeline-entry--highlight">
+            <div class="timeline-badge">Hackathon Highlight</div>
             <div class="timeline-body">
               <h3 class="timeline-title">HackSRM 2026</h3>
               <p class="timeline-issuer">SRM University AP</p>
               <p class="timeline-desc">
-                Co-developed <strong>CampusX</strong>, a multi-LLM consensus engine designed to eliminate hallucination in student query workflows.
+                Co-developed <strong>CampusX</strong>, a multi-LLM consensus engine designed to reduce response divergence and hallucination in student query workflows.
               </p>
             </div>
           </div>
 
-          <!-- Compact 1-line list for remaining verified credentials -->
-          <div class="credentials-ledger">
-            <h3 class="credentials-ledger__title">Credentials &amp; Coursework</h3>
-            
-            <ul class="credentials-list">
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">Adobe University Hackathon</span>
-                  <span class="credential-org">Adobe &amp; Unstop</span>
-                </div>
-                <a href="assets/certificates/adobe_university_hackathon.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View PDF
-                </a>
-              </li>
+          <!-- Quiet Collapsible Disclosure for Minor Credentials -->
+          <details class="credentials-disclosure">
+            <summary class="disclosure-summary">
+              <span class="summary-title">Additional Credentials &amp; Verified Coursework (6 items)</span>
+              <span class="summary-icon" aria-hidden="true">▾</span>
+            </summary>
 
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">GeeksforGeeks SRM AP Campus Chapter</span>
-                  <span class="credential-org">Technical events &amp; campus coding workshops</span>
-                </div>
-                <a href="assets/certificates/gfg_campus_certificate.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View PDF
-                </a>
-              </li>
+            <div class="disclosure-content">
+              <ul class="credentials-list">
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">Adobe University Hackathon</span>
+                    <span class="credential-org">Adobe &amp; Unstop</span>
+                  </div>
+                  <a href="assets/certificates/adobe_university_hackathon.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View PDF ↗
+                  </a>
+                </li>
 
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">Google Project Management Certificate</span>
-                  <span class="credential-org">Foundations credential via Coursera</span>
-                </div>
-                <a href="assets/certificates/google_project_management.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View PDF
-                </a>
-              </li>
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">GeeksforGeeks SRM AP Campus Chapter</span>
+                    <span class="credential-org">Technical events &amp; campus coding workshops</span>
+                  </div>
+                  <a href="assets/certificates/gfg_campus_certificate.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View PDF ↗
+                  </a>
+                </li>
 
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">CyberShield 360°: The Future of Intelligent Security</span>
-                  <span class="credential-org">SRM University-AP · Department of Computer Science &amp; Engineering</span>
-                </div>
-                <a href="assets/certificates/cybershield_360_srm_ap.jpg" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View Certificate
-                </a>
-              </li>
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">Google Project Management Certificate</span>
+                    <span class="credential-org">Foundations credential via Coursera</span>
+                  </div>
+                  <a href="assets/certificates/google_project_management.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View PDF ↗
+                  </a>
+                </li>
 
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">Google Gemini: Fund My Crazy (Grand Ideation Night)</span>
-                  <span class="credential-org">Google Gemini &amp; CampusCrew · Global Ideation Competition</span>
-                </div>
-                <a href="assets/certificates/google_gemini_fund_my_crazy.jpg" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View Certificate
-                </a>
-              </li>
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">CyberShield 360°: The Future of Intelligent Security</span>
+                    <span class="credential-org">SRM University AP · Department of Computer Science &amp; Engineering</span>
+                  </div>
+                  <a href="assets/certificates/cybershield_360_srm_ap.jpg" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View Certificate ↗
+                  </a>
+                </li>
 
-              <li class="credential-item">
-                <div class="credential-info">
-                  <span class="credential-name">Young Innovators STEM Lab (YISL)</span>
-                  <span class="credential-org">AR/VR engineering workshop completion</span>
-                </div>
-                <a href="assets/certificates/yisl_arvr_workshop.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
-                  View PDF
-                </a>
-              </li>
-            </ul>
-          </div>
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">Google Gemini: Fund My Crazy (Grand Ideation Night)</span>
+                    <span class="credential-org">Google Gemini &amp; CampusCrew · Global Ideation Competition</span>
+                  </div>
+                  <a href="assets/certificates/google_gemini_fund_my_crazy.jpg" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View Certificate ↗
+                  </a>
+                </li>
+
+                <li class="credential-item">
+                  <div class="credential-info">
+                    <span class="credential-name">Young Innovators STEM Lab (YISL)</span>
+                    <span class="credential-org">AR/VR engineering workshop completion</span>
+                  </div>
+                  <a href="assets/certificates/yisl_arvr_workshop.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                    View PDF ↗
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </details>
 
         </div>
 
@@ -572,49 +643,34 @@
       <div class="site-container contact-container">
         
         <header class="section-header">
+          <div class="section-kicker">Get in Touch</div>
           <h2 id="contact-heading" class="section-title">Contact</h2>
           <p class="section-intro">
             Open for software engineering roles, research collaborations, and internships.
           </p>
         </header>
 
-        <div class="contact-methods">
-          <div class="contact-card">
-            <span class="contact-card__label">Email</span>
-            <div class="contact-card__action">
-              <a href="mailto:sgmshah07@gmail.com" class="contact-link">
-                sgmshah07@gmail.com
-              </a>
-              <button type="button" class="btn btn-secondary btn-sm" id="copy-email-btn"
-                aria-label="Copy email address to clipboard">
-                <span id="copy-email-hint">Copy</span>
-              </button>
-            </div>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span class="contact-label">Email:</span>
+            <a href="mailto:sgmshah07@gmail.com" class="contact-link">sgmshah07@gmail.com</a>
+            <button type="button" id="copy-email-btn" class="btn btn-secondary btn-sm" aria-label="Copy email address to clipboard">
+              Copy
+            </button>
           </div>
 
-          <div class="contact-card">
-            <span class="contact-card__label">GitHub</span>
-            <div class="contact-card__action">
-              <a href="https://github.com/SGM-SHAH" target="_blank" rel="noopener noreferrer" class="contact-link">
-                github.com/SGM-SHAH
-              </a>
-            </div>
+          <div class="contact-row">
+            <span class="contact-label">GitHub:</span>
+            <a href="https://github.com/SGM-SHAH" target="_blank" rel="noopener noreferrer" class="contact-link">
+              github.com/SGM-SHAH
+            </a>
           </div>
 
-          <div class="contact-card">
-            <span class="contact-card__label">LinkedIn</span>
-            <div class="contact-card__action">
-              <a href="https://linkedin.com/in/shaik-ghouse-mohiddin-shah" target="_blank" rel="noopener noreferrer" class="contact-link">
-                linkedin.com/in/shaik-ghouse-mohiddin-shah
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <span class="contact-card__label">Location</span>
-            <div class="contact-card__action">
-              <span class="contact-text">Andhra Pradesh, India (SRM University AP)</span>
-            </div>
+          <div class="contact-row">
+            <span class="contact-label">LinkedIn:</span>
+            <a href="https://linkedin.com/in/sgm-shah" target="_blank" rel="noopener noreferrer" class="contact-link">
+              linkedin.com/in/sgm-shah
+            </a>
           </div>
         </div>
 
@@ -623,42 +679,39 @@
 
   </main>
 
-  <!-- ACCESSIBLE FOOTER -->
+  <!-- EDITORIAL FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="site-container site-footer__inner">
-      <p class="site-footer__text">
-        © 2026 Shaik Ghouse Mohiddin Shah
+      <p class="site-footer__copy">
+        &copy; 2026 Shaik Ghouse Mohiddin Shah. All rights reserved.
       </p>
       <a href="#hero" class="site-footer__top-link">
-        Back to top
+        Back to top ↑
       </a>
     </div>
   </footer>
 
-  <!-- ACCESSIBLE PROJECT SPECIFICATION MODAL -->
-  <div id="project-story-backdrop" class="modal-backdrop" role="dialog" aria-modal="true"
-    aria-labelledby="modal-title" aria-hidden="true">
-    <div class="modal-dialog">
+  <!-- ACCESSIBLE SPECIFICATION MODAL DIALOG -->
+  <div id="project-story-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <header class="modal-header">
-        <div>
-          <span class="modal-category" id="modal-category">Project Specification</span>
-          <h2 class="modal-title" id="modal-title">Project Title</h2>
-          <p class="modal-tagline" id="modal-tagline">Project Tagline</p>
+        <div class="modal-header-meta">
+          <span class="modal-category" id="modal-category">ARCHITECTURE SPEC</span>
+          <h2 class="modal-title" id="modal-title">Project Specification</h2>
+          <p class="modal-tagline" id="modal-tagline"></p>
         </div>
-        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close project specification">
-          ✕
-        </button>
+        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close specification dialog">✕</button>
       </header>
 
       <div class="modal-body">
         <section class="modal-section">
           <h3 class="modal-section-title">Overview</h3>
-          <p class="modal-text" id="modal-desc">Project overview description.</p>
+          <p class="modal-prose" id="modal-desc"></p>
         </section>
 
         <section class="modal-section">
-          <h3 class="modal-section-title">Architecture</h3>
-          <p class="modal-text" id="modal-architecture">Architecture details.</p>
+          <h3 class="modal-section-title">Architecture &amp; Data Flow</h3>
+          <p class="modal-prose" id="modal-architecture"></p>
         </section>
 
         <section class="modal-section">
@@ -667,30 +720,33 @@
         </section>
 
         <section class="modal-section">
-          <h3 class="modal-section-title">Technical Notes</h3>
+          <h3 class="modal-section-title">Technical Highlights</h3>
           <ul class="modal-list" id="modal-highlights"></ul>
         </section>
 
         <section class="modal-section">
-          <h3 class="modal-section-title">Stack</h3>
-          <p class="modal-code" id="modal-stack">Stack details.</p>
+          <h3 class="modal-section-title">Hardware &amp; Stack</h3>
+          <p class="modal-prose modal-stack" id="modal-stack"></p>
         </section>
       </div>
 
       <footer class="modal-footer">
-        <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link" style="display: none;">
-          View Live Deployment
-        </a>
-        <button type="button" class="btn btn-secondary" id="modal-close-btn-bottom">
-          Close
-        </button>
+        <div class="modal-footer-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code" id="modal-code-link" style="display: none;">
+            Repository ↗
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary" id="modal-live-link" style="display: none;">
+            View Live Deployment ↗
+          </a>
+        </div>
+        <button type="button" class="btn btn-secondary" id="modal-close-btn-bottom" aria-label="Close specification dialog">Close Spec</button>
       </footer>
     </div>
   </div>
 
-  <div id="email-toast" role="status" aria-live="polite">Email copied: sgmshah07@gmail.com</div>
+  <div id="email-toast" role="status" aria-live="polite">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=50.0"></script>
+  <script src="script.js?v=60.0"></script>
 </body>
 
 </html>
