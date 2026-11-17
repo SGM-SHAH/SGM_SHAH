@@ -66,6 +66,26 @@ const projectSpecs = {
     hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
     liveUrl: 'https://ipl-auction-a81df.web.app'
   },
+  rootmap: {
+    title: 'RootMap',
+    category: 'Geospatial & Civic Data',
+    tagline: 'Interactive political and administrative atlas of India with 786-district directory',
+    description: 'A responsive geospatial and administrative explorer of the Republic of India. Features complete profiles for all 28 States and 8 Union Territories, cabinet rosters, 786 administrative districts, and constitutional Seventh Schedule context.',
+    architecture: 'Client-side SPA built with React 19, Three.js, and D3 Geo rendering interactive state boundaries, reactive demographic filtering, and instant search across administrative divisions.',
+    keyModules: [
+      'Geospatial boundary visualizer with interactive state and district geometry',
+      'Executive cabinet profiles detailing Chief Ministers, Governors, and portfolios',
+      'Complete 786-district directory with administrative headquarters and regional highlights',
+      'Seventh Schedule constitutional guide detailing Union, State, and Concurrent distribution'
+    ],
+    technicalHighlights: [
+      'Production deployment on Firebase Hosting with fast initial asset delivery',
+      'Optimized client-side spatial datasets supporting instant multi-attribute search',
+      'Responsive multi-modal interface with desktop dual-pane and mobile navigation'
+    ],
+    hardwareOrStack: 'React 19 / Three.js / D3 Geo / Tailwind CSS / Vite / Firebase Hosting',
+    liveUrl: 'https://rootmap-app.web.app'
+  },
   safeecho: {
     title: 'SafeEcho',
     category: 'Sentiment Analysis & Privacy',

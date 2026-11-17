@@ -115,7 +115,7 @@
         <header class="section-header">
           <h2 id="work-heading" class="section-title">Selected Work</h2>
           <p class="section-intro">
-            Three core engineering projects exploring multi-LLM consensus, low-latency speech AI, and real-time state synchronization in simulated auctions.
+            Four core engineering projects exploring multi-LLM consensus, low-latency speech AI, real-time state synchronization, and geospatial civic data.
           </p>
         </header>
 
@@ -265,6 +265,56 @@
             </div>
           </article>
 
+          <!-- PROJECT 4: RootMap (Two-Column Grid: Text Left, Visual Right) -->
+          <article class="work-case work-case--reverse" id="case-rootmap">
+            <div class="work-case__visual">
+              <picture class="project-picture">
+                <source srcset="assets/rootmap.webp" type="image/webp">
+                <img src="assets/rootmap.webp" alt="RootMap interactive political and administrative atlas of India" width="1200" height="750" loading="lazy" class="project-img" onerror="this.closest('.work-case__visual').classList.add('is-hidden'); this.closest('.work-case').classList.add('work-case--no-visual');">
+              </picture>
+            </div>
+
+            <div class="work-case__content">
+              <div class="work-case__header">
+                <span class="case-number">04</span>
+                <h3 class="case-title">RootMap</h3>
+                <p class="case-tagline">Interactive political and administrative atlas of India with 786-district directory</p>
+              </div>
+
+              <div class="work-case__body">
+                <div class="case-spec-block">
+                  <div class="spec-row">
+                    <span class="spec-label">Problem</span>
+                    <p class="spec-text">Civic data, state executive cabinets, constitutional 7th Schedule distributions, and administrative district profiles across India are fragmented across outdated government portals.</p>
+                  </div>
+
+                  <div class="spec-row">
+                    <span class="spec-label">What I built</span>
+                    <p class="spec-text">Built a responsive geospatial explorer using React 19, Three.js, D3 Geo, and Tailwind CSS. Features an interactive map of all 28 States and 8 UTs, executive cabinet rosters, real-time demographic filters, 786 district dossiers, and Article 246 constitutional guide.</p>
+                  </div>
+
+                  <!-- TODO: What I'd do differently -->
+                </div>
+
+                <div class="case-facts">
+                  <span class="case-fact">Deployed live on Firebase Hosting</span>
+                  <span class="case-fact">Complete directory of all 28 States, 8 Union Territories, and 786 administrative districts</span>
+                  <span class="case-fact">React 19, Three.js, D3 Geo, and Tailwind CSS</span>
+                </div>
+
+                <div class="case-links">
+                  <a href="https://rootmap-app.web.app" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
+                    Live
+                  </a>
+                  <button type="button" class="link-btn btn-open-spec" data-project="rootmap">
+                    Write-up
+                  </button>
+                  <!-- TODO: repo URL -->
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
 
         <!-- MORE BUILDS: Compact Editorial Ledger -->
@@ -341,7 +391,7 @@
         <div class="about-content">
           <div class="about-prose">
             <p>
-              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, first-year CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; and an IPL Mega Auction simulator with real-time bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
+              I am a Computer Science &amp; Engineering undergraduate specializing in AI and Machine Learning at SRM University AP (2025–2029, first-year CGPA: 8.2). My work includes CampusX, a multi-LLM consensus engine; VOCA, a real-time speech evaluation platform; RootMap, an interactive civic atlas; and an IPL Mega Auction simulator with real-time bidding. Outside code, my interests are cinema, cricket, competitive debate, and acoustic music.
             </p>
           </div>
 
