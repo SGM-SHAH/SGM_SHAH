@@ -143,7 +143,7 @@
         <header class="section-header">
           <h2 id="work-heading" class="section-title">Selected Work</h2>
           <p class="section-intro">
-            Featured systems covering geospatial data directories and real-time multiplayer auction synchronization.
+            Three featured systems covering geospatial directories, multiplayer auction synchronization, and reactive print engines.
           </p>
         </header>
 
@@ -310,6 +310,68 @@
             </div>
           </article>
 
+          <!-- CASE STUDY 3: Dynamic Resume Writer (Split Showcase) -->
+          <article class="work-case work-case--split work-case--reverse" id="case-resume">
+            <div class="work-case__visual">
+              <picture class="project-picture">
+                <source srcset="assets/resume-writer.webp" type="image/webp">
+                <img src="assets/resume-writer.webp" alt="Dynamic Resume Writer split-pane editor and live ATS-optimized resume preview" width="1200" height="750" loading="lazy" class="project-img">
+              </picture>
+            </div>
+
+            <div class="work-case__content">
+              <div class="work-case__header">
+                <span class="tech-tag">JavaScript ESNext · HTML5 · CSS3 Print Engine · Vercel</span>
+                <h3 class="case-title">Dynamic Resume Writer</h3>
+                <p class="case-tagline">
+                  An ATS-optimized resume generator with real-time reactive DOM preview and vector print pagination.
+                </p>
+              </div>
+
+              <div class="work-case__narrative">
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Context</h4>
+                  <p class="narrative-text">
+                    Job seekers often struggle with brittle word processor templates, accidental page overflows, and third-party resume platforms that gate PDF exports behind paywalls.
+                  </p>
+                </div>
+
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Engineering</h4>
+                  <p class="narrative-text">
+                    Built a client-side reactive dual-pane builder binding form inputs directly to live DOM resume nodes. Structured specialized print media queries, CSS pagination rules, and local JSON backup imports without server round-trips.
+                  </p>
+                </div>
+
+                <div class="narrative-block">
+                  <h4 class="narrative-heading">Outcome</h4>
+                  <p class="narrative-text">
+                    Deployed live on Vercel with zero layout shift during real-time typing and instant vector printing formatted for ATS scanners.
+                  </p>
+                </div>
+
+                <div class="narrative-block narrative-block--hardest">
+                  <h4 class="narrative-heading">Hardest part</h4>
+                  <p class="narrative-text">
+                    Eliminating awkward section splits across A4 and Letter print dimensions, resolved by custom print break margins and DOM height calculation constraints.
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-actions">
+                <a href="https://github.com/SGM-SHAH/RESUME-WRITER" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
+                  Code ↗
+                </a>
+                <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--primary">
+                  Live ↗
+                </a>
+                <button type="button" class="link-btn btn-open-spec" data-project="resume">
+                  Architecture Spec
+                </button>
+              </div>
+            </div>
+          </article>
+
         </div>
 
         <!-- MORE BUILDS: Compact Tabular Ledger -->
@@ -322,23 +384,6 @@
               <span role="columnheader">Description</span>
               <span role="columnheader">Stack</span>
               <span role="columnheader">Actions</span>
-            </div>
-
-            <div class="builds-ledger__row" role="row">
-              <div class="build-name" role="cell">
-                <strong>Dynamic Resume Writer</strong>
-              </div>
-              <div class="build-desc" role="cell">
-                Resume generator with split-pane reactive preview and vector print CSS pagination.
-              </div>
-              <div class="build-stack" role="cell">
-                <span class="inline-code">JavaScript · HTML5 · Print CSS</span>
-              </div>
-              <div class="build-links" role="cell">
-                <a href="https://resume-writer-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-link">Live ↗</a>
-                <a href="https://github.com/SGM-SHAH/RESUME-WRITER" target="_blank" rel="noopener noreferrer" class="inline-link">Code ↗</a>
-                <button type="button" class="inline-link btn-open-spec" data-project="resume">Spec</button>
-              </div>
             </div>
 
             <div class="builds-ledger__row" role="row">
