@@ -38,7 +38,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=66.0">
+  <link rel="stylesheet" href="style.css?v=67.0">
 
   <!-- Theme init script to prevent flash of unstyled theme -->
   <script>
@@ -143,7 +143,7 @@
         <header class="section-header">
           <h2 id="work-heading" class="section-title">Selected Work</h2>
           <p class="section-intro">
-            Four projects covering geospatial data directories, multiplayer auction synchronization, parallel AI consensus, and speech evaluation.
+            Featured systems covering geospatial data directories and real-time multiplayer auction synchronization.
           </p>
         </header>
 
@@ -310,130 +310,6 @@
             </div>
           </article>
 
-          <!-- CASE STUDY 3: CampusX -->
-          <article class="work-case work-case--split work-case--reverse" id="case-campusx">
-            <div class="work-case__visual">
-              <picture class="project-picture">
-                <source srcset="assets/campusx.webp" type="image/webp">
-                <img src="assets/campusx.webp" alt="CampusX Multi-LLM parallel consensus architecture and similarity scores" width="1200" height="750" loading="lazy" class="project-img">
-              </picture>
-              <div class="visual-badge-caption">
-                <span>Illustrative UI · Architecture Prototype</span>
-              </div>
-            </div>
-
-            <div class="work-case__content">
-              <div class="work-case__header">
-                <span class="tech-tag">FastAPI · Multi-LLM Consensus</span>
-                <h3 class="case-title">CampusX</h3>
-                <p class="case-tagline">
-                  An API gateway that queries multiple AI models at once and scores how closely their answers agree.
-                </p>
-              </div>
-
-              <div class="work-case__narrative">
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Context</h4>
-                  <p class="narrative-text">
-                    Students querying single AI models often receive inconsistent or hallucinated answers without any cross-check.
-                  </p>
-                </div>
-
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Engineering</h4>
-                  <p class="narrative-text">
-                    Co-developed an asynchronous FastAPI gateway that dispatches user queries in parallel to OpenAI, Anthropic, and open-weights models, calculates cosine similarity across output vector embeddings, and aggregates agreement scores.
-                  </p>
-                </div>
-
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Outcome</h4>
-                  <p class="narrative-text">
-                    FastAPI gateway federating requests to Gemini 2.5 and Claude 3.5 Sonnet, caching recurring query patterns to maintain steady API responsiveness.
-                  </p>
-                </div>
-
-                <div class="narrative-block narrative-block--hardest">
-                  <h4 class="narrative-heading">Hardest part</h4>
-                  <p class="narrative-text">
-                    Managing divergent response latencies across provider APIs without blocking the client pipeline, solved by asynchronous FastAPI fan-out with individual timeout fallbacks.
-                  </p>
-                </div>
-              </div>
-
-              <div class="case-actions">
-                <a href="https://github.com/SGM-SHAH/CampusX" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
-                  Code ↗
-                </a>
-                <button type="button" class="link-btn btn-open-spec" data-project="campusx">
-                  Architecture Spec
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- CASE STUDY 4: VOCA -->
-          <article class="work-case work-case--split" id="case-voca">
-            <div class="work-case__visual">
-              <picture class="project-picture">
-                <source srcset="assets/voca.webp" type="image/webp">
-                <img src="assets/voca.webp" alt="VOCA speech evaluation interface showing live audio waveform and pronunciation score" width="1200" height="750" loading="lazy" class="project-img">
-              </picture>
-              <div class="visual-badge-caption">
-                <span>Illustrative UI · Architecture Prototype</span>
-              </div>
-            </div>
-
-            <div class="work-case__content">
-              <div class="work-case__header">
-                <span class="tech-tag">React 19 · Web Speech API · LLM Pipeline</span>
-                <h3 class="case-title">VOCA</h3>
-                <p class="case-tagline">
-                  A voice companion that captures speech through the browser microphone and gives feedback on pronunciation and pacing.
-                </p>
-              </div>
-
-              <div class="work-case__narrative">
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Context</h4>
-                  <p class="narrative-text">
-                    Language learners often lack immediate, accessible feedback on pronunciation cadence, accent stress, and speaking pace.
-                  </p>
-                </div>
-
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Engineering</h4>
-                  <p class="narrative-text">
-                    Built a browser-based speech companion using the Web Speech API to capture live phoneme cadence, stream audio buffers into an LLM evaluation prompt, and persist session metrics to Firebase.
-                  </p>
-                </div>
-
-                <div class="narrative-block">
-                  <h4 class="narrative-heading">Outcome</h4>
-                  <p class="narrative-text">
-                    Web Speech API coupled to dual Gemini and Deepgram endpoints, generating real-time transcription and contextual speech feedback.
-                  </p>
-                </div>
-
-                <div class="narrative-block narrative-block--hardest">
-                  <h4 class="narrative-heading">Hardest part</h4>
-                  <p class="narrative-text">
-                    Handling browser-specific Web Speech API audio stream cutoffs during conversational pauses, mitigated by client-side audio buffering and session persistence in Firebase.
-                  </p>
-                </div>
-              </div>
-
-              <div class="case-actions">
-                <a href="https://github.com/SGM-SHAH/VOCA-SpeechAI" target="_blank" rel="noopener noreferrer" class="link-btn link-btn--code">
-                  Code ↗
-                </a>
-                <button type="button" class="link-btn btn-open-spec" data-project="voca">
-                  Architecture Spec
-                </button>
-              </div>
-            </div>
-          </article>
-
         </div>
 
         <!-- MORE BUILDS: Compact Tabular Ledger -->
@@ -514,7 +390,7 @@
         <div class="about-content">
           <div class="about-prose">
             <p>
-              I am a Computer Science student at SRM University AP (2025–2029) with a first-year CGPA of 8.2. Most of my work centers on real-time data sync, audio processing in the browser, and API integration.
+              I am a Computer Science student at SRM University AP (2025–2029) with a first-year CGPA of 8.2. Most of my work centers on real-time data sync, state management, and API integration.
             </p>
             <p>
               I focus on building software that is fast, resilient under network strain, and clear to read.
@@ -607,7 +483,7 @@
               <h3 class="timeline-title">Hack The Winter</h3>
               <p class="timeline-issuer">Graphic Era Hill University · Hackathon Community</p>
               <p class="timeline-desc">
-                Built VOCA, an interactive browser speech evaluation companion with real-time cadence feedback, in 36 hours.
+                Built an interactive browser speech evaluation companion with real-time cadence feedback, in 36 hours.
               </p>
               <a href="assets/certificates/hack_the_winter.pdf" target="_blank" rel="noopener noreferrer" class="timeline-link">
                 View Certificate (PDF) ↗
@@ -621,7 +497,7 @@
               <h3 class="timeline-title">HackSRM 2026</h3>
               <p class="timeline-issuer">SRM University AP</p>
               <p class="timeline-desc">
-                Built CampusX, an asynchronous multi-model consensus API gateway running parallel LLM evaluations, in 36 hours.
+                Built an asynchronous multi-model consensus API gateway running parallel LLM evaluations, in 36 hours.
               </p>
             </div>
           </div>
@@ -816,7 +692,7 @@
 
   <div id="email-toast" role="status" aria-live="polite">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=66.0"></script>
+  <script src="script.js?v=67.0"></script>
 </body>
 
 </html>

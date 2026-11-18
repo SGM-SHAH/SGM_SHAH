@@ -48,48 +48,6 @@ const projectSpecs = {
     codeUrl: 'https://github.com/SGM-SHAH/IPL-AUCTION',
     liveUrl: 'https://ipl-auction-a81df.web.app'
   },
-  campusx: {
-    title: 'CampusX',
-    category: 'AI / Multi-LLM Consensus',
-    tagline: 'Multi-LLM consensus aggregation engine for grounded multi-model inference',
-    description: 'An intelligent consensus aggregation platform that queries multiple LLM providers in parallel to cross-validate responses, compute semantic agreement, and drastically minimize hallucinations in student queries.',
-    architecture: 'Distributed asynchronous FastAPI gateway with parallel fan-out RPC to diverse LLM endpoints, executing dynamic cosine similarity and token-level consensus voting.',
-    keyModules: [
-      'Parallel asynchronous client querying OpenAI, Anthropic, and open-weights models',
-      'Vector agreement matrix evaluating semantic divergence across model outputs',
-      'Automated fallback handler with heuristic confidence thresholds',
-      'Telemetry logging inference latency, token usage, and cost economics'
-    ],
-    technicalHighlights: [
-      'Parallel dispatch across multiple model providers reducing aggregate wait times',
-      'Pydantic schema validation ensuring clean structured prompt returns',
-      'Custom heuristic scoring algorithm weighting model domain expertise'
-    ],
-    hardwareOrStack: 'Python 3.11 / FastAPI / AsyncIO / Multi-LLM APIs / Pydantic / Uvicorn',
-    codeUrl: 'https://github.com/SGM-SHAH/CampusX',
-    liveUrl: null
-  },
-  voca: {
-    title: 'VOCA',
-    category: 'Speech AI & NLP',
-    tagline: 'Interactive real-time speech evaluation and conversational language companion',
-    description: 'Interactive speech evaluation platform built for Hack The Winter. Features live pronunciation analysis, accent cadence detection, and conversational scenarios.',
-    architecture: 'Client-side Web Speech API capture feeding low-latency streaming audio buffers into LLM conversational evaluation pipelines with Firebase state persistence.',
-    keyModules: [
-      'Live acoustic feedback loop capturing phonetic cadence and pronunciation',
-      'Conversational prompt engine generating contextual language practice drills',
-      'Real-time grammar and vocabulary feedback badge generator',
-      'Progress tracker synchronizing session metrics to Firebase'
-    ],
-    technicalHighlights: [
-      'Real-time audio capture and speech recognition telemetry loop',
-      'Dynamic vocabulary difficulty scaling based on user response fluency',
-      'Resilient offline session caching with automatic cloud synchronization'
-    ],
-    hardwareOrStack: 'React 19 / Web Speech API / LLM Integration / Firebase / Tailwind CSS',
-    codeUrl: 'https://github.com/SGM-SHAH/VOCA-SpeechAI',
-    liveUrl: null
-  },
   resume: {
     title: 'Dynamic Resume Writer',
     category: 'Web Productivity Tools',

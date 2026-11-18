@@ -731,7 +731,7 @@ button {
   }
 }
 
-/* 2-COLUMN SPLIT CASE STUDIES (IPL, CampusX, VOCA) */
+/* 2-COLUMN SPLIT CASE STUDIES (IPL Mega Auction) */
 .work-case--split {
   display: flex;
   flex-direction: column;
@@ -757,7 +757,7 @@ button {
     order: 2;
   }
 
-  /* Alternating: VOCA / CampusX */
+  /* Alternating column order for split cases */
   .work-case--reverse .work-case__visual {
     order: 2;
   }
