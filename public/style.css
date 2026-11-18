@@ -26,8 +26,8 @@
   --border-active: #fb923c;
 
   --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
 
   --accent: #fb923c;
   --accent-contrast: #0e1015;
@@ -55,8 +55,8 @@
   --border-active: #c2410c;
 
   --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
+  --text-secondary: #334155;
+  --text-muted: #475569;
 
   --accent: #c2410c;
   --accent-contrast: #ffffff;
@@ -418,6 +418,18 @@ button {
   border-color: var(--border-active);
 }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-prominent);
+}
+
 .btn-sm {
   padding: 0.35rem 0.75rem;
   font-size: 0.82rem;
@@ -453,11 +465,11 @@ button {
 }
 
 .hero-portrait-caption {
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 0.82rem;
 }
@@ -589,6 +601,21 @@ button {
   color: var(--text-secondary);
 }
 
+.narrative-block--hardest .narrative-heading {
+  color: var(--accent);
+}
+
+.visual-badge-caption {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
 .case-actions {
   display: flex;
   flex-wrap: wrap;
@@ -692,8 +719,15 @@ button {
 
 @media (min-width: 768px) {
   .flagship-narrative {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .flagship-narrative {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
   }
 }
 
@@ -1254,6 +1288,12 @@ button {
 .contact-link:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+.contact-resume-cta {
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* Toast Notification */

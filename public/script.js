@@ -41,7 +41,7 @@ const projectSpecs = {
     ],
     technicalHighlights: [
       'Real-time synchronization across concurrent bidding participants',
-      'Strict transaction guards preventing purse overflows and duplicate concurrent bids',
+      'Transaction guards preventing purse overflows and duplicate concurrent bids',
       'Production deployment on Firebase Hosting with instantaneous initial load'
     ],
     hardwareOrStack: 'Firebase Realtime DB / JavaScript ESNext / CSS Grid / Firebase Hosting',
@@ -104,7 +104,7 @@ const projectSpecs = {
     ],
     technicalHighlights: [
       'Real-time reactive preview without layout shifting',
-      'Strict adherence to ATS-friendly typography, hierarchy, and margins',
+      'Careful adherence to ATS-friendly typography, hierarchy, and margins',
       'Fully responsive dual-view interface adapting cleanly to mobile and desktop'
     ],
     hardwareOrStack: 'JavaScript ESNext / HTML5 / CSS3 Print Engine / Vercel',
@@ -363,13 +363,36 @@ const projectSpecs = {
   let currentLeader = 'Mumbai Indians';
   let isPaused = false;
   let tickerTimer = null;
+  let userPaused = false;
 
   // Respect prefers-reduced-motion
-  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
+  const motionQuery = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motionQuery && motionQuery.matches) {
     isPaused = true;
     if (toggleBtn) toggleBtn.textContent = 'Resume';
   }
+  if (motionQuery && motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', (e) => {
+      if (e.matches) {
+        isPaused = true;
+        if (toggleBtn) toggleBtn.textContent = 'Resume';
+      }
+    });
+  }
+
+  // Pause simulation when page is hidden to preserve battery and reduce CPU
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (!isPaused && tickerTimer) {
+        clearInterval(tickerTimer);
+        tickerTimer = null;
+      }
+    } else {
+      if (!isPaused && !userPaused && !tickerTimer) {
+        tickerTimer = setInterval(simulateNextBid, 4500);
+      }
+    }
+  });
 
   function updateDisplay(team, bid, message) {
     currentBidCr = bid;
@@ -384,7 +407,7 @@ const projectSpecs = {
   }
 
   function simulateNextBid() {
-    if (isPaused) return;
+    if (isPaused || userPaused) return;
     if (currentBidCr >= 25.0) {
       currentBidCr = 18.0;
     }
@@ -402,6 +425,7 @@ const projectSpecs = {
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       isPaused = !isPaused;
+      userPaused = isPaused;
       toggleBtn.textContent = isPaused ? 'Resume' : 'Pause';
     });
   }

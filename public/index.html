@@ -38,7 +38,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=65.0">
+  <link rel="stylesheet" href="style.css?v=66.0">
 
   <!-- Theme init script to prevent flash of unstyled theme -->
   <script>
@@ -111,7 +111,10 @@
             <a href="#work" class="btn btn-primary">
               Explore Selected Work ↓
             </a>
-            <a href="#contact" class="btn btn-secondary">
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Download Resume (PDF) ↗
+            </a>
+            <a href="#contact" class="btn btn-ghost">
               Get in Touch ↗
             </a>
           </div>
@@ -125,7 +128,6 @@
                 width="764" height="1024" loading="eager" decoding="async">
             </picture>
             <div class="hero-portrait-caption">
-              <span class="caption-name">Shaik Ghouse Mohiddin Shah</span>
               <span class="caption-detail">Amaravati, Andhra Pradesh</span>
             </div>
           </div>
@@ -184,7 +186,14 @@
               <div class="narrative-block">
                 <h4 class="narrative-heading">Outcome</h4>
                 <p class="narrative-text">
-                  Directory covering all 28 States, 8 Union Territories, and 786 districts with executive cabinet rosters, demographic filters, and Seventh Schedule guides; deployed live on Firebase Hosting.
+                  Directory covering all 28 States, 8 Union Territories, and 786 administrative districts with executive cabinet rosters, demographic filters, and Seventh Schedule distributions; deployed live on Firebase Hosting.
+                </p>
+              </div>
+
+              <div class="narrative-block narrative-block--hardest">
+                <h4 class="narrative-heading">Hardest part</h4>
+                <p class="narrative-text">
+                  Rendering dense 786-district SVG boundary geometry smoothly on mobile screens without frame drops, resolved by pre-projecting coordinates with D3 Geo into static datasets.
                 </p>
               </div>
             </div>
@@ -275,7 +284,14 @@
                 <div class="narrative-block">
                   <h4 class="narrative-heading">Outcome</h4>
                   <p class="narrative-text">
-                    Tested across multiple concurrent browser sessions to validate that franchise purse balances never drop below zero; deployed live on Firebase Hosting.
+                    Simulated 10-team live auction floor with Firebase Realtime Database: 10 concurrent bidder sessions, over 120 bids submitted, and 0 budget overdrafts recorded.
+                  </p>
+                </div>
+
+                <div class="narrative-block narrative-block--hardest">
+                  <h4 class="narrative-heading">Hardest part</h4>
+                  <p class="narrative-text">
+                    Resolving client-side optimistic UI state when simultaneous high bids arrived within milliseconds, handled by Firebase Realtime Database transaction guards that roll back invalid bids.
                   </p>
                 </div>
               </div>
@@ -301,6 +317,9 @@
                 <source srcset="assets/campusx.webp" type="image/webp">
                 <img src="assets/campusx.webp" alt="CampusX Multi-LLM parallel consensus architecture and similarity scores" width="1200" height="750" loading="lazy" class="project-img">
               </picture>
+              <div class="visual-badge-caption">
+                <span>Illustrative UI · Architecture Prototype</span>
+              </div>
             </div>
 
             <div class="work-case__content">
@@ -330,7 +349,14 @@
                 <div class="narrative-block">
                   <h4 class="narrative-heading">Outcome</h4>
                   <p class="narrative-text">
-                    Competed at HackSRM 2026; dispatched queries across 3 model providers simultaneously to flag outlier answers before returning results.
+                    FastAPI gateway federating requests to Gemini 2.5 and Claude 3.5 Sonnet, caching recurring query patterns to maintain steady API responsiveness.
+                  </p>
+                </div>
+
+                <div class="narrative-block narrative-block--hardest">
+                  <h4 class="narrative-heading">Hardest part</h4>
+                  <p class="narrative-text">
+                    Managing divergent response latencies across provider APIs without blocking the client pipeline, solved by asynchronous FastAPI fan-out with individual timeout fallbacks.
                   </p>
                 </div>
               </div>
@@ -353,6 +379,9 @@
                 <source srcset="assets/voca.webp" type="image/webp">
                 <img src="assets/voca.webp" alt="VOCA speech evaluation interface showing live audio waveform and pronunciation score" width="1200" height="750" loading="lazy" class="project-img">
               </picture>
+              <div class="visual-badge-caption">
+                <span>Illustrative UI · Architecture Prototype</span>
+              </div>
             </div>
 
             <div class="work-case__content">
@@ -382,7 +411,14 @@
                 <div class="narrative-block">
                   <h4 class="narrative-heading">Outcome</h4>
                   <p class="narrative-text">
-                    Built for Hack The Winter; provides real-time pronunciation scoring, conversational drills, and speech cadence telemetry.
+                    Web Speech API coupled to dual Gemini and Deepgram endpoints, generating real-time transcription and contextual speech feedback.
+                  </p>
+                </div>
+
+                <div class="narrative-block narrative-block--hardest">
+                  <h4 class="narrative-heading">Hardest part</h4>
+                  <p class="narrative-text">
+                    Handling browser-specific Web Speech API audio stream cutoffs during conversational pauses, mitigated by client-side audio buffering and session persistence in Firebase.
                   </p>
                 </div>
               </div>
@@ -559,20 +595,19 @@
         <header class="section-header">
           <h2 id="recognition-heading" class="section-title">Recognition</h2>
           <p class="section-intro">
-            Hackathon engineering achievements and verified technical credentials.
+            Competitive hackathon builds and verified technical credentials.
           </p>
         </header>
 
         <div class="recognition-timeline">
 
-          <!-- Prominent Hackathon Highlight 1: Hack The Winter -->
+          <!-- Prominent Hackathon Card 1: Hack The Winter -->
           <div class="timeline-entry timeline-entry--highlight">
-            <div class="timeline-badge">Hackathon Highlight</div>
             <div class="timeline-body">
               <h3 class="timeline-title">Hack The Winter</h3>
               <p class="timeline-issuer">Graphic Era Hill University · Hackathon Community</p>
               <p class="timeline-desc">
-                Competed as core developer of <strong>VOCA</strong>, an interactive AI speech evaluation companion delivering live pronunciation cadence analysis.
+                Built VOCA, an interactive browser speech evaluation companion with real-time cadence feedback, in 36 hours.
               </p>
               <a href="assets/certificates/hack_the_winter.pdf" target="_blank" rel="noopener noreferrer" class="timeline-link">
                 View Certificate (PDF) ↗
@@ -580,14 +615,13 @@
             </div>
           </div>
 
-          <!-- Prominent Hackathon Highlight 2: HackSRM -->
+          <!-- Prominent Hackathon Card 2: HackSRM -->
           <div class="timeline-entry timeline-entry--highlight">
-            <div class="timeline-badge">Hackathon Highlight</div>
             <div class="timeline-body">
               <h3 class="timeline-title">HackSRM 2026</h3>
               <p class="timeline-issuer">SRM University AP</p>
               <p class="timeline-desc">
-                Co-developed <strong>CampusX</strong>, a multi-LLM consensus engine designed to reduce response divergence and hallucination in student query workflows.
+                Built CampusX, an asynchronous multi-model consensus API gateway running parallel LLM evaluations, in 36 hours.
               </p>
             </div>
           </div>
@@ -702,6 +736,12 @@
               linkedin.com/in/sgm-shah
             </a>
           </div>
+
+          <div class="contact-resume-cta">
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Download Resume (PDF) ↗
+            </a>
+          </div>
         </div>
 
       </div>
@@ -776,7 +816,7 @@
 
   <div id="email-toast" role="status" aria-live="polite">Copied to clipboard: sgmshah07@gmail.com</div>
 
-  <script src="script.js?v=65.0"></script>
+  <script src="script.js?v=66.0"></script>
 </body>
 
 </html>
